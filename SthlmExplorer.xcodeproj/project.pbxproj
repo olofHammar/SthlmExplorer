@@ -14,6 +14,7 @@
 		E49C02AD2993E6C5001993B7 /* SthlmExplorerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49C02AC2993E6C5001993B7 /* SthlmExplorerTests.swift */; };
 		E49C02B72993E6C5001993B7 /* SthlmExplorerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49C02B62993E6C5001993B7 /* SthlmExplorerUITests.swift */; };
 		E49C02B92993E6C5001993B7 /* SthlmExplorerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49C02B82993E6C5001993B7 /* SthlmExplorerUITestsLaunchTests.swift */; };
+		E49C02C82993E837001993B7 /* Data in Frameworks */ = {isa = PBXBuildFile; productRef = E49C02C72993E837001993B7 /* Data */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		E49C02B22993E6C5001993B7 /* SthlmExplorerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SthlmExplorerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E49C02B62993E6C5001993B7 /* SthlmExplorerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SthlmExplorerUITests.swift; sourceTree = "<group>"; };
 		E49C02B82993E6C5001993B7 /* SthlmExplorerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SthlmExplorerUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		E49C02C52993E7F8001993B7 /* Data */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Data; path = ../Data; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E49C02C82993E837001993B7 /* Data in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,10 +77,12 @@
 		E49C028F2993E6C4001993B7 = {
 			isa = PBXGroup;
 			children = (
+				E49C02C52993E7F8001993B7 /* Data */,
 				E49C029A2993E6C4001993B7 /* SthlmExplorer */,
 				E49C02AB2993E6C5001993B7 /* SthlmExplorerTests */,
 				E49C02B52993E6C5001993B7 /* SthlmExplorerUITests */,
 				E49C02992993E6C4001993B7 /* Products */,
+				E49C02C62993E837001993B7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -127,6 +132,13 @@
 			path = SthlmExplorerUITests;
 			sourceTree = "<group>";
 		};
+		E49C02C62993E837001993B7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -143,6 +155,9 @@
 			dependencies = (
 			);
 			name = SthlmExplorer;
+			packageProductDependencies = (
+				E49C02C72993E837001993B7 /* Data */,
+			);
 			productName = SthlmExplorer;
 			productReference = E49C02982993E6C4001993B7 /* SthlmExplorer.app */;
 			productType = "com.apple.product-type.application";
@@ -583,6 +598,13 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E49C02C72993E837001993B7 /* Data */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Data;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E49C02902993E6C4001993B7 /* Project object */;
 }
