@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		E40211AF2993F42300C89C65 /* Model in Frameworks */ = {isa = PBXBuildFile; productRef = E40211AE2993F42300C89C65 /* Model */; };
-		E40211B32993F50D00C89C65 /* Data in Frameworks */ = {isa = PBXBuildFile; productRef = E40211B22993F50D00C89C65 /* Data */; };
+		E40211B62993F82000C89C65 /* Data in Frameworks */ = {isa = PBXBuildFile; productRef = E40211B52993F82000C89C65 /* Data */; };
 		E49C029C2993E6C4001993B7 /* SthlmExplorerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49C029B2993E6C4001993B7 /* SthlmExplorerApp.swift */; };
 		E49C029E2993E6C4001993B7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49C029D2993E6C4001993B7 /* ContentView.swift */; };
 		E49C02A02993E6C5001993B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E49C029F2993E6C5001993B7 /* Assets.xcassets */; };
@@ -38,7 +38,7 @@
 /* Begin PBXFileReference section */
 		E40211AD2993F37000C89C65 /* Model */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Model; sourceTree = "<group>"; };
 		E40211B02993F4B900C89C65 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		E40211B12993F50100C89C65 /* Data */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Data; sourceTree = "<group>"; };
+		E40211B42993F80F00C89C65 /* Data */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Data; sourceTree = "<group>"; };
 		E49C02982993E6C4001993B7 /* SthlmExplorer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SthlmExplorer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E49C029B2993E6C4001993B7 /* SthlmExplorerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SthlmExplorerApp.swift; sourceTree = "<group>"; };
 		E49C029D2993E6C4001993B7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -56,7 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E40211B32993F50D00C89C65 /* Data in Frameworks */,
+				E40211B62993F82000C89C65 /* Data in Frameworks */,
 				E40211AF2993F42300C89C65 /* Model in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -82,7 +82,7 @@
 			isa = PBXGroup;
 			children = (
 				E40211B02993F4B900C89C65 /* README.md */,
-				E40211B12993F50100C89C65 /* Data */,
+				E40211B42993F80F00C89C65 /* Data */,
 				E40211AD2993F37000C89C65 /* Model */,
 				E49C029A2993E6C4001993B7 /* SthlmExplorer */,
 				E49C02AB2993E6C5001993B7 /* SthlmExplorerTests */,
@@ -163,7 +163,7 @@
 			name = SthlmExplorer;
 			packageProductDependencies = (
 				E40211AE2993F42300C89C65 /* Model */,
-				E40211B22993F50D00C89C65 /* Data */,
+				E40211B52993F82000C89C65 /* Data */,
 			);
 			productName = SthlmExplorer;
 			productReference = E49C02982993E6C4001993B7 /* SthlmExplorer.app */;
@@ -611,7 +611,7 @@
 			isa = XCSwiftPackageProductDependency;
 			productName = Model;
 		};
-		E40211B22993F50D00C89C65 /* Data */ = {
+		E40211B52993F82000C89C65 /* Data */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Data;
 		};

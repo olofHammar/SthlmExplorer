@@ -24,7 +24,8 @@ let package = Package(
             dependencies: ["Model"],
             resources: [
                 .copy("Fixtures/CardList.json")
-            ]),
+            ]
+        ),
         .testTarget(
             name: "DataTests",
             dependencies: ["Data"]),
