@@ -15,6 +15,7 @@
 		E49C02B72993E6C5001993B7 /* SthlmExplorerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49C02B62993E6C5001993B7 /* SthlmExplorerUITests.swift */; };
 		E49C02B92993E6C5001993B7 /* SthlmExplorerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49C02B82993E6C5001993B7 /* SthlmExplorerUITestsLaunchTests.swift */; };
 		E49C02C82993E837001993B7 /* Data in Frameworks */ = {isa = PBXBuildFile; productRef = E49C02C72993E837001993B7 /* Data */; };
+		E49C02CB2993E88D001993B7 /* Model in Frameworks */ = {isa = PBXBuildFile; productRef = E49C02CA2993E88D001993B7 /* Model */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,7 @@
 		E49C02B62993E6C5001993B7 /* SthlmExplorerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SthlmExplorerUITests.swift; sourceTree = "<group>"; };
 		E49C02B82993E6C5001993B7 /* SthlmExplorerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SthlmExplorerUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		E49C02C52993E7F8001993B7 /* Data */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Data; path = ../Data; sourceTree = "<group>"; };
+		E49C02C92993E882001993B7 /* Model */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Model; path = ../Model; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E49C02CB2993E88D001993B7 /* Model in Frameworks */,
 				E49C02C82993E837001993B7 /* Data in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -77,6 +80,7 @@
 		E49C028F2993E6C4001993B7 = {
 			isa = PBXGroup;
 			children = (
+				E49C02C92993E882001993B7 /* Model */,
 				E49C02C52993E7F8001993B7 /* Data */,
 				E49C029A2993E6C4001993B7 /* SthlmExplorer */,
 				E49C02AB2993E6C5001993B7 /* SthlmExplorerTests */,
@@ -157,6 +161,7 @@
 			name = SthlmExplorer;
 			packageProductDependencies = (
 				E49C02C72993E837001993B7 /* Data */,
+				E49C02CA2993E88D001993B7 /* Model */,
 			);
 			productName = SthlmExplorer;
 			productReference = E49C02982993E6C4001993B7 /* SthlmExplorer.app */;
@@ -603,6 +608,10 @@
 		E49C02C72993E837001993B7 /* Data */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Data;
+		};
+		E49C02CA2993E88D001993B7 /* Model */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Model;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
