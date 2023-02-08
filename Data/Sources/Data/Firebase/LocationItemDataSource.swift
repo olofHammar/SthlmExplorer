@@ -8,6 +8,7 @@
 import Combine
 import Foundation
 import FirebaseFirestore
+import FirebaseFirestoreSwift
 import Model
 
 public struct LocationItemDataSource: ILocationItemDataSource {
@@ -26,9 +27,9 @@ public struct LocationItemDataSource: ILocationItemDataSource {
                 }
 
                 do {
-//                    if let locations = try snapshot?.documents.compactMap({ try $0.data(as: LocationItem.self) }) {
-//                        publisher.send(locations)
-//                    }
+                    if let locations = try snapshot?.documents.compactMap({ try $0.data(as: LocationItem.self) }) {
+                        publisher.send(locations)
+                    }
                 } catch {
                     print("Error: \(error.localizedDescription)")
                 }

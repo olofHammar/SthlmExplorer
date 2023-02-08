@@ -21,7 +21,11 @@ struct AppConfig: Config {
 private extension AppConfig {
     func configureDataInjections(_ injector: Injector) {
         injector.map(ILocationItemDataSource.self) {
-            StaticLocationItemDataSource()
+            if isRunningTests || isRunningInPreview {
+                return StaticLocationItemDataSource()
+            } else {
+                return LocationItemDataSource()
+            }
         }
     }
 

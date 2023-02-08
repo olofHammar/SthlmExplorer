@@ -25,7 +25,8 @@ let package = Package(
             name: "Data",
             dependencies: [
                 "Model",
-                .product(name: "FirebaseFirestore", package: "firebase-ios-sdk")
+                .product(name: "FirebaseFirestore", package: "firebase-ios-sdk"),
+                .product(name: "FirebaseFirestoreSwift-Beta", package: "firebase-ios-sdk")
             ],
             resources: [
                 .copy("Fixtures/CardList.json")
