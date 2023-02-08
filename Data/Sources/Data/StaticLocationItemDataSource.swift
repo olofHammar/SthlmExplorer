@@ -17,10 +17,12 @@ public struct StaticLocationItemDataSource: ILocationItemDataSource {
         let subject = CurrentValueSubject<[LocationItem], Never>([])
 
         do {
-            let locations: [LocationItem] = try modelFromJsonFixture("CardList")
+            let locations: [LocationItem] = try locationsFromJsonFixture("CardList")
             subject.send(locations)
+        } catch ResourceError.namedResourceNotInBundle(let resourceName) {
+            print("Error: The resource \(resourceName) could not be found in the bundle.")
         } catch {
-            print("Error getting data")
+            print("Error: \(error.localizedDescription)")
         }
 
         return subject
@@ -32,14 +34,13 @@ private enum ResourceError: Error {
     case namedResourceNotInBundle(String)
 }
 
-private func modelFromJsonFixture<T: Decodable>(_ resourceName: String) throws -> T {
-    guard let url = Bundle.module.url(forResource: resourceName, withExtension: "json", subdirectory: "Fixtures") else {
+private func locationsFromJsonFixture(_ resourceName: String) throws -> [LocationItem] {
+    guard let url = Bundle.module.url(forResource: resourceName, withExtension: "json") else {
         throw ResourceError.namedResourceNotInBundle(resourceName)
     }
 
     let data = try Data(contentsOf: url)
 
     let decoder = JSONDecoder()
-    decoder.dataDecodingStrategy = .base64
-    return try decoder.decode(T.self, from: data)
+    return try decoder.decode([LocationItem].self, from: data)
 }

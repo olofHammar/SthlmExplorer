@@ -34,6 +34,7 @@ let package = Package(
         ),
         .testTarget(
             name: "DataTests",
-            dependencies: ["Data"]),
+            dependencies: ["Data"],
+            resources: [.copy("TestData/CardList.json")]),
     ]
 )
