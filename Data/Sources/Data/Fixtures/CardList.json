@@ -1,3 +1,20 @@
-{
-
-}
+[
+    {
+        id: "abcde",
+        title: "Fjällgatan",
+        description: "Historic environment located high up on the edge of a cliff with a fantastic view of the city. Fjällgatan’s Kaffestuga café is charming and popular.<br>The blocks around Fjällgatan, Stigbergsgatan, Mäster Mikaels Gata, Fiskargatan, and Södra Teatern are lined with well-preserved wooden buildings from the 1700s on one side and a magnificent view of the other.",
+        type: "scenicView",
+        image: "https://www.visitstockholm.com/media/original_images/cbf1044319eb41a7bc35444be13018fc.jpg",
+        latitude: 59.31755,
+        longitude: 18.08629
+    },
+    {
+        id: "efgh",
+        title: "Etnografiska museét",
+        description: "The Museum of Ethnography is a place for everyone interested in the world. Bring the whole family on an extraordinary trip and experience art, culture, and food in an exciting and inspiring environment. With pieces from America, Africa, Asia, Australia, and Oceania the museum is a place full of dreams, achievements, and treasures from Swedish adventurers, merchants, collectors, and scientists. Restaurant Matmekka and museum shop. Free entry.",
+        type: "scenicView",
+        image: "https://www.visitstockholm.com/media/original_images/cbf1044319eb41a7bc35444be13018fc.jpg",
+        latitude: 59.31755,
+        longitude: 18.08629
+    }
+]
