@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>API_KEY</key>
+	<string>AIzaSyCMM34BzRok3HDXlLiWy9rUyGuSa9fNopI</string>
+	<key>GCM_SENDER_ID</key>
+	<string>894731959510</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.olof.SthlmExplorer</string>
+	<key>PROJECT_ID</key>
+	<string>stockholmexplorer-c30d7</string>
+	<key>STORAGE_BUCKET</key>
+	<string>stockholmexplorer-c30d7.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:894731959510:ios:ceaa6daff0fa145a1b5d77</string>
+</dict>
+</plist>
