@@ -19,5 +19,4 @@ public struct FetchLocationItemsUseCase: IFetchLocationItemsUseCase {
     public func execute() -> AnyPublisher<[LocationItem], Never> {
         repository.getLocationItems()
     }
-
 }

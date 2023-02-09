@@ -15,13 +15,14 @@ struct AppConfig: Config {
         configureDataInjections(injector)
         configureDomainInjections(injector)
         configureViewModelInjections(injector)
+        configurePresentationInjections(injector)
     }
 }
 
 private extension AppConfig {
     func configureDataInjections(_ injector: Injector) {
         injector.map(ILocationItemDataSource.self) {
-            if isRunningTests || isRunningInPreview {
+            if isRunningInPreview {
                 return StaticLocationItemDataSource()
             } else {
                 return LocationItemDataSource()
@@ -37,7 +38,7 @@ private extension AppConfig {
 
     func configurePresentationInjections(_ injector: Injector) {
         injector.map(IFetchLocationItemsUseCase.self) {
-            if isRunningTests || isRunningInPreview {
+            if isRunningInPreview {
                 return StaticFetchLocationItemsUseCase()
             } else {
                 return FetchLocationItemsUseCase()
@@ -46,11 +47,12 @@ private extension AppConfig {
     }
 
     func configureViewModelInjections(_ injector: Injector) {
-
+        injector.map(RootViewModel.self) {
+            RootViewModel()
+        }
     }
 }
 
 private extension AppConfig {
     var isRunningInPreview: Bool { ProcessInfo.processInfo.environment["XCODE_RUNNING_FOR_PREVIEWS"] == "1" }
-    var isRunningTests: Bool { ProcessInfo.processInfo.environment["XCTestConfigureFilePath"] != nil }
 }

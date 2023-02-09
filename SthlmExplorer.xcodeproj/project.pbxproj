@@ -12,6 +12,8 @@
 		E40211B9299403B500C89C65 /* Domain in Frameworks */ = {isa = PBXBuildFile; productRef = E40211B8299403B500C89C65 /* Domain */; };
 		E40211BC2994057100C89C65 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E40211BB2994057100C89C65 /* GoogleService-Info.plist */; };
 		E40211BE2994081D00C89C65 /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40211BD2994081D00C89C65 /* AppConfig.swift */; };
+		E4375A592995306100A92751 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4375A582995306100A92751 /* RootView.swift */; };
+		E4375A5B2995307100A92751 /* RootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4375A5A2995307100A92751 /* RootViewModel.swift */; };
 		E49C029C2993E6C4001993B7 /* SthlmExplorerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49C029B2993E6C4001993B7 /* SthlmExplorerApp.swift */; };
 		E49C029E2993E6C4001993B7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49C029D2993E6C4001993B7 /* ContentView.swift */; };
 		E49C02A02993E6C5001993B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E49C029F2993E6C5001993B7 /* Assets.xcassets */; };
@@ -45,6 +47,8 @@
 		E40211B72994037300C89C65 /* Domain */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Domain; sourceTree = "<group>"; };
 		E40211BB2994057100C89C65 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E40211BD2994081D00C89C65 /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
+		E4375A582995306100A92751 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		E4375A5A2995307100A92751 /* RootViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewModel.swift; sourceTree = "<group>"; };
 		E49C02982993E6C4001993B7 /* SthlmExplorer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SthlmExplorer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E49C029B2993E6C4001993B7 /* SthlmExplorerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SthlmExplorerApp.swift; sourceTree = "<group>"; };
 		E49C029D2993E6C4001993B7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -94,6 +98,23 @@
 			path = Config;
 			sourceTree = "<group>";
 		};
+		E4375A562995303700A92751 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				E4375A572995304E00A92751 /* Root */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		E4375A572995304E00A92751 /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				E4375A582995306100A92751 /* RootView.swift */,
+				E4375A5A2995307100A92751 /* RootViewModel.swift */,
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
 		E49C028F2993E6C4001993B7 = {
 			isa = PBXGroup;
 			children = (
@@ -122,6 +143,7 @@
 		E49C029A2993E6C4001993B7 /* SthlmExplorer */ = {
 			isa = PBXGroup;
 			children = (
+				E4375A562995303700A92751 /* Presentation */,
 				E40211BA2994054600C89C65 /* Config */,
 				E49C029B2993E6C4001993B7 /* SthlmExplorerApp.swift */,
 				E49C029D2993E6C4001993B7 /* ContentView.swift */,
@@ -299,6 +321,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4375A5B2995307100A92751 /* RootViewModel.swift in Sources */,
+				E4375A592995306100A92751 /* RootView.swift in Sources */,
 				E40211BE2994081D00C89C65 /* AppConfig.swift in Sources */,
 				E49C029E2993E6C4001993B7 /* ContentView.swift in Sources */,
 				E49C029C2993E6C4001993B7 /* SthlmExplorerApp.swift in Sources */,
