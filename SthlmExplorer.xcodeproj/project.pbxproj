@@ -23,6 +23,7 @@
 		E4375A89299548D800A92751 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4375A88299548D800A92751 /* Assets.swift */; };
 		E4375A8B299548F900A92751 /* Assets+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4375A8A299548F900A92751 /* Assets+Extension.swift */; };
 		E4375A8D29954DD300A92751 /* Dimensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4375A8C29954DD300A92751 /* Dimensions.swift */; };
+		E4375A8F29954E3300A92751 /* View+TextStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4375A8E29954E3300A92751 /* View+TextStyle.swift */; };
 		E49C029C2993E6C4001993B7 /* SthlmExplorerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49C029B2993E6C4001993B7 /* SthlmExplorerApp.swift */; };
 		E49C02A02993E6C5001993B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E49C029F2993E6C5001993B7 /* Assets.xcassets */; };
 		E49C02A32993E6C5001993B7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E49C02A22993E6C5001993B7 /* Preview Assets.xcassets */; };
@@ -78,6 +79,7 @@
 		E4375A88299548D800A92751 /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
 		E4375A8A299548F900A92751 /* Assets+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Assets+Extension.swift"; sourceTree = "<group>"; };
 		E4375A8C29954DD300A92751 /* Dimensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dimensions.swift; sourceTree = "<group>"; };
+		E4375A8E29954E3300A92751 /* View+TextStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+TextStyle.swift"; sourceTree = "<group>"; };
 		E49C02982993E6C4001993B7 /* SthlmExplorer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SthlmExplorer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E49C029B2993E6C4001993B7 /* SthlmExplorerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SthlmExplorerApp.swift; sourceTree = "<group>"; };
 		E49C029F2993E6C5001993B7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -167,6 +169,7 @@
 		E4375A5E29953BE300A92751 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				E4375A8E29954E3300A92751 /* View+TextStyle.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -430,6 +433,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E4375A5B2995307100A92751 /* RootViewModel.swift in Sources */,
+				E4375A8F29954E3300A92751 /* View+TextStyle.swift in Sources */,
 				E4375A592995306100A92751 /* RootView.swift in Sources */,
 				E4375A89299548D800A92751 /* Assets.swift in Sources */,
 				E40211BE2994081D00C89C65 /* AppConfig.swift in Sources */,
