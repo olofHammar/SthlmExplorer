@@ -28,9 +28,14 @@ let package = Package(
                 "Data",
                 "Model",
                 .product(name: "ShortcutFoundation", package: "shortcut-foundation-ios")
-            ]),
+            ],
+            resources: [
+                .copy("Fixtures/CardList.json")
+            ]
+        ),
         .testTarget(
             name: "DomainTests",
-            dependencies: ["Domain"]),
+            dependencies: ["Domain"],
+            resources: [.copy("TestData/CardList.json")]),
     ]
 )

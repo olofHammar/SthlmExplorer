@@ -8,7 +8,7 @@
 import Combine
 import XCTest
 
-extension XCTestCase {
+public extension XCTestCase {
     // Copied from John Sundell
     // https://www.swiftbysundell.com/articles/unit-testing-combine-based-swift-code/
     func awaitPublisher<T: Publisher>(
