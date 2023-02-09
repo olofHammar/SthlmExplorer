@@ -1,0 +1,59 @@
+/* 
+  Localizable.strings
+  SthlmExplorer
+
+  Created by Olof Hammar on 2023-02-09.
+  
+*/
+
+// MARK: - Root
+"root.title" = "Root view";
+
+// MARK: - TabBar
+"tabbar.list" = "HOME";
+"tabbar.map" = "MAP";
+
+// MARK: - Home
+"home.welcome.title" = "Welcome to Stockholm Explorer";
+"home.welcome.message" = "Here you will find locations worth a visit when exploring the city of Stockholm";
+"home.emptyList.title" = "No matching locations found";
+"home.searchBar.title" = "Search Locations";
+"home.emptyList.favorites.message" = "No locations have been added \n to your favorite list yet";
+
+// MARK: - Map
+"map.directions.route.message" = "Your destination is %@ min away";
+"map.directions.completed.message" = "You have reached your destination";
+"map.directions.locationNotAvailable.message" = "Update you location persmission to enable directions.";
+
+// MARK: - TravelTipCard
+"travelTipCard.title" = "Travel Tip";
+
+// MARK: - MapSheet
+"mapSheet.getDirections" = "Get Directions";
+"mapSheet.info.title" = "Learn More";
+
+// MARK: - LocationFilters
+"locationFilter.all.title" = "ALL";
+"locationFilter.all.searchKey" = "all";
+"locationFilter.all.headerTitle" = "Stockholm";
+"locationFilter.all.headerCaption" = "Welcome to,";
+"locationFilter.landmark.title" = "LANDMARKS";
+"locationFilter.landmark.searchKey" = "landmark";
+"locationFilter.landmark.headerCaption" = "Explore Landmarks";
+"locationFilter.scenicView.title" = "SCENIC VIEWS";
+"locationFilter.scenicView.searchKey" = "scenic view";
+"locationFilter.scenicView.headerCaption" = "Explore Scenic Walks";
+"locationFilter.museum.title" = "MUSEUMS";
+"locationFilter.museum.searchKey" = "museum";
+"locationFilter.museum.headerCaption" = "Explore Museums";
+"locationFilter.favorites.title" = "FAVORITES";
+"locationFilter.favorites.searchKey" = "favorite";
+"locationFilter.favorites.headerCaption" = "Your Favorites";
+
+// MARK: - LocationDetail
+"locationDetail.button.history" = "A Brief History";
+"locationDetail.tags.title" = "Great if you like";
+"locationDetail.openingHours.title" = "Opening hours";
+"locationDetail.walk.title" = "%@ min";
+"locationDetail.walk.notAvailable" = "N/A";
+"locationDetail.about.title" = "About";

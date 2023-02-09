@@ -11,8 +11,11 @@ import SwiftUI
 struct RootView: View {
     @InjectObject var vm: RootViewModel
 
+    private typealias MyStrings = L10n.Home.Welcome
+
     var body: some View {
         VStack {
+            Text(MyStrings.title)
             ForEach(vm.locationItems) { location in
                 Text(location.title)
             }

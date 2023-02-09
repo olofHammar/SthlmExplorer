@@ -14,6 +14,10 @@
 		E40211BE2994081D00C89C65 /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40211BD2994081D00C89C65 /* AppConfig.swift */; };
 		E4375A592995306100A92751 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4375A582995306100A92751 /* RootView.swift */; };
 		E4375A5B2995307100A92751 /* RootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4375A5A2995307100A92751 /* RootViewModel.swift */; };
+		E4375A6F2995416300A92751 /* swiftgen.yml in Resources */ = {isa = PBXBuildFile; fileRef = E4375A6E2995416300A92751 /* swiftgen.yml */; };
+		E4375A732995435500A92751 /* sv.lproj in Resources */ = {isa = PBXBuildFile; fileRef = E4375A702995435500A92751 /* sv.lproj */; };
+		E4375A742995435500A92751 /* en.lproj in Resources */ = {isa = PBXBuildFile; fileRef = E4375A712995435500A92751 /* en.lproj */; };
+		E4375A752995435500A92751 /* L10n.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4375A722995435500A92751 /* L10n.swift */; };
 		E49C029C2993E6C4001993B7 /* SthlmExplorerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49C029B2993E6C4001993B7 /* SthlmExplorerApp.swift */; };
 		E49C02A02993E6C5001993B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E49C029F2993E6C5001993B7 /* Assets.xcassets */; };
 		E49C02A32993E6C5001993B7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E49C02A22993E6C5001993B7 /* Preview Assets.xcassets */; };
@@ -48,6 +52,10 @@
 		E40211BD2994081D00C89C65 /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
 		E4375A582995306100A92751 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		E4375A5A2995307100A92751 /* RootViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewModel.swift; sourceTree = "<group>"; };
+		E4375A6E2995416300A92751 /* swiftgen.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = swiftgen.yml; sourceTree = "<group>"; };
+		E4375A702995435500A92751 /* sv.lproj */ = {isa = PBXFileReference; lastKnownFileType = folder; path = sv.lproj; sourceTree = "<group>"; };
+		E4375A712995435500A92751 /* en.lproj */ = {isa = PBXFileReference; lastKnownFileType = folder; path = en.lproj; sourceTree = "<group>"; };
+		E4375A722995435500A92751 /* L10n.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = L10n.swift; sourceTree = "<group>"; };
 		E49C02982993E6C4001993B7 /* SthlmExplorer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SthlmExplorer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E49C029B2993E6C4001993B7 /* SthlmExplorerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SthlmExplorerApp.swift; sourceTree = "<group>"; };
 		E49C029F2993E6C5001993B7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -126,6 +134,10 @@
 		E4375A5D29953BD700A92751 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E4375A6129953D4E00A92751 /* Assets */,
+				E4375A6029953D3F00A92751 /* Dimensions */,
+				E4375A5F29953D3400A92751 /* Fonts */,
+				E4375A6229953D5600A92751 /* Strings */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -137,9 +149,42 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		E4375A5F29953D3400A92751 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		E4375A6029953D3F00A92751 /* Dimensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Dimensions;
+			sourceTree = "<group>";
+		};
+		E4375A6129953D4E00A92751 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				E49C029F2993E6C5001993B7 /* Assets.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		E4375A6229953D5600A92751 /* Strings */ = {
+			isa = PBXGroup;
+			children = (
+				E4375A722995435500A92751 /* L10n.swift */,
+				E4375A702995435500A92751 /* sv.lproj */,
+				E4375A712995435500A92751 /* en.lproj */,
+			);
+			path = Strings;
+			sourceTree = "<group>";
+		};
 		E49C028F2993E6C4001993B7 = {
 			isa = PBXGroup;
 			children = (
+				E4375A6E2995416300A92751 /* swiftgen.yml */,
 				E40211B02993F4B900C89C65 /* README.md */,
 				E40211B42993F80F00C89C65 /* Data */,
 				E40211B72994037300C89C65 /* Domain */,
@@ -168,7 +213,6 @@
 				E40211BA2994054600C89C65 /* Config */,
 				E4375A562995303700A92751 /* Presentation */,
 				E49C029B2993E6C4001993B7 /* SthlmExplorerApp.swift */,
-				E49C029F2993E6C5001993B7 /* Assets.xcassets */,
 				E49C02A12993E6C5001993B7 /* Preview Content */,
 			);
 			path = SthlmExplorer;
@@ -297,6 +341,7 @@
 			knownRegions = (
 				en,
 				Base,
+				sv,
 			);
 			mainGroup = E49C028F2993E6C4001993B7;
 			productRefGroup = E49C02992993E6C4001993B7 /* Products */;
@@ -315,8 +360,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4375A742995435500A92751 /* en.lproj in Resources */,
 				E49C02A32993E6C5001993B7 /* Preview Assets.xcassets in Resources */,
+				E4375A6F2995416300A92751 /* swiftgen.yml in Resources */,
 				E49C02A02993E6C5001993B7 /* Assets.xcassets in Resources */,
+				E4375A732995435500A92751 /* sv.lproj in Resources */,
 				E40211BC2994057100C89C65 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -346,6 +394,7 @@
 				E4375A592995306100A92751 /* RootView.swift in Sources */,
 				E40211BE2994081D00C89C65 /* AppConfig.swift in Sources */,
 				E49C029C2993E6C4001993B7 /* SthlmExplorerApp.swift in Sources */,
+				E4375A752995435500A92751 /* L10n.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

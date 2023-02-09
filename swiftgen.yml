@@ -1,0 +1,23 @@
+input_dir: SthlmExplorer/Presentation/Resources/
+output_dir: SthlmExplorer/Presentation/Resources/
+
+strings:
+  inputs:
+    - Strings/Sv.lproj
+  outputs:
+    templateName: structured-swift5
+    output: Strings/L10n.swift
+
+xcassets:
+  inputs:
+    - Assets/Assets.xcassets
+  outputs:
+    templateName: swift5
+    output: Assets/Assets.swift
+
+fonts:
+  inputs:
+    - Fonts/
+  outputs:
+    - templateName: swift5
+      output: Fonts/Fonts.swift
