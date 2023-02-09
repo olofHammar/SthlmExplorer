@@ -18,6 +18,10 @@
 		E4375A732995435500A92751 /* sv.lproj in Resources */ = {isa = PBXBuildFile; fileRef = E4375A702995435500A92751 /* sv.lproj */; };
 		E4375A742995435500A92751 /* en.lproj in Resources */ = {isa = PBXBuildFile; fileRef = E4375A712995435500A92751 /* en.lproj */; };
 		E4375A752995435500A92751 /* L10n.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4375A722995435500A92751 /* L10n.swift */; };
+		E4375A852995486C00A92751 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4375A842995486C00A92751 /* Fonts.swift */; };
+		E4375A872995489D00A92751 /* FontConvertible+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4375A862995489D00A92751 /* FontConvertible+Extension.swift */; };
+		E4375A89299548D800A92751 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4375A88299548D800A92751 /* Assets.swift */; };
+		E4375A8B299548F900A92751 /* Assets+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4375A8A299548F900A92751 /* Assets+Extension.swift */; };
 		E49C029C2993E6C4001993B7 /* SthlmExplorerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49C029B2993E6C4001993B7 /* SthlmExplorerApp.swift */; };
 		E49C02A02993E6C5001993B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E49C029F2993E6C5001993B7 /* Assets.xcassets */; };
 		E49C02A32993E6C5001993B7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E49C02A22993E6C5001993B7 /* Preview Assets.xcassets */; };
@@ -56,6 +60,22 @@
 		E4375A702995435500A92751 /* sv.lproj */ = {isa = PBXFileReference; lastKnownFileType = folder; path = sv.lproj; sourceTree = "<group>"; };
 		E4375A712995435500A92751 /* en.lproj */ = {isa = PBXFileReference; lastKnownFileType = folder; path = en.lproj; sourceTree = "<group>"; };
 		E4375A722995435500A92751 /* L10n.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = L10n.swift; sourceTree = "<group>"; };
+		E4375A782995484400A92751 /* PlayfairDisplay-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PlayfairDisplay-Regular.ttf"; sourceTree = "<group>"; };
+		E4375A792995484400A92751 /* JosefinSans-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "JosefinSans-Italic.ttf"; sourceTree = "<group>"; };
+		E4375A7A2995484400A92751 /* JosefinSans-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "JosefinSans-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
+		E4375A7B2995484400A92751 /* JosefinSans-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "JosefinSans-BoldItalic.ttf"; sourceTree = "<group>"; };
+		E4375A7C2995484500A92751 /* PlayfairDisplay-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PlayfairDisplay-Bold.ttf"; sourceTree = "<group>"; };
+		E4375A7D2995484500A92751 /* JosefinSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "JosefinSans-Regular.ttf"; sourceTree = "<group>"; };
+		E4375A7E2995484500A92751 /* JosefinSans-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "JosefinSans-SemiBold.ttf"; sourceTree = "<group>"; };
+		E4375A7F2995484500A92751 /* JosefinSans-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "JosefinSans-Thin.ttf"; sourceTree = "<group>"; };
+		E4375A802995484500A92751 /* JosefinSans-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "JosefinSans-Light.ttf"; sourceTree = "<group>"; };
+		E4375A812995484500A92751 /* JosefinSans-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "JosefinSans-ThinItalic.ttf"; sourceTree = "<group>"; };
+		E4375A822995484500A92751 /* JosefinSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "JosefinSans-Bold.ttf"; sourceTree = "<group>"; };
+		E4375A832995484500A92751 /* JosefinSans-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "JosefinSans-LightItalic.ttf"; sourceTree = "<group>"; };
+		E4375A842995486C00A92751 /* Fonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
+		E4375A862995489D00A92751 /* FontConvertible+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FontConvertible+Extension.swift"; sourceTree = "<group>"; };
+		E4375A88299548D800A92751 /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
+		E4375A8A299548F900A92751 /* Assets+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Assets+Extension.swift"; sourceTree = "<group>"; };
 		E49C02982993E6C4001993B7 /* SthlmExplorer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SthlmExplorer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E49C029B2993E6C4001993B7 /* SthlmExplorerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SthlmExplorerApp.swift; sourceTree = "<group>"; };
 		E49C029F2993E6C5001993B7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -152,6 +172,20 @@
 		E4375A5F29953D3400A92751 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				E4375A822995484500A92751 /* JosefinSans-Bold.ttf */,
+				E4375A7B2995484400A92751 /* JosefinSans-BoldItalic.ttf */,
+				E4375A792995484400A92751 /* JosefinSans-Italic.ttf */,
+				E4375A802995484500A92751 /* JosefinSans-Light.ttf */,
+				E4375A832995484500A92751 /* JosefinSans-LightItalic.ttf */,
+				E4375A7D2995484500A92751 /* JosefinSans-Regular.ttf */,
+				E4375A7E2995484500A92751 /* JosefinSans-SemiBold.ttf */,
+				E4375A7A2995484400A92751 /* JosefinSans-SemiBoldItalic.ttf */,
+				E4375A7F2995484500A92751 /* JosefinSans-Thin.ttf */,
+				E4375A812995484500A92751 /* JosefinSans-ThinItalic.ttf */,
+				E4375A7C2995484500A92751 /* PlayfairDisplay-Bold.ttf */,
+				E4375A782995484400A92751 /* PlayfairDisplay-Regular.ttf */,
+				E4375A842995486C00A92751 /* Fonts.swift */,
+				E4375A862995489D00A92751 /* FontConvertible+Extension.swift */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -166,6 +200,8 @@
 		E4375A6129953D4E00A92751 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				E4375A88299548D800A92751 /* Assets.swift */,
+				E4375A8A299548F900A92751 /* Assets+Extension.swift */,
 				E49C029F2993E6C5001993B7 /* Assets.xcassets */,
 			);
 			path = Assets;
@@ -392,9 +428,13 @@
 			files = (
 				E4375A5B2995307100A92751 /* RootViewModel.swift in Sources */,
 				E4375A592995306100A92751 /* RootView.swift in Sources */,
+				E4375A89299548D800A92751 /* Assets.swift in Sources */,
 				E40211BE2994081D00C89C65 /* AppConfig.swift in Sources */,
 				E49C029C2993E6C4001993B7 /* SthlmExplorerApp.swift in Sources */,
+				E4375A852995486C00A92751 /* Fonts.swift in Sources */,
 				E4375A752995435500A92751 /* L10n.swift in Sources */,
+				E4375A872995489D00A92751 /* FontConvertible+Extension.swift in Sources */,
+				E4375A8B299548F900A92751 /* Assets+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

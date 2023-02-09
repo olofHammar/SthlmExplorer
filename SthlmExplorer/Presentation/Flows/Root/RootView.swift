@@ -12,6 +12,7 @@ struct RootView: View {
     @InjectObject var vm: RootViewModel
 
     private typealias MyStrings = L10n.Home.Welcome
+    private typealias MyColors = Asset.Colors.Main
 
     var body: some View {
         VStack {
