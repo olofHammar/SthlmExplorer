@@ -15,7 +15,6 @@
 		E4375A592995306100A92751 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4375A582995306100A92751 /* RootView.swift */; };
 		E4375A5B2995307100A92751 /* RootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4375A5A2995307100A92751 /* RootViewModel.swift */; };
 		E49C029C2993E6C4001993B7 /* SthlmExplorerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49C029B2993E6C4001993B7 /* SthlmExplorerApp.swift */; };
-		E49C029E2993E6C4001993B7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49C029D2993E6C4001993B7 /* ContentView.swift */; };
 		E49C02A02993E6C5001993B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E49C029F2993E6C5001993B7 /* Assets.xcassets */; };
 		E49C02A32993E6C5001993B7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E49C02A22993E6C5001993B7 /* Preview Assets.xcassets */; };
 		E49C02AD2993E6C5001993B7 /* SthlmExplorerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49C02AC2993E6C5001993B7 /* SthlmExplorerTests.swift */; };
@@ -51,7 +50,6 @@
 		E4375A5A2995307100A92751 /* RootViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewModel.swift; sourceTree = "<group>"; };
 		E49C02982993E6C4001993B7 /* SthlmExplorer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SthlmExplorer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E49C029B2993E6C4001993B7 /* SthlmExplorerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SthlmExplorerApp.swift; sourceTree = "<group>"; };
-		E49C029D2993E6C4001993B7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		E49C029F2993E6C5001993B7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E49C02A22993E6C5001993B7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E49C02A82993E6C5001993B7 /* SthlmExplorerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SthlmExplorerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -101,7 +99,9 @@
 		E4375A562995303700A92751 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				E4375A572995304E00A92751 /* Root */,
+				E4375A5E29953BE300A92751 /* Extensions */,
+				E4375A5C29953BBF00A92751 /* Flows */,
+				E4375A5D29953BD700A92751 /* Resources */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -113,6 +113,28 @@
 				E4375A5A2995307100A92751 /* RootViewModel.swift */,
 			);
 			path = Root;
+			sourceTree = "<group>";
+		};
+		E4375A5C29953BBF00A92751 /* Flows */ = {
+			isa = PBXGroup;
+			children = (
+				E4375A572995304E00A92751 /* Root */,
+			);
+			path = Flows;
+			sourceTree = "<group>";
+		};
+		E4375A5D29953BD700A92751 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		E4375A5E29953BE300A92751 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		E49C028F2993E6C4001993B7 = {
@@ -143,10 +165,9 @@
 		E49C029A2993E6C4001993B7 /* SthlmExplorer */ = {
 			isa = PBXGroup;
 			children = (
-				E4375A562995303700A92751 /* Presentation */,
 				E40211BA2994054600C89C65 /* Config */,
+				E4375A562995303700A92751 /* Presentation */,
 				E49C029B2993E6C4001993B7 /* SthlmExplorerApp.swift */,
-				E49C029D2993E6C4001993B7 /* ContentView.swift */,
 				E49C029F2993E6C5001993B7 /* Assets.xcassets */,
 				E49C02A12993E6C5001993B7 /* Preview Content */,
 			);
@@ -324,7 +345,6 @@
 				E4375A5B2995307100A92751 /* RootViewModel.swift in Sources */,
 				E4375A592995306100A92751 /* RootView.swift in Sources */,
 				E40211BE2994081D00C89C65 /* AppConfig.swift in Sources */,
-				E49C029E2993E6C4001993B7 /* ContentView.swift in Sources */,
 				E49C029C2993E6C4001993B7 /* SthlmExplorerApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
