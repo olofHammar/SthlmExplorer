@@ -30,7 +30,19 @@ private extension AppConfig {
     }
 
     func configureDomainInjections(_ injector: Injector) {
+        injector.map(ILocationItemsRepository.self) {
+            LocationItemsRepository()
+        }
+    }
 
+    func configurePresentationInjections(_ injector: Injector) {
+        injector.map(IFetchLocationItemsUseCase.self) {
+            if isRunningTests || isRunningInPreview {
+                return StaticFetchLocationItemsUseCase()
+            } else {
+                return FetchLocationItemsUseCase()
+            }
+        }
     }
 
     func configureViewModelInjections(_ injector: Injector) {
