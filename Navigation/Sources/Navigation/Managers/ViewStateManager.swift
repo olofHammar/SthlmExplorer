@@ -25,7 +25,7 @@ public final class ViewStateManager: NSObject, ObservableObject, IViewStateManag
     public var viewStatePublisher: Published<ViewState>.Publisher { $viewState }
 
     private var cancellables = Set<AnyCancellable>()
-
+    
     deinit {
         cancellables.forEach { $0.cancel() }
     }

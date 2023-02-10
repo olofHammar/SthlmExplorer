@@ -19,7 +19,7 @@ public final class ModalViewRouter: ObservableObject, ModalPresenter {
     @Published var sheetPresentationState: ModalPresentationState?
     @Published var fullScreenModalPresentationState: ModalPresentationState?
 
-    init() {}
+    public init() {}
 
     public func setModal(state: ModalPresentationState, type: ModalPresentationType) {
         modal(state: state, type: type, onDismiss: nil)

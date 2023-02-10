@@ -12,6 +12,11 @@
 		E40211B9299403B500C89C65 /* Domain in Frameworks */ = {isa = PBXBuildFile; productRef = E40211B8299403B500C89C65 /* Domain */; };
 		E40211BC2994057100C89C65 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E40211BB2994057100C89C65 /* GoogleService-Info.plist */; };
 		E40211BE2994081D00C89C65 /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40211BD2994081D00C89C65 /* AppConfig.swift */; };
+		E42FFA7C29963F7400C17BDA /* Navigation in Frameworks */ = {isa = PBXBuildFile; productRef = E42FFA7B29963F7400C17BDA /* Navigation */; };
+		E42FFA80299644FB00C17BDA /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42FFA7F299644FB00C17BDA /* ListView.swift */; };
+		E42FFA822996451100C17BDA /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42FFA812996451100C17BDA /* ListViewModel.swift */; };
+		E42FFA842996457700C17BDA /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42FFA832996457700C17BDA /* MapViewModel.swift */; };
+		E42FFA862996459400C17BDA /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42FFA852996459400C17BDA /* MapView.swift */; };
 		E4375A592995306100A92751 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4375A582995306100A92751 /* RootView.swift */; };
 		E4375A5B2995307100A92751 /* RootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4375A5A2995307100A92751 /* RootViewModel.swift */; };
 		E4375A6F2995416300A92751 /* swiftgen.yml in Resources */ = {isa = PBXBuildFile; fileRef = E4375A6E2995416300A92751 /* swiftgen.yml */; };
@@ -57,6 +62,10 @@
 		E40211BB2994057100C89C65 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E40211BD2994081D00C89C65 /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
 		E42FFA7A29962B4200C17BDA /* Navigation */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Navigation; sourceTree = "<group>"; };
+		E42FFA7F299644FB00C17BDA /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
+		E42FFA812996451100C17BDA /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
+		E42FFA832996457700C17BDA /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
+		E42FFA852996459400C17BDA /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		E4375A582995306100A92751 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		E4375A5A2995307100A92751 /* RootViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewModel.swift; sourceTree = "<group>"; };
 		E4375A6E2995416300A92751 /* swiftgen.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = swiftgen.yml; sourceTree = "<group>"; };
@@ -99,6 +108,7 @@
 			files = (
 				E40211B9299403B500C89C65 /* Domain in Frameworks */,
 				E40211B62993F82000C89C65 /* Data in Frameworks */,
+				E42FFA7C29963F7400C17BDA /* Navigation in Frameworks */,
 				E40211AF2993F42300C89C65 /* Model in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -129,6 +139,24 @@
 			path = Config;
 			sourceTree = "<group>";
 		};
+		E42FFA7D299644B600C17BDA /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				E42FFA832996457700C17BDA /* MapViewModel.swift */,
+				E42FFA852996459400C17BDA /* MapView.swift */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		E42FFA7E299644BD00C17BDA /* List */ = {
+			isa = PBXGroup;
+			children = (
+				E42FFA7F299644FB00C17BDA /* ListView.swift */,
+				E42FFA812996451100C17BDA /* ListViewModel.swift */,
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
 		E4375A562995303700A92751 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
@@ -151,6 +179,8 @@
 		E4375A5C29953BBF00A92751 /* Flows */ = {
 			isa = PBXGroup;
 			children = (
+				E42FFA7E299644BD00C17BDA /* List */,
+				E42FFA7D299644B600C17BDA /* Map */,
 				E4375A572995304E00A92751 /* Root */,
 			);
 			path = Flows;
@@ -314,6 +344,7 @@
 				E40211AE2993F42300C89C65 /* Model */,
 				E40211B52993F82000C89C65 /* Data */,
 				E40211B8299403B500C89C65 /* Domain */,
+				E42FFA7B29963F7400C17BDA /* Navigation */,
 			);
 			productName = SthlmExplorer;
 			productReference = E49C02982993E6C4001993B7 /* SthlmExplorer.app */;
@@ -441,8 +472,12 @@
 				E40211BE2994081D00C89C65 /* AppConfig.swift in Sources */,
 				E49C029C2993E6C4001993B7 /* SthlmExplorerApp.swift in Sources */,
 				E4375A852995486C00A92751 /* Fonts.swift in Sources */,
+				E42FFA862996459400C17BDA /* MapView.swift in Sources */,
 				E4375A8D29954DD300A92751 /* Dimensions.swift in Sources */,
+				E42FFA80299644FB00C17BDA /* ListView.swift in Sources */,
+				E42FFA822996451100C17BDA /* ListViewModel.swift in Sources */,
 				E4375A752995435500A92751 /* L10n.swift in Sources */,
+				E42FFA842996457700C17BDA /* MapViewModel.swift in Sources */,
 				E4375A872995489D00A92751 /* FontConvertible+Extension.swift in Sources */,
 				E4375A8B299548F900A92751 /* Assets+Extension.swift in Sources */,
 			);
@@ -784,6 +819,10 @@
 		E40211B8299403B500C89C65 /* Domain */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Domain;
+		};
+		E42FFA7B29963F7400C17BDA /* Navigation */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Navigation;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
