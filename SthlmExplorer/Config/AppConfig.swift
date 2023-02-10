@@ -73,6 +73,14 @@ private extension AppConfig {
         injector.map(RootViewModel.self) {
             RootViewModel()
         }
+
+        injector.map(ListViewModel.self) {
+            ListViewModel()
+        }
+
+        injector.map(MapViewModel.self) {
+            MapViewModel()
+        }
     }
 }
 

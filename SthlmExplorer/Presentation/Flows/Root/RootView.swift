@@ -15,14 +15,19 @@ struct RootView: View {
     private typealias MyColors = Asset.Colors.Main
 
     var body: some View {
-        VStack {
-            Text(MyStrings.title)
-            ForEach(vm.locationItems) { location in
-                Text(location.title)
+        VStack(spacing: 0) {
+            ZStack(alignment: .topLeading) {
+                ListView()
+
+                if vm.selectedTab == .map {
+                    MapView()
+                        .opacity(1)
+                }
+
+                TabBarView(tabBarSelection: $vm.selectedTab)
+                    .padding(.bottom)
+                    .ignoresSafeArea(.keyboard)
             }
-        }
-        .onAppear {
-            vm.fetchListItems()
         }
     }
 }
