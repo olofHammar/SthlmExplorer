@@ -9,14 +9,6 @@ import Combine
 import Foundation
 import Model
 
-public enum ViewState {
-    case initial
-    case presentedLocationDetail(_ location: LocationItem)
-    case dismissedLocationDetail
-    case presentedLocationSheet(_ location: LocationItem)
-    case dismissedLocationSheet
-}
-
 public protocol IViewStateManager {
     var viewStatePublisher: Published<ViewState>.Publisher { get }
 
