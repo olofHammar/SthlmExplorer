@@ -11,18 +11,8 @@ import ShortcutFoundation
 import SwiftUI
 
 final class RootViewModel: ObservableObject {
-    @Inject var fetchListItemsUseCase: IFetchLocationItemsUseCase
 
-    @Published private(set) var locationItems: [LocationItem] = []
+    @Published var selectedTab: TabBarSelection = .list
 
     init() { }
-
-    func fetchListItems() {
-        fetchListItemsUseCase.execute()
-            .receive(on: RunLoop.main)
-            .eraseToAnyPublisher()
-            .assign(to: &$locationItems)
-    }
-
-
 }

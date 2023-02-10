@@ -5,11 +5,18 @@
 //  Created by Olof Hammar on 2023-02-10.
 //
 
+import ShortcutFoundation
 import SwiftUI
 
 struct ListView: View {
+    @InjectObject var vm: ListViewModel
+
     var body: some View {
-        Text("ListView")
+        VStack {
+            ForEach(vm.locationItems) { location in
+                Text(location.title)
+            }
+        }
     }
 }
 
