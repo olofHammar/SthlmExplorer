@@ -43,6 +43,7 @@
 		E4375A8B299548F900A92751 /* Assets+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4375A8A299548F900A92751 /* Assets+Extension.swift */; };
 		E4375A8D29954DD300A92751 /* Dimensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4375A8C29954DD300A92751 /* Dimensions.swift */; };
 		E4375A8F29954E3300A92751 /* View+TextStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4375A8E29954E3300A92751 /* View+TextStyle.swift */; };
+		E4648C6829966ED500A0E103 /* LocationCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4648C6729966ED500A0E103 /* LocationCard.swift */; };
 		E49C029C2993E6C4001993B7 /* SthlmExplorerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49C029B2993E6C4001993B7 /* SthlmExplorerApp.swift */; };
 		E49C02A02993E6C5001993B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E49C029F2993E6C5001993B7 /* Assets.xcassets */; };
 		E49C02A32993E6C5001993B7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E49C02A22993E6C5001993B7 /* Preview Assets.xcassets */; };
@@ -106,6 +107,7 @@
 		E4375A8A299548F900A92751 /* Assets+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Assets+Extension.swift"; sourceTree = "<group>"; };
 		E4375A8C29954DD300A92751 /* Dimensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dimensions.swift; sourceTree = "<group>"; };
 		E4375A8E29954E3300A92751 /* View+TextStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+TextStyle.swift"; sourceTree = "<group>"; };
+		E4648C6729966ED500A0E103 /* LocationCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCard.swift; sourceTree = "<group>"; };
 		E49C02982993E6C4001993B7 /* SthlmExplorer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SthlmExplorer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E49C029B2993E6C4001993B7 /* SthlmExplorerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SthlmExplorerApp.swift; sourceTree = "<group>"; };
 		E49C029F2993E6C5001993B7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -168,6 +170,7 @@
 		E42FFA7E299644BD00C17BDA /* List */ = {
 			isa = PBXGroup;
 			children = (
+				E4648C6629966EBE00A0E103 /* ViewComponents */,
 				E42FFA7F299644FB00C17BDA /* ListView.swift */,
 				E42FFA812996451100C17BDA /* ListViewModel.swift */,
 			);
@@ -278,6 +281,14 @@
 				E4375A712995435500A92751 /* en.lproj */,
 			);
 			path = Strings;
+			sourceTree = "<group>";
+		};
+		E4648C6629966EBE00A0E103 /* ViewComponents */ = {
+			isa = PBXGroup;
+			children = (
+				E4648C6729966ED500A0E103 /* LocationCard.swift */,
+			);
+			path = ViewComponents;
 			sourceTree = "<group>";
 		};
 		E49C028F2993E6C4001993B7 = {
@@ -512,6 +523,7 @@
 				E4375A89299548D800A92751 /* Assets.swift in Sources */,
 				E40211BE2994081D00C89C65 /* AppConfig.swift in Sources */,
 				E49C029C2993E6C4001993B7 /* SthlmExplorerApp.swift in Sources */,
+				E4648C6829966ED500A0E103 /* LocationCard.swift in Sources */,
 				E4375A852995486C00A92751 /* Fonts.swift in Sources */,
 				E42FFA862996459400C17BDA /* MapView.swift in Sources */,
 				E4375A8D29954DD300A92751 /* Dimensions.swift in Sources */,

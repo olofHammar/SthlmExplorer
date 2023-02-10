@@ -1,5 +1,5 @@
 //
-//  LocationItemDataSource.swift
+//  LocationsDataSource.swift
 //  SthlmExplorer
 //
 //  Created by Olof Hammar on 2023-02-08.
@@ -11,13 +11,13 @@ import FirebaseFirestore
 import FirebaseFirestoreSwift
 import Model
 
-public struct LocationItemDataSource: ILocationItemDataSource {
+public struct LocationsDataSource: ILocationsDataSource {
     private var firestore = Firestore.firestore()
 
     public init() { }
 
-    public func getLocationItems() -> AnyPublisher<[LocationItem], Never> {
-        let publisher = CurrentValueSubject<[LocationItem], Never>([])
+    public func getLocations() -> AnyPublisher<[Location], Never> {
+        let publisher = CurrentValueSubject<[Location], Never>([])
 
         firestore
             .locationCollection()
@@ -27,7 +27,7 @@ public struct LocationItemDataSource: ILocationItemDataSource {
                 }
 
                 do {
-                    if let locations = try snapshot?.documents.compactMap({ try $0.data(as: LocationItem.self) }) {
+                    if let locations = try snapshot?.documents.compactMap({ try $0.data(as: Location.self) }) {
                         publisher.send(locations)
                     }
                 } catch {

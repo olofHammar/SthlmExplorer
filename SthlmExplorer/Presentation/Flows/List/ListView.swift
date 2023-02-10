@@ -14,7 +14,7 @@ struct ListView: View {
     var body: some View {
         VStack {
             ForEach(vm.locationItems) { location in
-                Text(location.title)
+                Text(location.location.title)
             }
         }
     }

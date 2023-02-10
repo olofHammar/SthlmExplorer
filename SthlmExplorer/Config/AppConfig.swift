@@ -24,12 +24,16 @@ struct AppConfig: Config {
 
 private extension AppConfig {
     func configureDataInjections(_ injector: Injector) {
-        injector.map(ILocationItemDataSource.self) {
+        injector.map(ILocationsDataSource.self) {
             if isRunningInPreview {
-                return StaticLocationItemDataSource()
+                return StaticLocationsDataSource()
             } else {
-                return LocationItemDataSource()
+                return LocationsDataSource()
             }
+        }
+
+        injector.map(IFavoriteLocationsDataSource.self) {
+            FavoriteLocationsDataSource()
         }
     }
 

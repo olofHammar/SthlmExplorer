@@ -1,5 +1,5 @@
 //
-//  StaticLocationItemDataSource.swift
+//  StaticLocationsDataSource.swift
 //  SthlmExplorer
 //
 //  Created by Olof Hammar on 2023-02-08.
@@ -9,15 +9,15 @@ import Combine
 import Foundation
 import Model
 
-public struct StaticLocationItemDataSource: ILocationItemDataSource {
+public struct StaticLocationsDataSource: ILocationsDataSource {
 
     public init() { }
 
-    public func getLocationItems() -> AnyPublisher<[Model.LocationItem], Never> {
-        let subject = CurrentValueSubject<[LocationItem], Never>([])
+    public func getLocations() -> AnyPublisher<[Location], Never> {
+        let subject = CurrentValueSubject<[Location], Never>([])
 
         do {
-            let locations: [LocationItem] = try locationsFromJsonFixture("CardList")
+            let locations: [Location] = try locationsFromJsonFixture("CardList")
             subject.send(locations)
         } catch ResourceError.namedResourceNotInBundle(let resourceName) {
             print("Error: The resource \(resourceName) could not be found in the bundle.")
@@ -34,7 +34,7 @@ private enum ResourceError: Error {
     case namedResourceNotInBundle(String)
 }
 
-private func locationsFromJsonFixture(_ resourceName: String) throws -> [LocationItem] {
+private func locationsFromJsonFixture(_ resourceName: String) throws -> [Location] {
     guard let url = Bundle.module.url(forResource: resourceName, withExtension: "json") else {
         throw ResourceError.namedResourceNotInBundle(resourceName)
     }
@@ -42,5 +42,5 @@ private func locationsFromJsonFixture(_ resourceName: String) throws -> [Locatio
     let data = try Data(contentsOf: url)
 
     let decoder = JSONDecoder()
-    return try decoder.decode([LocationItem].self, from: data)
+    return try decoder.decode([Location].self, from: data)
 }

@@ -8,7 +8,21 @@
 import Foundation
 import CoreLocation
 
-public struct LocationItem: Codable, Identifiable, Hashable {
+public struct LocationItem: Identifiable, Hashable {
+    public var id: String { location.id }
+    public let location: Location
+    public var isFavorite: Bool
+
+    public init(
+        location: Location,
+        isFavorite: Bool
+    ) {
+        self.location = location
+        self.isFavorite = isFavorite
+    }
+}
+
+public struct Location: Codable, Identifiable, Hashable {
     public let id: String
     public let title: String
     public let description: String
@@ -17,7 +31,7 @@ public struct LocationItem: Codable, Identifiable, Hashable {
     public let latitude: Double
     public let longitude: Double
 
-    public static func == (lhs: LocationItem, rhs: LocationItem) -> Bool {
+    public static func == (lhs: Location, rhs: Location) -> Bool {
         return lhs.id == rhs.id
     }
 

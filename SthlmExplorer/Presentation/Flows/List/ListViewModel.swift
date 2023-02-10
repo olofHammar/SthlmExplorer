@@ -5,8 +5,9 @@
 //  Created by Olof Hammar on 2023-02-10.
 //
 
-import Model
+import Combine
 import Domain
+import Model
 import ShortcutFoundation
 import SwiftUI
 
@@ -14,7 +15,7 @@ final class ListViewModel: ObservableObject {
     @Inject var fetchListItemsUseCase: IFetchLocationItemsUseCase
 
     @Published private(set) var locationItems: [LocationItem] = []
-
+    private var cancellables = Set<AnyCancellable>()
     init() {
         fetchListItems()
     }
@@ -22,7 +23,6 @@ final class ListViewModel: ObservableObject {
     func fetchListItems() {
         fetchListItemsUseCase.execute()
             .receive(on: RunLoop.main)
-            .eraseToAnyPublisher()
             .assign(to: &$locationItems)
     }
 }
