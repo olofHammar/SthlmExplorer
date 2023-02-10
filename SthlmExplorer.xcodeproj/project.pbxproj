@@ -18,6 +18,19 @@
 		E42FFA842996457700C17BDA /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42FFA832996457700C17BDA /* MapViewModel.swift */; };
 		E42FFA862996459400C17BDA /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42FFA852996459400C17BDA /* MapView.swift */; };
 		E42FFA892996487200C17BDA /* Location in Frameworks */ = {isa = PBXBuildFile; productRef = E42FFA882996487200C17BDA /* Location */; };
+		E42FFA8C299659D300C17BDA /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42FFA8B299659D300C17BDA /* TabBarView.swift */; };
+		E42FFA8D2996655500C17BDA /* JosefinSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E4375A822995484500A92751 /* JosefinSans-Bold.ttf */; };
+		E42FFA8E2996655500C17BDA /* JosefinSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E4375A7B2995484400A92751 /* JosefinSans-BoldItalic.ttf */; };
+		E42FFA8F2996655500C17BDA /* JosefinSans-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E4375A792995484400A92751 /* JosefinSans-Italic.ttf */; };
+		E42FFA902996655500C17BDA /* JosefinSans-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E4375A802995484500A92751 /* JosefinSans-Light.ttf */; };
+		E42FFA912996655500C17BDA /* JosefinSans-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E4375A832995484500A92751 /* JosefinSans-LightItalic.ttf */; };
+		E42FFA922996655500C17BDA /* JosefinSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E4375A7D2995484500A92751 /* JosefinSans-Regular.ttf */; };
+		E42FFA932996655500C17BDA /* JosefinSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E4375A7E2995484500A92751 /* JosefinSans-SemiBold.ttf */; };
+		E42FFA942996655500C17BDA /* JosefinSans-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E4375A7A2995484400A92751 /* JosefinSans-SemiBoldItalic.ttf */; };
+		E42FFA952996655500C17BDA /* JosefinSans-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E4375A7F2995484500A92751 /* JosefinSans-Thin.ttf */; };
+		E42FFA962996655500C17BDA /* JosefinSans-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E4375A812995484500A92751 /* JosefinSans-ThinItalic.ttf */; };
+		E42FFA972996655500C17BDA /* PlayfairDisplay-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E4375A7C2995484500A92751 /* PlayfairDisplay-Bold.ttf */; };
+		E42FFA982996655500C17BDA /* PlayfairDisplay-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E4375A782995484400A92751 /* PlayfairDisplay-Regular.ttf */; };
 		E4375A592995306100A92751 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4375A582995306100A92751 /* RootView.swift */; };
 		E4375A5B2995307100A92751 /* RootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4375A5A2995307100A92751 /* RootViewModel.swift */; };
 		E4375A6F2995416300A92751 /* swiftgen.yml in Resources */ = {isa = PBXBuildFile; fileRef = E4375A6E2995416300A92751 /* swiftgen.yml */; };
@@ -68,6 +81,7 @@
 		E42FFA832996457700C17BDA /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
 		E42FFA852996459400C17BDA /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		E42FFA872996480B00C17BDA /* Location */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Location; sourceTree = "<group>"; };
+		E42FFA8B299659D300C17BDA /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		E4375A582995306100A92751 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		E4375A5A2995307100A92751 /* RootViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewModel.swift; sourceTree = "<group>"; };
 		E4375A6E2995416300A92751 /* swiftgen.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = swiftgen.yml; sourceTree = "<group>"; };
@@ -160,6 +174,14 @@
 			path = List;
 			sourceTree = "<group>";
 		};
+		E42FFA8A299659B300C17BDA /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				E42FFA8B299659D300C17BDA /* TabBarView.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
 		E4375A562995303700A92751 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
@@ -185,6 +207,7 @@
 				E42FFA7E299644BD00C17BDA /* List */,
 				E42FFA7D299644B600C17BDA /* Map */,
 				E4375A572995304E00A92751 /* Root */,
+				E42FFA8A299659B300C17BDA /* TabBar */,
 			);
 			path = Flows;
 			sourceTree = "<group>";
@@ -440,6 +463,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E42FFA8D2996655500C17BDA /* JosefinSans-Bold.ttf in Resources */,
+				E42FFA8E2996655500C17BDA /* JosefinSans-BoldItalic.ttf in Resources */,
+				E42FFA8F2996655500C17BDA /* JosefinSans-Italic.ttf in Resources */,
+				E42FFA902996655500C17BDA /* JosefinSans-Light.ttf in Resources */,
+				E42FFA912996655500C17BDA /* JosefinSans-LightItalic.ttf in Resources */,
+				E42FFA922996655500C17BDA /* JosefinSans-Regular.ttf in Resources */,
+				E42FFA932996655500C17BDA /* JosefinSans-SemiBold.ttf in Resources */,
+				E42FFA942996655500C17BDA /* JosefinSans-SemiBoldItalic.ttf in Resources */,
+				E42FFA952996655500C17BDA /* JosefinSans-Thin.ttf in Resources */,
+				E42FFA962996655500C17BDA /* JosefinSans-ThinItalic.ttf in Resources */,
+				E42FFA972996655500C17BDA /* PlayfairDisplay-Bold.ttf in Resources */,
+				E42FFA982996655500C17BDA /* PlayfairDisplay-Regular.ttf in Resources */,
 				E4375A742995435500A92751 /* en.lproj in Resources */,
 				E49C02A32993E6C5001993B7 /* Preview Assets.xcassets in Resources */,
 				E4375A6F2995416300A92751 /* swiftgen.yml in Resources */,
@@ -472,6 +507,7 @@
 			files = (
 				E4375A5B2995307100A92751 /* RootViewModel.swift in Sources */,
 				E4375A8F29954E3300A92751 /* View+TextStyle.swift in Sources */,
+				E42FFA8C299659D300C17BDA /* TabBarView.swift in Sources */,
 				E4375A592995306100A92751 /* RootView.swift in Sources */,
 				E4375A89299548D800A92751 /* Assets.swift in Sources */,
 				E40211BE2994081D00C89C65 /* AppConfig.swift in Sources */,
