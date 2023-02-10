@@ -8,6 +8,7 @@
 import Data
 import Domain
 import Foundation
+import Location
 import Navigation
 import ShortcutFoundation
 
@@ -35,6 +36,12 @@ private extension AppConfig {
     func configureDomainInjections(_ injector: Injector) {
         injector.map(ILocationItemsRepository.self) {
             LocationItemsRepository()
+        }
+    }
+
+    func configureLocationInjections(_ injector: Injector) {
+        injector.map(ILocationManager.self) {
+            LocationManager()
         }
     }
 
