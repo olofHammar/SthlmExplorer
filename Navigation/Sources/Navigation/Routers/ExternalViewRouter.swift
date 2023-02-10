@@ -16,6 +16,8 @@ public protocol IExternalViewRouter {
 
 public final class ExternalViewRouter: IExternalViewRouter {
 
+    public init() {}
+    
     public func presentLocationShareSheet(with title: String, for location: CLLocation) {
         let sheet = ShareSheet(title: title, location: location)
         let hostingViewController = UIHostingController(rootView: sheet)
