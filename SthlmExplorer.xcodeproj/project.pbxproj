@@ -56,6 +56,7 @@
 		E40211B72994037300C89C65 /* Domain */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Domain; sourceTree = "<group>"; };
 		E40211BB2994057100C89C65 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E40211BD2994081D00C89C65 /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
+		E42FFA7A29962B4200C17BDA /* Navigation */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Navigation; sourceTree = "<group>"; };
 		E4375A582995306100A92751 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		E4375A5A2995307100A92751 /* RootViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewModel.swift; sourceTree = "<group>"; };
 		E4375A6E2995416300A92751 /* swiftgen.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = swiftgen.yml; sourceTree = "<group>"; };
@@ -231,6 +232,7 @@
 				E40211B42993F80F00C89C65 /* Data */,
 				E40211B72994037300C89C65 /* Domain */,
 				E40211AD2993F37000C89C65 /* Model */,
+				E42FFA7A29962B4200C17BDA /* Navigation */,
 				E49C029A2993E6C4001993B7 /* SthlmExplorer */,
 				E49C02AB2993E6C5001993B7 /* SthlmExplorerTests */,
 				E49C02B52993E6C5001993B7 /* SthlmExplorerUITests */,
