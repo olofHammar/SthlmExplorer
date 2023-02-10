@@ -11,7 +11,7 @@ import FirebaseFirestore
 import FirebaseFirestoreSwift
 import Model
 
-public struct LocationsDataSource: ILocationsDataSource {
+public class LocationsDataSource: ILocationsDataSource {
     private var firestore = Firestore.firestore()
 
     public init() { }

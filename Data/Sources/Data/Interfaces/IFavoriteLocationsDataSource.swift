@@ -10,5 +10,9 @@ import Foundation
 import OrderedCollections
 
 public protocol IFavoriteLocationsDataSource {
-    func getFavorites() -> AnyPublisher<OrderedSet<String>, Never>
+    var favoriteLocationsPublisher: Published<OrderedSet<String>>.Publisher { get }
+
+    func loadFavorites()
+    func addFavoriteLocation(with id: String)
+    func removeFavoriteLocation(with id: String)
 }

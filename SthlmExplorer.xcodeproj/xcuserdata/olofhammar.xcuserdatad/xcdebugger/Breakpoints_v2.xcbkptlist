@@ -46,8 +46,8 @@
             filePath = "Domain/Sources/Domain/UseCases/FetchLocationItemsUseCase.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "20"
-            endingLineNumber = "20"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
             landmarkName = "execute()"
             landmarkType = "7">
          </BreakpointContent>
@@ -82,54 +82,6 @@
             endingLineNumber = "31"
             landmarkName = "getLocations()"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "115EEA70-68E2-4ACA-BB0A-F628DDB14FE5"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Domain/Sources/Domain/UseCases/ToggleFavoriteLocationUseCase.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "24"
-            endingLineNumber = "24"
-            landmarkName = "toggleFavorite(_:isOn:)"
-            landmarkType = "9">
-            <Locations>
-               <Location
-                  uuid = "115EEA70-68E2-4ACA-BB0A-F628DDB14FE5 - a4dd813f91630e76"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Domain.ToggleFavoriteLocationUseCase.toggleFavorite(_: Swift.String, isOn: Swift.Bool) -&gt; ()"
-                  moduleName = "SthlmExplorer"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/olofhammar/xCodeProjects/SthlmExplorer/Domain/Sources/Domain/UseCases/ToggleFavoriteLocationUseCase.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "24"
-                  endingLineNumber = "24"
-                  offsetFromSymbolStart = "556">
-               </Location>
-               <Location
-                  uuid = "115EEA70-68E2-4ACA-BB0A-F628DDB14FE5 - a4dd813f91630e76"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Domain.ToggleFavoriteLocationUseCase.toggleFavorite(_: Swift.String, isOn: Swift.Bool) -&gt; ()"
-                  moduleName = "SthlmExplorer"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/olofhammar/xCodeProjects/SthlmExplorer/Domain/Sources/Domain/UseCases/ToggleFavoriteLocationUseCase.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "24"
-                  endingLineNumber = "24"
-                  offsetFromSymbolStart = "636">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy

@@ -20,7 +20,7 @@ public struct LocationItemsRepository: ILocationItemsRepository {
     public init() { }
 
     public func getLocationItems() -> AnyPublisher<[LocationItem], Never> {
-        return favoritesDataSource.getFavorites()
+        return favoritesDataSource.favoriteLocationsPublisher
             .replaceError(with: OrderedSet<String>())
             .combineLatest(locationsDataSource.getLocations())
             .map { favorites, locations -> [LocationItem] in

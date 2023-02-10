@@ -9,24 +9,49 @@ import Combine
 import OrderedCollections
 import SwiftUI
 
-public struct FavoriteLocationsDataSource: IFavoriteLocationsDataSource {
+public class FavoriteLocationsDataSource: IFavoriteLocationsDataSource {
 
     @AppStorage("favorites")
     private var favoriteStorage = Data()
 
-    public init() { }
+    @Published private(set) var favoriteLocations = OrderedSet<String>()
 
-    public func getFavorites() -> AnyPublisher<OrderedSet<String>, Never> {
-        let publisher = CurrentValueSubject<OrderedSet<String>, Never>([])
+    public var favoriteLocationsPublisher: Published<OrderedCollections.OrderedSet<String>>.Publisher { $favoriteLocations }
 
+    private var cancellables = Set<AnyCancellable>()
+
+    public init() {
+        loadFavorites()
+        startObserver()
+    }
+
+    deinit {
+        cancellables.forEach { $0.cancel() }
+    }
+
+    public func loadFavorites() {
         do {
-            let favoriteIDs = try JSONDecoder().decode(OrderedSet<String>.self, from: favoriteStorage)
-            publisher.send(favoriteIDs)
+            self.favoriteLocations =  try JSONDecoder().decode(OrderedSet<String>.self, from: favoriteStorage)
         } catch {
-            print("None or invalid favorties")
+            print("None or invalid favorites")
         }
+    }
 
-        return publisher
-            .eraseToAnyPublisher()
+    public func addFavoriteLocation(with id: String) {
+        favoriteLocations.append(id)
+    }
+
+    public func removeFavoriteLocation(with id: String) {
+        favoriteLocations.remove(id)
+    }
+
+    private func startObserver() {
+        $favoriteLocations
+            .compactMap {
+                try? JSONEncoder().encode($0)
+            }
+            .receive(on: RunLoop.main)
+            .assign(to: \.favoriteStorage, on: self)
+            .store(in: &cancellables)
     }
 }
