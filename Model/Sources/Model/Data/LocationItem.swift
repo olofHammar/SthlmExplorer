@@ -31,6 +31,24 @@ public struct Location: Codable, Identifiable, Hashable {
     public let latitude: Double
     public let longitude: Double
 
+    public init(
+        id: String,
+        title: String,
+        description: String,
+        type: String,
+        image: String,
+        latitude: Double,
+        longitude: Double
+    ) {
+        self.id = id
+        self.title = title
+        self.description = description
+        self.type = type
+        self.image = image
+        self.latitude = latitude
+        self.longitude = longitude
+    }
+
     public static func == (lhs: Location, rhs: Location) -> Bool {
         return lhs.id == rhs.id
     }

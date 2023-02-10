@@ -12,18 +12,13 @@ struct ListView: View {
     @InjectObject var vm: ListViewModel
 
     var body: some View {
-        VStack(alignment: .leading) {
-            ForEach(vm.locationItems) { location in
-                HStack {
-                    Text(location.location.title)
-
-                    Button("Toggle") {
-                        vm.toggleFavoriteLocation(for: location)
-                    }
+        ScrollView(showsIndicators: false) {
+            VStack(alignment: .center, spacing: .x2) {
+                ForEach(vm.locationItems) { locationItem in
+                    LocationCard(location: locationItem.location)
                 }
-                .frame(height: 60)
-                .background(location.isFavorite ? .red : .white)
             }
+            .padding(.horizontal, .x2)
         }
     }
 }

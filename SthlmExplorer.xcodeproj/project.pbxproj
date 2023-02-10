@@ -50,6 +50,8 @@
 		E49C02AD2993E6C5001993B7 /* SthlmExplorerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49C02AC2993E6C5001993B7 /* SthlmExplorerTests.swift */; };
 		E49C02B72993E6C5001993B7 /* SthlmExplorerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49C02B62993E6C5001993B7 /* SthlmExplorerUITests.swift */; };
 		E49C02B92993E6C5001993B7 /* SthlmExplorerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49C02B82993E6C5001993B7 /* SthlmExplorerUITestsLaunchTests.swift */; };
+		E49D71A92996FC9400B7E72C /* NeumorphismButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49D71A82996FC9400B7E72C /* NeumorphismButtonStyle.swift */; };
+		E49D71AB2996FD0A00B7E72C /* IconButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49D71AA2996FD0A00B7E72C /* IconButtonStyle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -117,6 +119,8 @@
 		E49C02B22993E6C5001993B7 /* SthlmExplorerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SthlmExplorerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E49C02B62993E6C5001993B7 /* SthlmExplorerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SthlmExplorerUITests.swift; sourceTree = "<group>"; };
 		E49C02B82993E6C5001993B7 /* SthlmExplorerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SthlmExplorerUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		E49D71A82996FC9400B7E72C /* NeumorphismButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeumorphismButtonStyle.swift; sourceTree = "<group>"; };
+		E49D71AA2996FD0A00B7E72C /* IconButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconButtonStyle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,6 +194,7 @@
 			children = (
 				E4375A5E29953BE300A92751 /* Extensions */,
 				E4375A5C29953BBF00A92751 /* Flows */,
+				E49D71A72996FC6D00B7E72C /* Styles */,
 				E4375A5D29953BD700A92751 /* Resources */,
 			);
 			path = Presentation;
@@ -362,6 +367,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		E49D71A72996FC6D00B7E72C /* Styles */ = {
+			isa = PBXGroup;
+			children = (
+				E49D71A82996FC9400B7E72C /* NeumorphismButtonStyle.swift */,
+				E49D71AA2996FD0A00B7E72C /* IconButtonStyle.swift */,
+			);
+			path = Styles;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -525,12 +539,14 @@
 				E49C029C2993E6C4001993B7 /* SthlmExplorerApp.swift in Sources */,
 				E4648C6829966ED500A0E103 /* LocationCard.swift in Sources */,
 				E4375A852995486C00A92751 /* Fonts.swift in Sources */,
+				E49D71AB2996FD0A00B7E72C /* IconButtonStyle.swift in Sources */,
 				E42FFA862996459400C17BDA /* MapView.swift in Sources */,
 				E4375A8D29954DD300A92751 /* Dimensions.swift in Sources */,
 				E42FFA80299644FB00C17BDA /* ListView.swift in Sources */,
 				E42FFA822996451100C17BDA /* ListViewModel.swift in Sources */,
 				E4375A752995435500A92751 /* L10n.swift in Sources */,
 				E42FFA842996457700C17BDA /* MapViewModel.swift in Sources */,
+				E49D71A92996FC9400B7E72C /* NeumorphismButtonStyle.swift in Sources */,
 				E4375A872995489D00A92751 /* FontConvertible+Extension.swift in Sources */,
 				E4375A8B299548F900A92751 /* Assets+Extension.swift in Sources */,
 			);

@@ -37,9 +37,10 @@ internal enum Asset {
       internal static let black300 = ColorAsset(name: "Colors/Main/Black300")
       internal static let gray100 = ColorAsset(name: "Colors/Main/Gray100")
       internal static let info = ColorAsset(name: "Colors/Main/Info")
+      internal static let pink = ColorAsset(name: "Colors/Main/Pink")
+      internal static let pinkLight = ColorAsset(name: "Colors/Main/PinkLight")
       internal static let primary = ColorAsset(name: "Colors/Main/Primary")
       internal static let secondary = ColorAsset(name: "Colors/Main/Secondary")
-      internal static let success = ColorAsset(name: "Colors/Main/Success")
     }
     internal enum NavigationBar {
       internal static let primary = ColorAsset(name: "Colors/NavigationBar/Primary")
