@@ -12,14 +12,22 @@ struct ListView: View {
     @InjectObject var vm: ListViewModel
 
     var body: some View {
-        VStack {
+        VStack(alignment: .leading) {
             ForEach(vm.locationItems) { location in
-                Text(location.location.title)
+                HStack {
+                    Text(location.location.title)
+
+                    Button("Toggle") {
+                        vm.toggleFavoriteLocation(for: location)
+                    }
+                }
+                .frame(height: 60)
+                .background(location.isFavorite ? .red : .white)
             }
         }
     }
 }
-
+ 
 struct ListView_Previews: PreviewProvider {
     static var previews: some View {
         ListView()

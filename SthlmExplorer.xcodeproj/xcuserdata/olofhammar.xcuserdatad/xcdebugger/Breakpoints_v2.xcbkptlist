@@ -30,8 +30,8 @@
             filePath = "SthlmExplorer/Presentation/Flows/List/ListViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "24"
-            endingLineNumber = "24"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
             landmarkName = "fetchListItems()"
             landmarkType = "7">
          </BreakpointContent>
@@ -81,6 +81,70 @@
             startingLineNumber = "31"
             endingLineNumber = "31"
             landmarkName = "getLocations()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "115EEA70-68E2-4ACA-BB0A-F628DDB14FE5"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Domain/Sources/Domain/UseCases/ToggleFavoriteLocationUseCase.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
+            landmarkName = "toggleFavorite(_:isOn:)"
+            landmarkType = "9">
+            <Locations>
+               <Location
+                  uuid = "115EEA70-68E2-4ACA-BB0A-F628DDB14FE5 - a4dd813f91630e76"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Domain.ToggleFavoriteLocationUseCase.toggleFavorite(_: Swift.String, isOn: Swift.Bool) -&gt; ()"
+                  moduleName = "SthlmExplorer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/olofhammar/xCodeProjects/SthlmExplorer/Domain/Sources/Domain/UseCases/ToggleFavoriteLocationUseCase.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "556">
+               </Location>
+               <Location
+                  uuid = "115EEA70-68E2-4ACA-BB0A-F628DDB14FE5 - a4dd813f91630e76"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Domain.ToggleFavoriteLocationUseCase.toggleFavorite(_: Swift.String, isOn: Swift.Bool) -&gt; ()"
+                  moduleName = "SthlmExplorer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/olofhammar/xCodeProjects/SthlmExplorer/Domain/Sources/Domain/UseCases/ToggleFavoriteLocationUseCase.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "636">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "DC386DA6-7765-458F-ACE8-BE037BBFC188"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Domain/Sources/Domain/Repositories/LocationItemsRepository.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
+            landmarkName = "getLocationItems()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

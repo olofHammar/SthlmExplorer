@@ -71,6 +71,10 @@ private extension AppConfig {
                 return FetchLocationItemsUseCase()
             }
         }
+
+        injector.map(IToggleFavoriteLocationUseCase.self) {
+            ToggleFavoriteLocationUseCase()
+        }
     }
 
     func configureViewModelInjections(_ injector: Injector) {
