@@ -8,12 +8,15 @@
 import Data
 import Domain
 import Foundation
+import Location
+import Navigation
 import ShortcutFoundation
 
 struct AppConfig: Config {
     func configure(_ injector: ShortcutFoundation.Injector) {
         configureDataInjections(injector)
         configureDomainInjections(injector)
+        configureNavigationInjections(injector)
         configureViewModelInjections(injector)
         configurePresentationInjections(injector)
     }
@@ -33,6 +36,26 @@ private extension AppConfig {
     func configureDomainInjections(_ injector: Injector) {
         injector.map(ILocationItemsRepository.self) {
             LocationItemsRepository()
+        }
+    }
+
+    func configureLocationInjections(_ injector: Injector) {
+        injector.map(ILocationManager.self) {
+            LocationManager()
+        }
+    }
+
+    func configureNavigationInjections(_ injector: Injector) {
+        injector.map(IViewStateManager.self) {
+            ViewStateManager()
+        }
+
+        injector.map(ModalViewRouter.self) {
+            ModalViewRouter()
+        }
+
+        injector.map(IExternalViewRouter.self) {
+            ExternalViewRouter()
         }
     }
 
