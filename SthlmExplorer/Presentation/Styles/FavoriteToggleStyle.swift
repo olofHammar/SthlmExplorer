@@ -10,24 +10,45 @@ import SwiftUI
 struct FavoriteToggleStyle: ToggleStyle {
 
     @State var tapped = false
+    @State var splash = false
+    @State var isFavorite: Bool
+
+    private var animationScale: CGFloat {
+        isFavorite ? 1.2 : 0.7
+    }
+
+    private var splashScale: CGFloat {
+        tapped ? 1.3 : 0.7
+    }
 
     func makeBody(configuration: Configuration) -> some View {
-        Image(systemName: configuration.isOn ? "heart.fill" : "heart")
-            .font(.system(size: 20))
-            .frame(width: 40, height: 40)
-            .background(.thickMaterial)
-            .clipShape(Circle())
-            .colorScheme(.dark)
-            .scaleEffect(tapped ? 1.2 : 1.0)
-            .onTapGesture {
-                configuration.isOn.toggle()
-                withAnimation(.easeOut(duration: 0.1)) {
-                    tapped.toggle()
-                }
-                withAnimation(.easeOut(duration: 0.1).delay(0.4)) {
-                    tapped.toggle()
-                }
+        return ZStack {
+            Image(systemName: configuration.isOn ? "heart.fill" : "heart")
+                .overlay(content: {
+                    Image(systemName: configuration.isOn ? "heart.fill" : "heart")
+                        .animation(splash ? Animation.easeInOut(duration: 0.5).repeatForever(autoreverses: true) : .default, value: splash)
+                        .scaleEffect(splash ? splashScale : 1)
+                        .opacity(isFavorite ? 1 : 0)
+                })
+                .font(.system(size: 20))
+                .frame(width: 40, height: 40)
+                .background(.thickMaterial)
+                .clipShape(Circle())
+                .colorScheme(.dark)
+                .scaleEffect(tapped ? animationScale : 1)
+        }
+        .onTapGesture {
+            configuration.isOn.toggle()
+            withAnimation(.easeOut(duration: 0.1)) {
+                tapped.toggle()
+                splash.toggle()
+                isFavorite.toggle()
             }
+            withAnimation(.easeOut(duration: 0.1).delay(0.4)) {
+                tapped.toggle()
+                splash.toggle()
+            }
+        }
     }
 }
 
@@ -37,7 +58,7 @@ struct FavoriteToggleStyle_Previews: PreviewProvider {
 
         var body: some View {
             Toggle("", isOn: $isOn)
-                .toggleStyle(FavoriteToggleStyle())
+                .toggleStyle(FavoriteToggleStyle(isFavorite: false))
         }
     }
 
@@ -45,4 +66,3 @@ struct FavoriteToggleStyle_Previews: PreviewProvider {
         Preview()
     }
 }
-

@@ -91,7 +91,7 @@ struct LocationCard: View {
     @ViewBuilder
     private func favoriteToggle() -> some View {
         Toggle("", isOn: $isFavorite).padding(.x2)
-            .toggleStyle(FavoriteToggleStyle())
+            .toggleStyle(FavoriteToggleStyle(isFavorite: isFavorite))
     }
 }
 
