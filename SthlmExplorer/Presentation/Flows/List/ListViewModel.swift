@@ -34,8 +34,4 @@ final class ListViewModel: ObservableObject {
             self.favoriteLocationUseCase.toggleFavorite(locationItem.id, isOn: locationItem.isFavorite)
         }
     }
-
-//    private func toggleFavoriteLocation(for location: LocationItem) {
-//        toggleFavoriteUseCase.toggleFavorite(location.id, isOn: location.isFavorite)
-//    }
 }

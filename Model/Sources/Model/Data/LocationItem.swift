@@ -26,7 +26,7 @@ public struct Location: Codable, Identifiable, Hashable {
     public let id: String
     public let title: String
     public let description: String
-    public let type: String
+    public let type: LocationType
     public let image: String
     public let latitude: Double
     public let longitude: Double
@@ -35,7 +35,7 @@ public struct Location: Codable, Identifiable, Hashable {
         id: String,
         title: String,
         description: String,
-        type: String,
+        type: LocationType,
         image: String,
         latitude: Double,
         longitude: Double
@@ -47,6 +47,12 @@ public struct Location: Codable, Identifiable, Hashable {
         self.image = image
         self.latitude = latitude
         self.longitude = longitude
+    }
+
+    public enum LocationType: String, Codable {
+        case scenicView
+        case museum
+        case landmark
     }
 
     public static func == (lhs: Location, rhs: Location) -> Bool {
