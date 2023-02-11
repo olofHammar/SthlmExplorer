@@ -31,12 +31,16 @@ let package = Package(
                 .product(name: "OrderedCollections", package: "swift-collections")
             ],
             resources: [
-                .copy("Fixtures/CardList.json")
+                .copy("Fixtures/CardList.json"),
+                .copy("Fixtures/TravelTips.json")
             ]
         ),
         .testTarget(
             name: "DataTests",
             dependencies: ["Data"],
-            resources: [.copy("TestData/CardList.json")]),
+            resources: [
+                .copy("TestData/CardList.json"),
+                .copy("TestData/TravelTips.json")
+            ]),
     ]
 )
