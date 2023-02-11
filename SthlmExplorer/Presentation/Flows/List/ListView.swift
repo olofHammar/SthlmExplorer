@@ -15,7 +15,7 @@ struct ListView: View {
         ScrollView(showsIndicators: false) {
             VStack(alignment: .center, spacing: .x2) {
                 ForEach(vm.locationItems) { locationItem in
-                    LocationCard(location: locationItem.location)
+                    LocationCard(location: locationItem.location, isFavorite: vm.favoriteBinding(locationItem))
                 }
             }
             .padding(.horizontal, .x2)

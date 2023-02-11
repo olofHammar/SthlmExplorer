@@ -41,6 +41,10 @@ private extension AppConfig {
         injector.map(ILocationItemsRepository.self) {
             LocationItemsRepository()
         }
+
+        injector.map(IFavoriteLocationsRepository.self) {
+            FavoriteLocationsRepository()
+        }
     }
 
     func configureLocationInjections(_ injector: Injector) {
@@ -72,8 +76,8 @@ private extension AppConfig {
             }
         }
 
-        injector.map(IToggleFavoriteLocationUseCase.self) {
-            ToggleFavoriteLocationUseCase()
+        injector.map(IFavoriteLocationUseCase.self) {
+            FavoriteLocationUseCase()
         }
     }
 

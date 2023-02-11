@@ -15,4 +15,5 @@ public protocol IFavoriteLocationsDataSource {
     func loadFavorites()
     func addFavoriteLocation(with id: String)
     func removeFavoriteLocation(with id: String)
+    func isFavorite(_ id: String) -> Bool
 }

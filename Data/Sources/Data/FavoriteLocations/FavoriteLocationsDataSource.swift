@@ -45,6 +45,10 @@ public class FavoriteLocationsDataSource: IFavoriteLocationsDataSource {
         favoriteLocations.remove(id)
     }
 
+    public func isFavorite(_ id: String) -> Bool {
+        favoriteLocations.contains(id)
+    }
+
     private func startObserver() {
         $favoriteLocations
             .compactMap {

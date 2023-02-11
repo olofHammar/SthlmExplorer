@@ -13,7 +13,7 @@ import SwiftUI
 
 final class ListViewModel: ObservableObject {
     @Inject var fetchListItemsUseCase: IFetchLocationItemsUseCase
-    @Inject var toggleFavoriteUseCase: IToggleFavoriteLocationUseCase
+    @Inject var favoriteLocationUseCase: IFavoriteLocationUseCase
 
     @Published private(set) var locationItems: [LocationItem] = []
     private var cancellables = Set<AnyCancellable>()
@@ -27,7 +27,15 @@ final class ListViewModel: ObservableObject {
             .assign(to: &$locationItems)
     }
 
-    func toggleFavoriteLocation(for location: LocationItem) {
-        toggleFavoriteUseCase.toggleFavorite(location.id, isOn: location.isFavorite)
+    func favoriteBinding(_ locationItem: LocationItem) -> Binding<Bool> {
+        Binding {
+            self.favoriteLocationUseCase.isFavorite(locationItem.id)
+        } set: { isFavorite in
+            self.favoriteLocationUseCase.toggleFavorite(locationItem.id, isOn: locationItem.isFavorite)
+        }
     }
+
+//    private func toggleFavoriteLocation(for location: LocationItem) {
+//        toggleFavoriteUseCase.toggleFavorite(location.id, isOn: location.isFavorite)
+//    }
 }
