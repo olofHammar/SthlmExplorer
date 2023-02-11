@@ -47,6 +47,11 @@ internal enum Asset {
       internal static let secondary = ColorAsset(name: "Colors/NavigationBar/Secondary")
     }
   }
+  internal enum Icon {
+    internal static let destination = ImageAsset(name: "Icon/destination")
+    internal static let mountain = ImageAsset(name: "Icon/mountain")
+    internal static let parthenon = ImageAsset(name: "Icon/parthenon")
+  }
   internal enum Images {
     internal enum Home {
       internal static let logo = ImageAsset(name: "Images/Home/logo")

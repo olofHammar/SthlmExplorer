@@ -1,5 +1,5 @@
 //
-//  LocationCard.swift
+//  LocationCardView.swift
 //  SthlmExplorer
 //
 //  Created by Olof Hammar on 2023-02-10.
@@ -8,10 +8,11 @@
 import Model
 import SwiftUI
 
-struct LocationCard: View {
+struct LocationCardView: View {
     let title: String
     let type: Location.LocationType
     let imageURL: URL?
+    let icon: Image
 
     @Binding var isFavorite: Bool
     var onTap: (() -> Void)?
@@ -20,12 +21,14 @@ struct LocationCard: View {
         title: String,
         type: Location.LocationType,
         imageURL: String,
+        icon: Image,
         isFavorite: Binding<Bool>,
         onTap: (() -> Void)? = nil
     ) {
         self.title = title
         self.type = type
         self.imageURL = URL(string: imageURL)
+        self.icon = icon
         self._isFavorite = isFavorite
         self.onTap = onTap
     }
@@ -39,6 +42,7 @@ struct LocationCard: View {
             title: location.title,
             type: location.type,
             imageURL: location.image,
+            icon: location.type.icon,
             isFavorite: isFavorite,
             onTap: onTap
         )
@@ -61,9 +65,7 @@ struct LocationCard: View {
                 }
             }
             .frame(height: 250)
-            .cornerRadius(.x2)
-            .shadow(color: Color.white, radius: 1, x: -1, y: -1)
-            .shadow(color: Color.gray, radius: 1, x: 1, y: 1)
+            .modifier(RoundedCardModifier())
             .overlay(alignment: .topTrailing) {
                 favoriteToggle()
             }
@@ -73,10 +75,10 @@ struct LocationCard: View {
                     .textStyle(.headerThreePlay)
 
                 HStack {
-                    Asset.Images.Icons.tramFill.swiftUIImage
+                    icon
                         .resizable()
-                        .scaledToFit()
-                        .frame(width: 30)
+                        .scaledToFill()
+                        .frame(width: 30, height: 30)
 
                     Text(type.rawValue.uppercased())
                         .textStyle(.bodyMBold)
@@ -95,9 +97,9 @@ struct LocationCard: View {
     }
 }
 
-struct LocationCard_Previews: PreviewProvider {
+struct LocationCardView_Previews: PreviewProvider {
     static var previews: some View {
-        LocationCard(location: .mockLocation, isFavorite: .constant(false))
+        LocationCardView(location: .mockLocation, isFavorite: .constant(false))
     }
 }
 

@@ -14,20 +14,13 @@ struct ListView: View {
     var body: some View {
         ScrollView(showsIndicators: false) {
             VStack(alignment: .center, spacing: .x2) {
-                ForEach(vm.listItems, id: \.self) { item in
+                ForEach(vm.listItems) { item in
                     switch item {
-                      case .location(let locationItem):
-                          Button {
-//                              hideKeyboard()
-//                              vm.viewStateManager.showSelectedDetail(for: locationItem)
-                          } label: {
-                              LocationCard(location: locationItem.location, isFavorite: vm.favoriteBinding(locationItem))
-                          }
-                          .buttonStyle(PlainButtonStyle())
-                      case .travelTip(let travelTip):
-                        Text(travelTip.title)
-//                          TravelTipCardView(travelTip: travelTip)
-                      }
+                    case .location(let locationItem):
+                        LocationCardView(location: locationItem.location, isFavorite: vm.favoriteBinding(locationItem))
+                    case .travelTip(let travelTip):
+                        TravelTipCardView(travelTip: travelTip)
+                    }
                 }
             }
             .padding(.horizontal, .x2)

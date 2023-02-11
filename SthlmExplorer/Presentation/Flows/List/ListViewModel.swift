@@ -33,9 +33,13 @@ final class ListViewModel: ObservableObject {
 
     func favoriteBinding(_ locationItem: LocationItem) -> Binding<Bool> {
         Binding {
-            self.favoriteLocationUseCase.isFavorite(locationItem.id)
+            withAnimation {
+                self.favoriteLocationUseCase.isFavorite(locationItem.id)
+            }
         } set: { isFavorite in
-            self.favoriteLocationUseCase.toggleFavorite(locationItem.id, isOn: locationItem.isFavorite)
+            withAnimation {
+                self.favoriteLocationUseCase.toggleFavorite(locationItem.id, isOn: locationItem.isFavorite)
+            }
         }
     }
 
@@ -59,8 +63,17 @@ final class ListViewModel: ObservableObject {
 }
 
 extension ListViewModel {
-    enum ListItem: Hashable {
+    enum ListItem: Hashable, Identifiable {
         case location(LocationItem)
         case travelTip(TravelTipItem)
+
+        var id: String {
+            switch self {
+            case .location(let location):
+                return location.id
+            case .travelTip(let travelTip):
+                return travelTip.id
+            }
+        }
     }
 }
