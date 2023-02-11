@@ -30,12 +30,16 @@ let package = Package(
                 .product(name: "ShortcutFoundation", package: "shortcut-foundation-ios")
             ],
             resources: [
-                .copy("Fixtures/CardList.json")
+                .copy("Fixtures/CardList.json"),
+                .copy("Fixtures/TravelTips.json")
             ]
         ),
         .testTarget(
             name: "DomainTests",
             dependencies: ["Domain"],
-            resources: [.copy("TestData/CardList.json")]),
+            resources: [
+                .copy("TestData/CardList.json"),
+                .copy("TestData/TravelTips.json")
+            ]),
     ]
 )
