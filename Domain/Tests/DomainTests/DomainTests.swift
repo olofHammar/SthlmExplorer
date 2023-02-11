@@ -26,7 +26,7 @@ final class DomainTests: XCTestCase {
     }
 
     func test_static_travel_tips_data_count_is_one() throws {
-        let sut = StaticFetchTravelTipsUseCase()
+        let sut = StaticFetchTravelTipItemsUseCase()
 
         let publisher = sut.execute()
 

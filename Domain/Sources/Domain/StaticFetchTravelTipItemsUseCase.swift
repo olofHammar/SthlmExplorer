@@ -1,5 +1,5 @@
 //
-//  StaticFetchTravelTipsUseCase.swift
+//  StaticFetchTravelTipItemsUseCase.swift
 //  SthlmExplorer
 //
 //  Created by Olof Hammar on 2023-02-11.
@@ -10,7 +10,7 @@ import Data
 import Foundation
 import Model
 
-public struct StaticFetchTravelTipsUseCase: IFetchTravelTipsUseCase {
+public struct StaticFetchTravelTipItemsUseCase: IFetchTravelTipItemsUseCase {
 
     public init() { }
 

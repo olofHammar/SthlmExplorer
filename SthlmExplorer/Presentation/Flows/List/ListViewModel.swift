@@ -12,10 +12,12 @@ import ShortcutFoundation
 import SwiftUI
 
 final class ListViewModel: ObservableObject {
-    @Inject var fetchListItemsUseCase: IFetchLocationItemsUseCase
-    @Inject var favoriteLocationUseCase: IFavoriteLocationUseCase
+    @Inject private var fetchListItemsUseCase: IFetchLocationItemsUseCase
+    @Inject private var favoriteLocationUseCase: IFavoriteLocationUseCase
+    @Inject private var fetchTravelTipItemsUseCase: IFetchTravelTipItemsUseCase
 
-    @Published private(set) var locationItems: [LocationItem] = []
+    @Published private(set) var listItems: [ListItem] = []
+
     private var cancellables = Set<AnyCancellable>()
     init() {
         fetchListItems()
@@ -23,8 +25,10 @@ final class ListViewModel: ObservableObject {
 
     func fetchListItems() {
         fetchListItemsUseCase.execute()
+            .combineLatest(fetchTravelTipItemsUseCase.execute())
+            .map { self.sortListItems(locationItems: $0.0, travelTips: $0.1) }
             .receive(on: RunLoop.main)
-            .assign(to: &$locationItems)
+            .assign(to: &$listItems)
     }
 
     func favoriteBinding(_ locationItem: LocationItem) -> Binding<Bool> {
@@ -33,5 +37,30 @@ final class ListViewModel: ObservableObject {
         } set: { isFavorite in
             self.favoriteLocationUseCase.toggleFavorite(locationItem.id, isOn: locationItem.isFavorite)
         }
+    }
+
+    private func sortListItems(locationItems: [LocationItem], travelTips: [TravelTipItem]) -> [ListItem] {
+        var listItems = [ListItem]()
+
+        locationItems.forEach { location in
+            travelTips.forEach { travelTip in
+//                if (travelTip.order - 1) == locationItems.firstIndex(of: location) && !isShowingSearchTextField && selectedFilter == .all {
+//                    return listItems.append(.travelTip(travelTip))
+//                }
+                if (travelTip.order - 1) == locationItems.firstIndex(of: location) {
+                    return listItems.append(.travelTip(travelTip))
+                }
+            }
+            listItems.append(.location(location))
+        }
+
+        return listItems
+    }
+}
+
+extension ListViewModel {
+    enum ListItem: Hashable {
+        case location(LocationItem)
+        case travelTip(TravelTipItem)
     }
 }

@@ -32,6 +32,14 @@ private extension AppConfig {
             }
         }
 
+        injector.map(ITravelTipDataSource.self) {
+            if isRunningInPreview {
+                return StaticTravelTipsDataSource()
+            } else {
+                return TravelTipDataSource()
+            }
+        }
+
         injector.map(IFavoriteLocationsDataSource.self) {
             FavoriteLocationsDataSource()
         }
@@ -44,6 +52,10 @@ private extension AppConfig {
 
         injector.map(IFavoriteLocationsRepository.self) {
             FavoriteLocationsRepository()
+        }
+
+        injector.map(ITravelTipItemsRepository.self) {
+            TravelTipItemsRepository()
         }
     }
 
@@ -78,6 +90,14 @@ private extension AppConfig {
 
         injector.map(IFavoriteLocationUseCase.self) {
             FavoriteLocationUseCase()
+        }
+
+        injector.map(IFetchTravelTipItemsUseCase.self) {
+            if isRunningInPreview {
+                return StaticFetchTravelTipItemsUseCase()
+            } else {
+                return FetchTravelTipItemsUseCase()
+            }
         }
     }
 
