@@ -135,8 +135,8 @@ internal enum L10n {
     internal static let title = L10n.tr("Localizable", "root.title", fallback: "Root view")
   }
   internal enum Tabbar {
-    /// HEM
-    internal static let list = L10n.tr("Localizable", "tabbar.list", fallback: "HEM")
+    /// LISTA
+    internal static let list = L10n.tr("Localizable", "tabbar.list", fallback: "LISTA")
     /// KARTA
     internal static let map = L10n.tr("Localizable", "tabbar.map", fallback: "KARTA")
   }

@@ -14,21 +14,26 @@ struct RootView: View {
     private typealias MyStrings = L10n.Home.Welcome
     private typealias MyColors = Asset.Colors.Main
 
+    init() {
+        UITabBar.appearance().isHidden = true
+    }
+
     var body: some View {
-        VStack(spacing: 0) {
-            ZStack(alignment: .topLeading) {
+        ZStack(alignment: .topLeading) {
+            TabView(selection: $vm.selectedTab) {
                 ListView()
+                    .tag(TabBarSelection.list)
 
-                if vm.selectedTab == .map {
-                    MapView()
-                        .opacity(1)
-                }
-
-                TabBarView(tabBarSelection: $vm.selectedTab)
-                    .padding(.bottom)
-                    .ignoresSafeArea(.keyboard)
+                MapView()
+                    .tag(TabBarSelection.map)
             }
+            .tabViewStyle(.page(indexDisplayMode: .never))
+
+            TabBarView(tabBarSelection: $vm.selectedTab)
+                .padding(.bottom, .x4)
+                .ignoresSafeArea(.keyboard)
         }
+        .ignoresSafeArea()
     }
 }
 

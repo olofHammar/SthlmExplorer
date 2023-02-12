@@ -10,11 +10,24 @@ import SwiftUI
 enum TabBarSelection {
     case list
     case map
+
+    var title: String {
+        typealias MyStrings = L10n.Tabbar
+
+        switch self {
+        case .list:
+            return MyStrings.list
+
+        case .map:
+            return MyStrings.map
+        }
+    }
 }
 
 struct TabBarView: View {
 
     @Binding var tabBarSelection: TabBarSelection
+    @State private var shakeValue: CGFloat = 0
 
     let maxHeight: CGFloat
     let strokeWidth: CGFloat
@@ -32,7 +45,6 @@ struct TabBarView: View {
         self.defaultPadding = defaultPadding
     }
 
-    private typealias MyStrings = L10n.Tabbar
     private typealias MyColors = Asset.Colors
 
     var body: some View {
@@ -41,69 +53,97 @@ struct TabBarView: View {
                 Spacer()
 
                 HStack(spacing: 0) {
-                    Capsule()
-                        .fill(.thinMaterial)
-                        .colorScheme(.light)
-                        .frame(maxWidth: geo.size.width * 0.75, maxHeight: maxHeight)
-                        .overlay(
-                            Capsule()
-                                .stroke(lineWidth: 0.2)
-                                .fill(.gray)
-                        )
-                        .overlay(
-                            ZStack {
-                                Capsule()
-                                    .padding(defaultPadding)
-                                    .foregroundColor(MyColors.Main.primary.swiftUIColor)
-                                    .frame(width: (geo.size.width * 0.75) / 2)
-                                    .offset(x: calculateOffset(geo))
-
-                                HStack(alignment: .center, spacing: 0) {
-                                    Text(MyStrings.list)
-                                        .textStyle(.bodyLBold)
-                                        .foregroundColor(calculateTextColor(tabBarSelection == .list))
-                                        .frame(width: (geo.size.width * 0.75) / 2)
-                                        .contentShape(Rectangle())
-                                        .onTapGesture {
-                                            tabBarSelection = .list
-                                        }
-
-                                    Text(MyStrings.map)
-                                        .textStyle(.bodyLBold)
-                                        .foregroundColor(calculateTextColor(tabBarSelection == .map))
-                                        .frame(width: (geo.size.width * 0.75) / 2)
-                                        .contentShape(Rectangle())
-                                        .onTapGesture {
-                                            tabBarSelection = .map
-                                        }
+                    tapableText(.list, geo: geo)
+                        .foregroundColor(MyColors.Main.primary.swiftUIColor)
+                        .frame(maxHeight: maxHeight)
+                        .overlay {
+                            CustomCorner(corners: [.topLeft, .bottomLeft], radius: .capsuleRadius)
+                                .fill(MyColors.Main.primary.swiftUIColor)
+                                .overlay {
+                                    tapableText(.map, geo: geo)
+                                        .foregroundColor(tabBarSelection == .map ? .white : .clear)
+                                        .scaleEffect(x: -1)
                                 }
-                                .foregroundColor(.white)
-                            }
-                        )
-                        .animation(.spring().speed(2), value: calculateOffset(geo))
+                                .overlay {
+                                    tapableText(.list, geo: geo)
+                                        .foregroundColor(tabBarSelection == .map ? .clear : .white)
+                                }
+                                .padding(defaultPadding)
+                                .rotation3DEffect(
+                                    .init(degrees: tabBarSelection == .list ? 0 : 180),
+                                    axis: (x: 0, y: 1, z: 0),
+                                    anchor: .trailing,
+                                    perspective: 0.45
+                                )
+                        }
+                        .zIndex(1)
+                        .contentShape(Rectangle())
+
+                    tapableText(.map, geo: geo)
+                        .zIndex(0)
+                        .foregroundColor(MyColors.Main.primary.swiftUIColor)
+                        .frame(maxHeight: maxHeight)
                 }
+                .background(
+                    ZStack {
+                        Capsule()
+                            .fill(.thinMaterial)
+                            .colorScheme(.light)
+
+                        Capsule()
+                            .stroke(.gray, lineWidth: 0.2)
+                    }
+                )
                 .frame(maxWidth: .infinity, alignment: .center)
+                .rotation3DEffect(
+                    .init(degrees: shakeValue),
+                    axis: (x: 0, y: 1, z: 0)
+                )
             }
         }
         .frame(maxHeight: .infinity, alignment: .bottom)
     }
+
+    @ViewBuilder
+    private func tapableText(_ tab: TabBarSelection, geo: GeometryProxy) -> some View {
+        Text(tab.title)
+            .textStyle(.bodyLBold)
+            .contentTransition(.interpolate)
+            .frame(width: (geo.size.width * 0.75) / 2)
+            .contentShape(Rectangle())
+            .onTapGesture {
+                updateSelectedTab(with: tab)
+            }
+    }
 }
 
 extension TabBarView {
-    private func calculateOffset(_ geo: GeometryProxy) -> CGFloat {
-        let capsuleWidth = (geo.size.width * 0.75) / 2
-        let horizontalPadding = defaultPadding / (geo.size.width / defaultPadding)
-
-        switch tabBarSelection {
-        case .map:
-            return (capsuleWidth / 2) - horizontalPadding
-        case .list:
-            return -((capsuleWidth / 2) + horizontalPadding)
+    private func updateSelectedTab(with tab: TabBarSelection) {
+        withAnimation(.interactiveSpring(
+            response: 0.4,
+            dampingFraction: 1,
+            blendDuration: 1
+        )) {
+            tabBarSelection = tab
         }
-    }
 
-    private func calculateTextColor(_ bool: Bool) -> Color {
-        bool ? .white : MyColors.Main.primary.just()
+        withAnimation(.interactiveSpring(
+            response: 0.5,
+            dampingFraction: 0.5,
+            blendDuration: 0.5
+        ).delay(0.2)) {
+            shakeValue = (tab == .map ? 5 : -5)
+        }
+
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+            withAnimation(.interactiveSpring(
+                response: 0.5,
+                dampingFraction: 0.5,
+                blendDuration: 0.5
+            )) {
+                shakeValue = 0
+            }
+        }
     }
 }
 
@@ -133,4 +173,5 @@ fileprivate extension CGFloat {
     static var tabBarHeight = CGFloat(56)
     static var strokeWidth = CGFloat(0.2)
     static var defaultPadding = CGFloat(4)
+    static var capsuleRadius = CGFloat(50)
 }

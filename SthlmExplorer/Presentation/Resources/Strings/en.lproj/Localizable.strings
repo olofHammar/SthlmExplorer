@@ -10,7 +10,7 @@
 "root.title" = "Root view";
 
 // MARK: - TabBar
-"tabbar.list" = "HOME";
+"tabbar.list" = "LIST";
 "tabbar.map" = "MAP";
 
 // MARK: - Home
