@@ -13,7 +13,7 @@ struct ListView: View {
 
     var body: some View {
         ScrollView(showsIndicators: false) {
-            VStack(alignment: .center, spacing: .x2) {
+            VStack(alignment: .center, spacing: .x4) {
                 ForEach(vm.listItems) { item in
                     switch item {
                     case .location(let locationItem):

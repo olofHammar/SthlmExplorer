@@ -66,33 +66,30 @@ struct LocationCardView: View {
             }
             .frame(height: 250)
             .modifier(RoundedCardModifier())
-            .overlay(alignment: .topTrailing) {
-                favoriteToggle()
-            }
 
-            VStack(alignment: .leading, spacing: .x1) {
-                Text(title.capitalized)
-                    .textStyle(.headerThreePlay)
+            VStack(alignment: .leading, spacing: 4) {
+                HStack(alignment: .top) {
+                    Text(title.capitalized)
+                        .textStyle(.headerThreePlay)
+                        .minimumScaleFactor(0.5)
+                        .lineLimit(1)
 
-                HStack {
-                    icon
-                        .resizable()
-                        .scaledToFill()
-                        .frame(width: 30, height: 30)
+                    Spacer()
 
-                    Text(type.rawValue.uppercased())
-                        .textStyle(.bodyMBold)
+                    favoriteToggle()
                 }
-                .foregroundColor(.gray)
-            }
-            .padding(.vertical, .x1)
 
+                Text(type.rawValue.uppercased())
+                    .textStyle(.bodySBold)
+                    .foregroundColor(.gray)
+            }
+            .padding(.top, .x1)
         }
     }
 
     @ViewBuilder
     private func favoriteToggle() -> some View {
-        Toggle("", isOn: $isFavorite).padding(.x2)
+        Toggle("", isOn: $isFavorite)
             .toggleStyle(FavoriteToggleStyle(isFavorite: isFavorite))
     }
 }
