@@ -48,9 +48,6 @@ final class ListViewModel: ObservableObject {
 
         locationItems.forEach { location in
             travelTips.forEach { travelTip in
-//                if (travelTip.order - 1) == locationItems.firstIndex(of: location) && !isShowingSearchTextField && selectedFilter == .all {
-//                    return listItems.append(.travelTip(travelTip))
-//                }
                 if (travelTip.order - 1) == locationItems.firstIndex(of: location) {
                     return listItems.append(.travelTip(travelTip))
                 }

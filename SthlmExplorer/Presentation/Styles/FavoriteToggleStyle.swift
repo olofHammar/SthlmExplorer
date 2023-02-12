@@ -24,8 +24,10 @@ struct FavoriteToggleStyle: ToggleStyle {
     func makeBody(configuration: Configuration) -> some View {
         return ZStack {
             Image(systemName: configuration.isOn ? "heart.fill" : "heart")
+                .foregroundColor(Asset.Colors.Main.accent.swiftUIColor)
                 .overlay(content: {
                     Image(systemName: configuration.isOn ? "heart.fill" : "heart")
+                        .foregroundColor(Asset.Colors.Main.accent.swiftUIColor)
                         .animation(splash ? Animation.easeInOut(duration: 0.5).repeatForever(autoreverses: true) : .default, value: splash)
                         .scaleEffect(splash ? splashScale : 1)
                         .opacity(isFavorite ? 1 : 0)
@@ -34,7 +36,8 @@ struct FavoriteToggleStyle: ToggleStyle {
                 .frame(width: 40, height: 40)
                 .background(.thickMaterial)
                 .clipShape(Circle())
-                .colorScheme(.dark)
+                .shadow(color: Color.white, radius: 1, x: -1, y: -1)
+                .shadow(color: Color.gray, radius: 1, x: 1, y: 1)
                 .scaleEffect(tapped ? animationScale : 1)
         }
         .onTapGesture {

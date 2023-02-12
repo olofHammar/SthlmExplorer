@@ -25,6 +25,7 @@ struct ListView: View {
             }
             .padding(.horizontal, .x2)
         }
+        .background(.thickMaterial)
     }
 }
  

@@ -14,6 +14,8 @@ struct LocationCardView: View {
     let imageURL: URL?
     let icon: Image
 
+    private let cardHeight: CGFloat = .cardHeight
+
     @Binding var isFavorite: Bool
     var onTap: (() -> Void)?
 
@@ -61,10 +63,12 @@ struct LocationCardView: View {
                         .frame(width: proxy.size.width, height: proxy.size.height)
                         .clipped()
                 } placeholder: {
-                    Color.white
+                    Rectangle()
+                        .fill(Color.white)
+                        .redacted(reason: .placeholder)
                 }
             }
-            .frame(height: 250)
+            .frame(height: cardHeight)
             .modifier(RoundedCardModifier())
 
             VStack(alignment: .leading, spacing: 4) {
@@ -112,4 +116,8 @@ fileprivate extension Location {
             longitude: 18.07176
         )
     }
+}
+
+fileprivate extension CGFloat {
+    static var cardHeight = CGFloat(250)
 }
