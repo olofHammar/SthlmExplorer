@@ -34,8 +34,8 @@ struct ExpandableSearchBar: View {
                         .focused(focus)
 
                     Button(String.empty) {
-                        focus.wrappedValue = false
                         toggleSearchBarState()
+                        self.focus.wrappedValue = false
                     }
                     .matchedGeometryEffect(id: String.searchBarID, in: searchBarAnimation)
                     .buttonStyle(IconButtonStyle(systemImage: "xmark"))
@@ -43,8 +43,8 @@ struct ExpandableSearchBar: View {
                     Spacer()
 
                     Button(String.empty) {
-                        focus.wrappedValue = true
                         toggleSearchBarState()
+                        focus.wrappedValue = true
                     }
                     .matchedGeometryEffect(id: String.searchBarID, in: searchBarAnimation)
                     .buttonStyle(IconButtonStyle(systemImage: "magnifyingglass"))
