@@ -17,7 +17,15 @@ extension String {
         return "filterTab"
     }
 
-    static var searchBarID: String {
-        return "searchBarID"
+    static var searchBarButtonID: String {
+        return "searchBarButtonID"
+    }
+
+    static var searchBarIconID: String {
+        return "searchBarIconID"
+    }
+
+    static var searchBarTextFieldID: String {
+        return "searchBarTextFieldID"
     }
 }

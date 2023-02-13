@@ -54,7 +54,6 @@ final class ListViewModel: ObservableObject {
             .receive(on: RunLoop.main)
             .sink { [unowned self] (returnedLocations) in
                 self.locationItems = returnedLocations
-                self.isLoading = false
             }
             .store(in: &cancellables)
     }
@@ -101,7 +100,6 @@ final class ListViewModel: ObservableObject {
     }
 
     private func sortListItems(locationItems: [LocationItem], travelTips: [TravelTipItem]) -> [ListItem] {
-        isLoading = true
         var listItems = [ListItem]()
 
         locationItems.forEach { location in
@@ -117,7 +115,6 @@ final class ListViewModel: ObservableObject {
     }
 
     private func filterBySearchLocations(text: String, locationItems: [LocationItem]) -> [LocationItem] {
-        isLoading = true
         guard !text.isEmpty else { return locationItems }
 
         let lowercasedText = text.lowercased()
@@ -131,7 +128,6 @@ final class ListViewModel: ObservableObject {
     }
 
     private func filterByType(locationItems: [LocationItem], type: LocationFilter) -> [LocationItem] {
-        isLoading = true
         guard type != .all else { return locationItems }
 
         if type == .favorites {

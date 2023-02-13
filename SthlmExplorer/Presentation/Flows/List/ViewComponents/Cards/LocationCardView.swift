@@ -11,7 +11,7 @@ import SwiftUI
 struct LocationCardView: View {
     let title: String
     let type: Location.LocationType
-    let imageURL: URL?
+    let imageURL: String?
     let icon: Image
 
     private let cardHeight: CGFloat = .cardHeight
@@ -22,14 +22,14 @@ struct LocationCardView: View {
     init(
         title: String,
         type: Location.LocationType,
-        imageURL: String,
+        imageURL: String?,
         icon: Image,
         isFavorite: Binding<Bool>,
         onTap: (() -> Void)? = nil
     ) {
         self.title = title
         self.type = type
-        self.imageURL = URL(string: imageURL)
+        self.imageURL = imageURL
         self.icon = icon
         self._isFavorite = isFavorite
         self.onTap = onTap
@@ -53,20 +53,10 @@ struct LocationCardView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
             GeometryReader { proxy in
-                AsyncImage(url: imageURL) { image in
-                    image
-                        .resizable()
-                        .scaledToFill()
-                        .overlay(
-                            LinearGradient(colors: [.black.opacity(1), .clear, .clear], startPoint: .bottom, endPoint: .top)
-                        )
-                        .frame(width: proxy.size.width, height: proxy.size.height)
-                        .clipped()
-                } placeholder: {
-                    Rectangle()
-                        .fill(Color.white)
-                        .redacted(reason: .placeholder)
-                }
+                RemoteImageView(
+                    urlString: imageURL,
+                    placeholder: Asset.Colors.Main.gray100.swiftUIColor.embedInAnyView()
+                )
             }
             .frame(height: cardHeight)
             .modifier(RoundedCardModifier())

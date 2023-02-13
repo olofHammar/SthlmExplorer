@@ -14,7 +14,6 @@ struct ListView: View {
 
     @Namespace private var topID
     @Namespace private var listAnimation
-    @FocusState private var isFocused: Bool
 
     var body: some View {
         ZStack(alignment: .topLeading) {
@@ -28,8 +27,7 @@ struct ListView: View {
                     .overlay(alignment: .bottom) {
                         ExpandableSearchBar(
                             isExpanded: $vm.isPresentingExpandedSearchBar,
-                            searchText: $vm.searchBarText,
-                            focus: $isFocused
+                            searchText: $vm.searchBarText
                         )
                             .padding(.trailing, .x1)
                     }
@@ -38,7 +36,11 @@ struct ListView: View {
             }
             .padding([.leading, .top], .x2)
             .frame(height: .headerExpanded)
-            .background(Asset.Colors.Background.b100.swiftUIColor.shadow(color: .gray, radius: .x3))
+            .background(
+                Asset.Colors.Background.b100.swiftUIColor
+                    .padding(.horizontal, -.x2)
+                    .shadow(color: Asset.Colors.Main.black400.swiftUIColor, radius: 12, x: 0, y: 5)
+            )
             .offset(y: vm.headerOffsetValue())
             .zIndex(1)
             
