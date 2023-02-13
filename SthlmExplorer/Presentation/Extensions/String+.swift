@@ -16,4 +16,8 @@ extension String {
     static var filterTabID: String {
         return "filterTab"
     }
+
+    static var searchBarID: String {
+        return "searchBarID"
+    }
 }

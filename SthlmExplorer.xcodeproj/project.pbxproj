@@ -53,6 +53,7 @@
 		E45C641A299A3827009A70E6 /* ListOffsetModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45C6419299A3827009A70E6 /* ListOffsetModifier.swift */; };
 		E45C641C299A4137009A70E6 /* HeaderFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45C641B299A4137009A70E6 /* HeaderFilterView.swift */; };
 		E45C6420299A449B009A70E6 /* LocationFilter+.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45C641F299A449B009A70E6 /* LocationFilter+.swift */; };
+		E45C6422299A64B6009A70E6 /* ExpandableSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45C6421299A64B6009A70E6 /* ExpandableSearchBar.swift */; };
 		E4648C6829966ED500A0E103 /* LocationCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4648C6729966ED500A0E103 /* LocationCardView.swift */; };
 		E49C029C2993E6C4001993B7 /* SthlmExplorerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49C029B2993E6C4001993B7 /* SthlmExplorerApp.swift */; };
 		E49C02A02993E6C5001993B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E49C029F2993E6C5001993B7 /* Assets.xcassets */; };
@@ -129,6 +130,7 @@
 		E45C6419299A3827009A70E6 /* ListOffsetModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOffsetModifier.swift; sourceTree = "<group>"; };
 		E45C641B299A4137009A70E6 /* HeaderFilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderFilterView.swift; sourceTree = "<group>"; };
 		E45C641F299A449B009A70E6 /* LocationFilter+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LocationFilter+.swift"; sourceTree = "<group>"; };
+		E45C6421299A64B6009A70E6 /* ExpandableSearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandableSearchBar.swift; sourceTree = "<group>"; };
 		E4648C6729966ED500A0E103 /* LocationCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCardView.swift; sourceTree = "<group>"; };
 		E49C02982993E6C4001993B7 /* SthlmExplorer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SthlmExplorer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E49C029B2993E6C4001993B7 /* SthlmExplorerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SthlmExplorerApp.swift; sourceTree = "<group>"; };
@@ -335,6 +337,7 @@
 			children = (
 				E45C641B299A4137009A70E6 /* HeaderFilterView.swift */,
 				E45C6415299A2F12009A70E6 /* HeaderTitleView.swift */,
+				E45C6421299A64B6009A70E6 /* ExpandableSearchBar.swift */,
 			);
 			path = Header;
 			sourceTree = "<group>";
@@ -619,6 +622,7 @@
 				E42FFA842996457700C17BDA /* MapViewModel.swift in Sources */,
 				E42303502997C1F1007FB0A4 /* TravelTipCardView.swift in Sources */,
 				E49D71A92996FC9400B7E72C /* NeumorphismButtonStyle.swift in Sources */,
+				E45C6422299A64B6009A70E6 /* ExpandableSearchBar.swift in Sources */,
 				E4375A872995489D00A92751 /* FontConvertible+Extension.swift in Sources */,
 				E4375A8B299548F900A92751 /* Assets+Extension.swift in Sources */,
 			);

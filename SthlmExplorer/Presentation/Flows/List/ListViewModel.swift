@@ -19,7 +19,9 @@ final class ListViewModel: ObservableObject {
     @Published private(set) var listItems: [ListItem] = []
 
     @Published private(set) var isLoading = false
+    @Published var isPresentingExpandedSearchBar = false
 
+    @Published var searchBarText = String.empty
     @Published var selectedFilter: LocationFilter = .all
     @Published var headerOffset: CGFloat = .zero
 
@@ -52,6 +54,10 @@ final class ListViewModel: ObservableObject {
     func headerOffsetValue() -> CGFloat {
         let navBarDifference = .headerExpanded - .headerCollapsed
         let offsetValue = -headerOffset < navBarDifference ? headerOffset : -navBarDifference
+
+        guard !isPresentingExpandedSearchBar else {
+            return -navBarDifference
+        }
 
         return headerOffset < 0 ? offsetValue : 0
     }

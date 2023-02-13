@@ -23,7 +23,7 @@ struct HeaderFilterView: View {
             .frame(height: .x7)
         }
         .frame(maxHeight: . infinity, alignment: .bottom)
-        .padding([.top, .horizontal], .x2)
+//        .padding([.top, .horizontal], .x2)
     }
 
     @ViewBuilder

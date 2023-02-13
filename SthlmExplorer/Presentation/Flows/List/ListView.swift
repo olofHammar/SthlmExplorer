@@ -14,20 +14,26 @@ struct ListView: View {
 
     @Namespace private var topID
     @Namespace private var listAnimation
+    @FocusState private var isFocused: Bool
 
     var body: some View {
         ZStack(alignment: .topLeading) {
             ZStack(alignment: .topLeading) {
                 HeaderTitleView(locationFilter: vm.selectedFilter, animation: listAnimation)
                     .animation(.easeInOut, value: vm.headerOffset)
-                    .padding(.leading, .x2)
-                    .frame(height: .headerExpanded - .x7, alignment: .bottom)
+                    .frame(height: .headerExpanded - .x6, alignment: .bottom)
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .opacity(1.8 + vm.headerOffsetProgress())
+                    .animation(vm.isPresentingExpandedSearchBar ? .none : .interactiveSpring(response: 0.7, dampingFraction: 0.7, blendDuration: 0.6).delay(0.2), value: vm.isPresentingExpandedSearchBar)
+                    .overlay(alignment: .bottom) {
+                        ExpandableSearchBar(isExpanded: $vm.isPresentingExpandedSearchBar, searchText: $vm.searchBarText)
+                            .padding(.trailing, .x1)
+                    }
 
                 HeaderFilterView(selectedFilter: $vm.selectedFilter, animation: listAnimation)
             }
-            .frame(height: .headerExpanded)
+            .padding(.leading, .x2)
+            .frame(height: .headerExpanded + .x1)
             .background(Asset.Colors.Background.b100.swiftUIColor.shadow(color: .gray, radius: .x3))
             .offset(y: vm.headerOffsetValue())
             .zIndex(1)
@@ -54,7 +60,8 @@ struct ListView: View {
                                     }
                                 }
                             }
-                            .padding(.top, .headerExpanded + .x4)
+                            .padding(.top, vm.isPresentingExpandedSearchBar ? .headerCollapsed : .headerExpanded)
+                            .padding(.top, .x4)
                             .padding(.horizontal, .x2)
                             .padding(.bottom, .x10)
                             .modifier(ListOffsetModifier(offset: $vm.headerOffset))
