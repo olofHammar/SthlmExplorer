@@ -31,11 +31,11 @@ struct ExpandableSearchBar: View {
                     TextField(MyStrings.title, text: $searchText)
                         .textStyle(.bodyL)
                         .foregroundColor(Asset.Colors.Main.black200.swiftUIColor)
+                        .autocorrectionDisabled()
                         .focused(focus)
 
                     Button(String.empty) {
-                        toggleSearchBarState()
-                        self.focus.wrappedValue = false
+                        minimizeSearchBar()
                     }
                     .matchedGeometryEffect(id: String.searchBarID, in: searchBarAnimation)
                     .buttonStyle(IconButtonStyle(systemImage: "xmark"))
@@ -43,26 +43,33 @@ struct ExpandableSearchBar: View {
                     Spacer()
 
                     Button(String.empty) {
-                        toggleSearchBarState()
-                        focus.wrappedValue = true
+                        expandSearchBar()
                     }
                     .matchedGeometryEffect(id: String.searchBarID, in: searchBarAnimation)
                     .buttonStyle(IconButtonStyle(systemImage: "magnifyingglass"))
                 }
             }
             .animation(.spring(response: 0.7, dampingFraction: 0.7, blendDuration: 0.6), value: isExpanded)
-            .padding(.trailing, .x1)
-            .padding(.vertical, isExpanded ? .x1 : .x05)
+            .padding([.trailing, .vertical], .x1)
             .background(isExpanded ? Asset.Colors.Background.b200.swiftUIColor : .clear)
             .cornerRadius(.x4)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomTrailing)
     }
 
-    private func toggleSearchBarState() {
+    private func expandSearchBar() {
         withAnimation(.spring()) {
-            isExpanded.toggle()
+            isExpanded = true
         }
+        focus.wrappedValue = true
+    }
+
+    private func minimizeSearchBar() {
+        withAnimation(.spring()) {
+            isExpanded = false
+        }
+        searchText = String.empty
+        focus.wrappedValue = false
     }
 }
 

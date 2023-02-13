@@ -37,12 +37,12 @@
 "locationFilter.all.searchKey" = "alla";
 "locationFilter.all.headerTitle" = "Stockholm";
 "locationFilter.all.headerCaption" = "Välkommen till";
-"locationFilter.landmark.title" = "LANDMARKS";
+"locationFilter.landmark.title" = "LANDMÄRKEN";
 "locationFilter.landmark.searchKey" = "landmark";
 "locationFilter.explore.headerCaption" = "Utforska";
 "locationFilter.landmark.headerTitle" = "Landmärken";
 "locationFilter.scenicView.title" = "UTSIKSPLATSER";
-"locationFilter.scenicView.searchKey" = "utsiktsplatser";
+"locationFilter.scenicView.searchKey" = "scenicView";
 "locationFilter.scenicView.headerTitle" = "Utsiktsplatser";
 "locationFilter.museum.title" = "MUSEUM";
 "locationFilter.museum.searchKey" = "museum";

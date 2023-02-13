@@ -17,6 +17,9 @@ final class ListViewModel: ObservableObject {
     @Inject private var fetchTravelTipItemsUseCase: IFetchTravelTipItemsUseCase
 
     @Published private(set) var listItems: [ListItem] = []
+    @Published private(set) var allLocationItems: [LocationItem] = []
+    @Published private(set) var locationItems: [LocationItem] = []
+    @Published private(set) var travelTipItems: [TravelTipItem] = []
 
     @Published private(set) var isLoading = false
     @Published var isPresentingExpandedSearchBar = false
@@ -33,10 +36,27 @@ final class ListViewModel: ObservableObject {
 
     func fetchListItems() {
         fetchListItemsUseCase.execute()
+            .receive(on: RunLoop.main)
+            .assign(to: &$allLocationItems)
+
+        $locationItems
             .combineLatest(fetchTravelTipItemsUseCase.execute())
             .map { self.sortListItems(locationItems: $0.0, travelTips: $0.1) }
             .receive(on: RunLoop.main)
             .assign(to: &$listItems)
+
+        $searchBarText
+            .combineLatest($allLocationItems)
+            .debounce(for: .seconds(0.3), scheduler: DispatchQueue.main)
+            .map(filterBySearchLocations)
+            .combineLatest($selectedFilter)
+            .map(filterByType)
+            .receive(on: RunLoop.main)
+            .sink { [unowned self] (returnedLocations) in
+                self.locationItems = returnedLocations
+                self.isLoading = false
+            }
+            .store(in: &cancellables)
     }
 
     func favoriteBinding(_ locationItem: LocationItem) -> Binding<Bool> {
@@ -81,11 +101,12 @@ final class ListViewModel: ObservableObject {
     }
 
     private func sortListItems(locationItems: [LocationItem], travelTips: [TravelTipItem]) -> [ListItem] {
+        isLoading = true
         var listItems = [ListItem]()
 
         locationItems.forEach { location in
             travelTips.forEach { travelTip in
-                if (travelTip.order - 1) == locationItems.firstIndex(of: location) {
+                if (travelTip.order - 1) == locationItems.firstIndex(of: location) && !isPresentingExpandedSearchBar && selectedFilter == .all {
                     return listItems.append(.travelTip(travelTip))
                 }
             }
@@ -93,6 +114,35 @@ final class ListViewModel: ObservableObject {
         }
 
         return listItems
+    }
+
+    private func filterBySearchLocations(text: String, locationItems: [LocationItem]) -> [LocationItem] {
+        isLoading = true
+        guard !text.isEmpty else { return locationItems }
+
+        let lowercasedText = text.lowercased()
+
+        return locationItems.filter { (locationItem) -> Bool in
+            return locationItem.location.title.lowercased().contains(lowercasedText) ||
+            locationItem.location.type.rawValue.lowercased().contains(lowercasedText)
+//            ||
+//            locationItem.location.subway.lowercased().contains(lowercasedText)
+        }
+    }
+
+    private func filterByType(locationItems: [LocationItem], type: LocationFilter) -> [LocationItem] {
+        isLoading = true
+        guard type != .all else { return locationItems }
+
+        if type == .favorites {
+            return locationItems.filter { (locationItem) -> Bool in
+                return locationItem.isFavorite
+            }
+        } else {
+            return locationItems.filter { (locationItem) -> Bool in
+                return locationItem.location.type.rawValue.lowercased() == type.searchKey.lowercased()
+            }
+        }
     }
 }
 
