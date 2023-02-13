@@ -34,8 +34,8 @@ enum TextStyle {
     fileprivate var size: CGFloat {
         switch self {
         case .headerOne, .headerOnePlay: return 48
-        case .headerFour, .headerTwo, .headerFourPlay, .headerTwoPlay: return 32
-        case .headerThree, .headerThreePlay: return 24
+        case .headerFour, .headerTwo, .headerTwoPlay: return 32
+        case .headerThree, .headerThreePlay, .headerFourPlay: return 24
         case .bodyL, .bodyLSemiBold, .bodyLBold, .bodyLPlay, .bodyLBoldPlay: return 16
         case .bodyM, .bodyMSemiBold, .bodyMBold, .bodyMPlay, .bodyMBoldPlay: return 14
         case .bodyS, .bodySSemiBold, .bodySBold, .bodySBoldPlay: return 12

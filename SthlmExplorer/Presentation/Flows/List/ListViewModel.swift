@@ -18,7 +18,13 @@ final class ListViewModel: ObservableObject {
 
     @Published private(set) var listItems: [ListItem] = []
 
+    @Published private(set) var isLoading = false
+
+    @Published var selectedFilter: LocationFilter = .all
+    @Published var headerOffset: CGFloat = .zero
+
     private var cancellables = Set<AnyCancellable>()
+
     init() {
         fetchListItems()
     }
@@ -41,6 +47,31 @@ final class ListViewModel: ObservableObject {
                 self.favoriteLocationUseCase.toggleFavorite(locationItem.id, isOn: locationItem.isFavorite)
             }
         }
+    }
+
+    func headerOffsetValue() -> CGFloat {
+        let navBarDifference = .headerExpanded - .headerCollapsed
+        let offsetValue = -headerOffset < navBarDifference ? headerOffset : -navBarDifference
+
+        return headerOffset < 0 ? offsetValue : 0
+    }
+
+    func headerOffsetProgress() -> CGFloat {
+        let navBarDifference = .headerExpanded - (.headerCollapsed + .x7)
+        let topHeight = navBarDifference
+        let progress = headerOffsetValue() / topHeight
+
+        return progress
+    }
+
+    func setSelectedFilter(filter: LocationFilter) {
+        withAnimation {
+            self.selectedFilter = filter
+        }
+    }
+
+    func isSelectedFilter(filter: LocationFilter) -> Bool {
+        filter == self.selectedFilter
     }
 
     private func sortListItems(locationItems: [LocationItem], travelTips: [TravelTipItem]) -> [ListItem] {

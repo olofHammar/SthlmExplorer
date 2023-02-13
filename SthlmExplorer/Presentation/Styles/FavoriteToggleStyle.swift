@@ -28,7 +28,7 @@ struct FavoriteToggleStyle: ToggleStyle {
                 .overlay(content: {
                     Image(systemName: configuration.isOn ? "heart.fill" : "heart")
                         .foregroundColor(Asset.Colors.Main.accent.swiftUIColor)
-                        .animation(splash ? Animation.easeInOut(duration: 0.5).repeatForever(autoreverses: true) : .default, value: splash)
+                        .animation(splash ? .easeInOut(duration: 0.5).repeatForever(autoreverses: true) : .default, value: splash)
                         .scaleEffect(splash ? splashScale : 1)
                         .opacity(isFavorite ? 1 : 0)
                 })

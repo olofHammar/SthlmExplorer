@@ -36,19 +36,21 @@
 "locationFilter.all.title" = "ALLA";
 "locationFilter.all.searchKey" = "alla";
 "locationFilter.all.headerTitle" = "Stockholm";
-"locationFilter.all.headerCaption" = "Välkommen till,";
-"locationFilter.landmark.title" = "LANDMÄRKEN";
-"locationFilter.landmark.searchKey" = "landmärken";
-"locationFilter.landmark.headerCaption" = "Utforska landmärken";
-"locationFilter.scenicView.title" = "SCENISK UTSIKT";
-"locationFilter.scenicView.searchKey" = "scenisk utsikt";
-"locationFilter.scenicView.headerCaption" = "Utforska natursköna promenader";
-"locationFilter.museum.title" = "MUSEUMS";
+"locationFilter.all.headerCaption" = "Välkommen till";
+"locationFilter.landmark.title" = "LANDMARKS";
+"locationFilter.landmark.searchKey" = "landmark";
+"locationFilter.explore.headerCaption" = "Utforska";
+"locationFilter.landmark.headerTitle" = "Landmärken";
+"locationFilter.scenicView.title" = "UTSIKSPLATSER";
+"locationFilter.scenicView.searchKey" = "utsiktsplatser";
+"locationFilter.scenicView.headerTitle" = "Utsiktsplatser";
+"locationFilter.museum.title" = "MUSEUM";
 "locationFilter.museum.searchKey" = "museum";
-"locationFilter.museum.headerCaption" = "Utforska Museum";
+"locationFilter.museum.headerTitle" = "Museum";
 "locationFilter.favorites.title" = "FAVORITER";
 "locationFilter.favorites.searchKey" = "favoriter";
-"locationFilter.favorites.headerCaption" = "Dina Favoriter";
+"locationFilter.favorites.headerCaption" = "Dina";
+"locationFilter.favorites.headerTitle" = "Favoriter";
 
 // MARK: - LocationDetail
 "locationDetail.button.history" = "En kort historia";
