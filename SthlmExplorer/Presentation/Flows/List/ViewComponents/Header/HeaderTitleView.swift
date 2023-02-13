@@ -22,7 +22,7 @@ struct HeaderTitleView: View {
                 VStack(alignment: .leading, spacing: 0) {
                     Text(filter.headerCaption)
                         .textStyle(.headerFourPlay)
-                        .foregroundColor(.gray)
+                        .foregroundColor(Asset.Colors.Main.gray200.swiftUIColor)
                         .padding(.bottom, -.x1)
 
                     Text(filter.headerTitle)

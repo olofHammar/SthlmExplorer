@@ -27,7 +27,6 @@ struct RootView: View {
                 MapView()
                     .tag(TabBarSelection.map)
             }
-            .tabViewStyle(.page(indexDisplayMode: .never))
 
             TabBarView(tabBarSelection: $vm.selectedTab)
                 .padding(.bottom, .x4)

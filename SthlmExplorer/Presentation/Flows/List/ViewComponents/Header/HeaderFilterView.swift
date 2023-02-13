@@ -36,7 +36,8 @@ struct HeaderFilterView: View {
             VStack(spacing: 0) {
                 Text(locationFilter.title)
                     .textStyle(isSelected(locationFilter) ? .bodyMBold : .bodyM)
-                    .foregroundColor(isSelected(locationFilter) ? Asset.Colors.Main.accent.swiftUIColor : Color.gray)
+                    .foregroundColor(isSelected(locationFilter) ?
+                                     Asset.Colors.Main.accent.swiftUIColor : Asset.Colors.Main.gray200.swiftUIColor)
 
                 ZStack {
                     Rectangle()

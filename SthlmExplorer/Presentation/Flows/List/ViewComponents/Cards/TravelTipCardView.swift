@@ -33,7 +33,7 @@ struct TravelTipCardView: View {
         }
         .frame(maxWidth: .infinity, alignment: .center)
         .frame(height: 250)
-        .foregroundColor(Asset.Colors.Main.accent.just())
+        .foregroundColor(Asset.Colors.Main.accent.swiftUIColor)
         .modifier(RoundedCardModifier())
     }
 
@@ -42,11 +42,11 @@ struct TravelTipCardView: View {
         HStack {
             Spacer()
 
-            Asset.Images.SketchImages.thumbUp.just()
+            Asset.Images.SketchImages.thumbUp.swiftUIImage
                 .resizable()
                 .aspectRatio(contentMode: .fill)
                 .frame(width: .x6, height: .x6)
-                .foregroundColor(Asset.Colors.Main.accent.just())
+                .foregroundColor(Asset.Colors.Main.accent.swiftUIColor)
         }
     }
 
@@ -67,7 +67,7 @@ struct TravelTipCardView: View {
     private func leadingBottomText() -> some View {
         Text(Strings.title.uppercased())
             .textStyle(.bodySBold)
-            .foregroundColor(Asset.Colors.Main.secondary.just())
+            .foregroundColor(Asset.Colors.Main.gray200.swiftUIColor)
     }
 }
 

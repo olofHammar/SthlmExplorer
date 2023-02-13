@@ -10,8 +10,8 @@ import SwiftUI
 struct IconButtonStyle: ButtonStyle {
 
     let image: Image
-    var foreground: Color = Asset.Colors.Main.accent.just()
-    var background: Color = Asset.Colors.Background.b200.just()
+    var foreground: Color = Asset.Colors.Main.accent.swiftUIColor
+    var background: Color = Asset.Colors.Background.b200.swiftUIColor
 
     func makeBody(configuration: Configuration) -> some View {
         image
@@ -31,10 +31,10 @@ struct IconButtonStyle_Previews: PreviewProvider {
     static var previews: some View {
         Group {
             Button(String.empty, action: {})
-                .buttonStyle(IconButtonStyle(image: Asset.Images.Icons.magnifyingglass.just()))
+                .buttonStyle(IconButtonStyle(image: Asset.Images.Icons.magnifyingglass.swiftUIImage))
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(Asset.Colors.Background.b200.just())
+        .background(Asset.Colors.Background.b200.swiftUIColor)
         .ignoresSafeArea()
     }
 }
