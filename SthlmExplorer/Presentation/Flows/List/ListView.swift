@@ -18,22 +18,26 @@ struct ListView: View {
 
     var body: some View {
         ZStack(alignment: .topLeading) {
-            ZStack(alignment: .topLeading) {
+            VStack(alignment: .leading, spacing: 0) {
                 HeaderTitleView(locationFilter: vm.selectedFilter, animation: listAnimation)
                     .animation(.easeInOut, value: vm.headerOffset)
-                    .frame(height: .headerExpanded - .x6, alignment: .bottom)
+                    .frame(height: .headerExpanded - .filterViewHeight, alignment: .bottom)
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .opacity(1.8 + vm.headerOffsetProgress())
                     .animation(vm.isPresentingExpandedSearchBar ? .none : .interactiveSpring(response: 0.7, dampingFraction: 0.7, blendDuration: 0.6).delay(0.2), value: vm.isPresentingExpandedSearchBar)
                     .overlay(alignment: .bottom) {
-                        ExpandableSearchBar(isExpanded: $vm.isPresentingExpandedSearchBar, searchText: $vm.searchBarText)
+                        ExpandableSearchBar(
+                            isExpanded: $vm.isPresentingExpandedSearchBar,
+                            searchText: $vm.searchBarText,
+                            focus: $isFocused
+                        )
                             .padding(.trailing, .x1)
                     }
 
                 HeaderFilterView(selectedFilter: $vm.selectedFilter, animation: listAnimation)
             }
-            .padding(.leading, .x2)
-            .frame(height: .headerExpanded + .x1)
+            .padding([.leading, .top], .x2)
+            .frame(height: .headerExpanded)
             .background(Asset.Colors.Background.b100.swiftUIColor.shadow(color: .gray, radius: .x3))
             .offset(y: vm.headerOffsetValue())
             .zIndex(1)

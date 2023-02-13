@@ -20,10 +20,9 @@ struct HeaderFilterView: View {
                     filterButton(locationFilter: locationFilter)
                 }
             }
-            .frame(height: .x7)
+            .frame(height: .filterViewHeight)
         }
         .frame(maxHeight: . infinity, alignment: .bottom)
-//        .padding([.top, .horizontal], .x2)
     }
 
     @ViewBuilder

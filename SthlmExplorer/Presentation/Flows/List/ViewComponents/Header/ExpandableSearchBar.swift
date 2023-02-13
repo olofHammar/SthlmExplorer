@@ -12,6 +12,8 @@ struct ExpandableSearchBar: View {
     @Binding var isExpanded: Bool
     @Binding var searchText: String
 
+    var focus: FocusState<Bool>.Binding
+
     @Namespace private var searchBarAnimation
 
     private typealias MyStrings = L10n.Home.SearchBar
@@ -24,13 +26,15 @@ struct ExpandableSearchBar: View {
                 if isExpanded {
                     Asset.Images.Icons.magnifyingglass.swiftUIImage
                         .padding(.leading, .x1)
-                        .foregroundColor(Asset.Colors.Background.b300.swiftUIColor)
+                        .foregroundColor(Asset.Colors.Main.gray200.swiftUIColor)
 
                     TextField(MyStrings.title, text: $searchText)
                         .textStyle(.bodyL)
                         .foregroundColor(Asset.Colors.Main.black200.swiftUIColor)
+                        .focused(focus)
 
                     Button(String.empty) {
+                        focus.wrappedValue = false
                         toggleSearchBarState()
                     }
                     .matchedGeometryEffect(id: String.searchBarID, in: searchBarAnimation)
@@ -39,6 +43,7 @@ struct ExpandableSearchBar: View {
                     Spacer()
 
                     Button(String.empty) {
+                        focus.wrappedValue = true
                         toggleSearchBarState()
                     }
                     .matchedGeometryEffect(id: String.searchBarID, in: searchBarAnimation)
@@ -65,6 +70,6 @@ struct ExpandableSearchBar_Previews: PreviewProvider {
     @FocusState static var isFocused
 
     static var previews: some View {
-        ExpandableSearchBar(isExpanded: .constant(false), searchText: .constant("Example text"))
+        ExpandableSearchBar(isExpanded: .constant(true), searchText: .constant("Example text"), focus: $isFocused)
     }
 }

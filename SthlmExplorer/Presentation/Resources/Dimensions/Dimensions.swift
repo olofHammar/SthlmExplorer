@@ -12,8 +12,9 @@ extension CGFloat {
 
     static var defaultContentWidth: CGFloat = 300
     static var largeContentWidth: CGFloat = 340
-    static var headerExpanded: CGFloat = 210
-    static var headerCollapsed: CGFloat = 140
+    static var headerExpanded: CGFloat = 220
+    static var headerCollapsed: CGFloat = 145
+    static var filterViewHeight: CGFloat { .x7 }
 
     // MARK: - Padding
     static var defaultHorizontalPadding: CGFloat { .x2 }
