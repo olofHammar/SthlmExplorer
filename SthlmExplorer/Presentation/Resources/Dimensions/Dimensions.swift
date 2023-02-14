@@ -15,6 +15,7 @@ extension CGFloat {
     static var largeContentWidth: CGFloat = 340
     static var headerExpanded: CGFloat = 220
     static var headerCollapsed: CGFloat = 145
+    static var headerTitleHeight: CGFloat = 90
     static var filterViewHeight: CGFloat { .x7 }
     static var defaultCardHeight: CGFloat = 250
 

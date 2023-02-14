@@ -12,7 +12,7 @@ struct HeaderTitleView: View {
 
     let locationFilter: LocationFilter
     let animation: Namespace.ID
-    let contentHeight: CGFloat = 90
+    let contentHeight: CGFloat = .headerTitleHeight
 
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
