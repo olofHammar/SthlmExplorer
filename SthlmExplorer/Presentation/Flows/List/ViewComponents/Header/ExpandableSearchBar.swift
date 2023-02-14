@@ -13,6 +13,7 @@ struct ExpandableSearchBar: View {
     @Binding var searchText: String
 
     @State private var isAnimating = false
+    
     @FocusState private var isFocused: Bool
     @Namespace private var searchBarAnimation
 

@@ -89,16 +89,7 @@ final class ListViewModel: ObservableObject {
         return progress
     }
 
-    func setSelectedFilter(filter: LocationFilter) {
-        withAnimation {
-            self.selectedFilter = filter
-        }
-    }
-
-    func isSelectedFilter(filter: LocationFilter) -> Bool {
-        filter == self.selectedFilter
-    }
-
+    // MARK: Private functions
     private func sortListItems(locationItems: [LocationItem], travelTips: [TravelTipItem]) -> [ListItem] {
         var listItems = [ListItem]()
 
