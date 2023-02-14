@@ -89,6 +89,14 @@ final class ListViewModel: ObservableObject {
         return progress
     }
 
+    func shouldDisplayEmptyFavoritesState() -> Bool {
+        locationItems.isEmpty && selectedFilter == .favorites
+    }
+
+    func shouldDisplayEmptySearchState() -> Bool {
+        locationItems.isEmpty && !searchBarText.isEmpty
+    }
+
     // MARK: Private functions
     private func sortListItems(locationItems: [LocationItem], travelTips: [TravelTipItem]) -> [ListItem] {
         var listItems = [ListItem]()

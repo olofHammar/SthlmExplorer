@@ -15,6 +15,8 @@ struct ListView: View {
     @Namespace private var topID
     @Namespace private var listAnimation
 
+    private typealias MyStrings = L10n.Home
+
     var body: some View {
         ZStack(alignment: .topLeading) {
             listHeaderSection()
@@ -88,6 +90,14 @@ struct ListView: View {
                 }
             }
         }
+    }
+
+    @ViewBuilder
+    private func emptyStateView(with message: String) -> some View {
+        Text(message)
+            .textStyle(.bodyL)
+            .multilineTextAlignment(.center)
+            .foregroundColor(Asset.Colors.Main.gray200.swiftUIColor)
     }
 }
 
