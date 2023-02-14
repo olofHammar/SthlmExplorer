@@ -1,8 +1,8 @@
 //
-//  LocationItemDataSource.swift
+//  TravelTipDataSource.swift
 //  SthlmExplorer
 //
-//  Created by Olof Hammar on 2023-02-08.
+//  Created by Olof Hammar on 2023-02-11.
 //
 
 import Combine
@@ -11,23 +11,23 @@ import FirebaseFirestore
 import FirebaseFirestoreSwift
 import Model
 
-public struct LocationItemDataSource: ILocationItemDataSource {
+public class TravelTipDataSource: ITravelTipDataSource {
     private var firestore = Firestore.firestore()
 
     public init() { }
 
-    public func getLocationItems() -> AnyPublisher<[LocationItem], Never> {
-        let publisher = CurrentValueSubject<[LocationItem], Never>([])
+    public func getTravelTips() -> AnyPublisher<[TravelTipItem], Never> {
+        let publisher = CurrentValueSubject<[TravelTipItem], Never>([])
 
         firestore
-            .locationCollection()
+            .travelTipCollection()
             .addSnapshotListener { snapshot, error in
                 if let error {
                     print("Error: \(error.localizedDescription)")
                 }
 
                 do {
-                    if let locations = try snapshot?.documents.compactMap({ try $0.data(as: LocationItem.self) }) {
+                    if let locations = try snapshot?.documents.compactMap({ try $0.data(as: TravelTipItem.self) }) {
                         publisher.send(locations)
                     }
                 } catch {
@@ -41,7 +41,7 @@ public struct LocationItemDataSource: ILocationItemDataSource {
 }
 
 private extension Firestore {
-    func locationCollection() -> CollectionReference {
-        self.collection("locations")
+    func travelTipCollection() -> CollectionReference {
+        self.collection("traveltips")
     }
 }

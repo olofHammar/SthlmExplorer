@@ -1,24 +1,25 @@
 //
-//  StaticLocationItemDataSource.swift
+//  StaticFetchTravelTipItemsUseCase.swift
 //  SthlmExplorer
 //
-//  Created by Olof Hammar on 2023-02-08.
+//  Created by Olof Hammar on 2023-02-11.
 //
 
 import Combine
+import Data
 import Foundation
 import Model
 
-public struct StaticLocationItemDataSource: ILocationItemDataSource {
+public struct StaticFetchTravelTipItemsUseCase: IFetchTravelTipItemsUseCase {
 
     public init() { }
 
-    public func getLocationItems() -> AnyPublisher<[Model.LocationItem], Never> {
-        let subject = CurrentValueSubject<[LocationItem], Never>([])
+    public func execute() -> AnyPublisher<[TravelTipItem], Never> {
+        let subject = CurrentValueSubject<[TravelTipItem], Never>([])
 
         do {
-            let locations: [LocationItem] = try locationsFromJsonFixture("CardList")
-            subject.send(locations)
+            let travelTips: [TravelTipItem] = try locationsFromJsonFixture("TravelTips")
+            subject.send(travelTips)
         } catch ResourceError.namedResourceNotInBundle(let resourceName) {
             print("Error: The resource \(resourceName) could not be found in the bundle.")
         } catch {
@@ -34,7 +35,7 @@ private enum ResourceError: Error {
     case namedResourceNotInBundle(String)
 }
 
-private func locationsFromJsonFixture(_ resourceName: String) throws -> [LocationItem] {
+private func locationsFromJsonFixture(_ resourceName: String) throws -> [TravelTipItem] {
     guard let url = Bundle.module.url(forResource: resourceName, withExtension: "json") else {
         throw ResourceError.namedResourceNotInBundle(resourceName)
     }
@@ -42,5 +43,5 @@ private func locationsFromJsonFixture(_ resourceName: String) throws -> [Locatio
     let data = try Data(contentsOf: url)
 
     let decoder = JSONDecoder()
-    return try decoder.decode([LocationItem].self, from: data)
+    return try decoder.decode([TravelTipItem].self, from: data)
 }
