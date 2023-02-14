@@ -57,23 +57,28 @@ struct LocationCardView: View {
             .frame(height: cardHeight)
             .modifier(RoundedCardModifier())
 
-            VStack(alignment: .leading, spacing: 4) {
-                HStack(alignment: .top) {
-                    Text(title.capitalized)
-                        .textStyle(.headerThreePlay)
-                        .minimumScaleFactor(0.5)
-                        .lineLimit(1)
-
-                    Spacer()
-
-                    favoriteToggle()
-                }
+            VStack(alignment: .leading, spacing: 0) {
+                titleAndToggleSection()
 
                 Text(type.rawValue.uppercased())
                     .textStyle(.bodySBold)
                     .foregroundColor(.gray)
             }
             .padding(.top, .x1)
+        }
+    }
+
+    @ViewBuilder
+    private func titleAndToggleSection() -> some View {
+        HStack(alignment: .top, spacing: 0) {
+            Text(title.capitalized)
+                .textStyle(.headerThreePlay)
+                .minimumScaleFactor(0.5)
+                .lineLimit(1)
+
+            Spacer()
+
+            favoriteToggle()
         }
     }
 
