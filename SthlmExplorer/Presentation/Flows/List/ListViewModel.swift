@@ -97,7 +97,6 @@ final class ListViewModel: ObservableObject {
         locationItems.isEmpty && !searchBarText.isEmpty
     }
 
-    // MARK: Private functions
     private func sortListItems(locationItems: [LocationItem], travelTips: [TravelTipItem]) -> [ListItem] {
         var listItems = [ListItem]()
 
@@ -120,9 +119,8 @@ final class ListViewModel: ObservableObject {
 
         return locationItems.filter { (locationItem) -> Bool in
             return locationItem.location.title.lowercased().contains(lowercasedText) ||
-            locationItem.location.type.rawValue.lowercased().contains(lowercasedText)
-//            ||
-//            locationItem.location.subway.lowercased().contains(lowercasedText)
+            locationItem.location.type.rawValue.lowercased().contains(lowercasedText) ||
+            locationItem.location.subway.lowercased().contains(lowercasedText)
         }
     }
 

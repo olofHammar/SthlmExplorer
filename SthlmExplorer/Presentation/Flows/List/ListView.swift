@@ -23,10 +23,10 @@ struct ListView: View {
                 .zIndex(1)
 
             listScrollView()
-                .padding(.horizontal, .x2)
         }
         .ignoresSafeArea(edges: .top)
         .background(.thickMaterial)
+        .onTapGesture { hideKeyboard() }
     }
 
     @ViewBuilder
@@ -71,21 +71,35 @@ struct ListView: View {
                             .foregroundColor(.clear)
                             .id(topID)
 
-                        VStack(alignment: .center, spacing: .x4) {
-                            ForEach(vm.listItems) { item in
-                                switch item {
-                                case .location(let locationItem):
-                                    LocationCardView(location: locationItem.location,
-                                                     isFavorite: vm.favoriteBinding(locationItem))
-                                case .travelTip(let travelTip):
-                                    TravelTipCardView(travelTip: travelTip)
+                        VStack(spacing: .x4) {
+                            if vm.shouldDisplayEmptySearchState() {
+                                emptyStateView(with: MyStrings.EmptyList.title)
+                                    .padding(.top, .x4)
+                            } else if vm.shouldDisplayEmptyFavoritesState() {
+                                emptyStateView(with: MyStrings.EmptyList.Favorites.message)
+                                    .padding(.top, .x10)
+                            } else {
+                                ForEach(vm.listItems) { item in
+                                    switch item {
+                                    case .location(let locationItem):
+                                        LocationCardView(location: locationItem.location,
+                                                         isFavorite: vm.favoriteBinding(locationItem))
+                                    case .travelTip(let travelTip):
+                                        TravelTipCardView(travelTip: travelTip)
+                                    }
                                 }
                             }
                         }
                         .padding(.top, .x4)
                         .padding(.top, vm.isPresentingExpandedSearchBar ? .headerCollapsed : .headerExpanded)
+                        .padding(.horizontal, .x2)
                         .padding(.bottom, .x10)
                         .modifier(ListOffsetModifier(offset: $vm.headerOffset))
+                    }
+                    .onChange(of: vm.isPresentingExpandedSearchBar) { _ in
+                        withAnimation(.linear) {
+                            reader.scrollTo(topID, anchor: .bottom)
+                        }
                     }
                 }
             }
