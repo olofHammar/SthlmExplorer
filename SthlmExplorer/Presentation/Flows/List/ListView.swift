@@ -11,7 +11,7 @@ import SwiftUI
 
 struct ListView: View {
     @InjectObject var vm: ListViewModel
-
+    
     var parentAnimation: Namespace.ID
 
     @Namespace private var topID
@@ -21,7 +21,7 @@ struct ListView: View {
 
     var body: some View {
         ZStack(alignment: .topLeading) {
-            listHeaderSection()
+            headerSection()
                 .zIndex(1)
 
             listScrollView()
@@ -32,7 +32,7 @@ struct ListView: View {
     }
 
     @ViewBuilder
-    private func listHeaderSection() -> some View {
+    private func headerSection() -> some View {
         VStack(alignment: .leading, spacing: 0) {
             HeaderTitleView(locationFilter: vm.selectedFilter, animation: listAnimation)
                 .animation(.easeInOut, value: vm.headerOffset)

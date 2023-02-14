@@ -35,7 +35,7 @@ struct RootView: View {
                 .ignoresSafeArea(.keyboard)
 
             if let selectedLocation = vm.selectedLocation, vm.isPresentingDetail {
-                LocationDetailView(locationItem: selectedLocation, parentAnimation: animation)
+                LocationDetailView(locationItem: selectedLocation, animation: animation)
             }
         }
         .ignoresSafeArea()
