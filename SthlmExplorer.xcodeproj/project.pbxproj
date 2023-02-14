@@ -15,7 +15,6 @@
 		E423034E299785C2007FB0A4 /* FavoriteToggleStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E423034D299785C2007FB0A4 /* FavoriteToggleStyle.swift */; };
 		E42303502997C1F1007FB0A4 /* TravelTipCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E423034F2997C1F1007FB0A4 /* TravelTipCardView.swift */; };
 		E42303532997C50B007FB0A4 /* RoundedCardModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42303522997C50B007FB0A4 /* RoundedCardModifier.swift */; };
-		E42303552997CE41007FB0A4 /* LocationType+.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42303542997CE41007FB0A4 /* LocationType+.swift */; };
 		E42FFA7C29963F7400C17BDA /* Navigation in Frameworks */ = {isa = PBXBuildFile; productRef = E42FFA7B29963F7400C17BDA /* Navigation */; };
 		E42FFA80299644FB00C17BDA /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42FFA7F299644FB00C17BDA /* ListView.swift */; };
 		E42FFA822996451100C17BDA /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42FFA812996451100C17BDA /* ListViewModel.swift */; };
@@ -95,7 +94,6 @@
 		E423034D299785C2007FB0A4 /* FavoriteToggleStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteToggleStyle.swift; sourceTree = "<group>"; };
 		E423034F2997C1F1007FB0A4 /* TravelTipCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelTipCardView.swift; sourceTree = "<group>"; };
 		E42303522997C50B007FB0A4 /* RoundedCardModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCardModifier.swift; sourceTree = "<group>"; };
-		E42303542997CE41007FB0A4 /* LocationType+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LocationType+.swift"; sourceTree = "<group>"; };
 		E42FFA7A29962B4200C17BDA /* Navigation */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Navigation; sourceTree = "<group>"; };
 		E42FFA7F299644FB00C17BDA /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
 		E42FFA812996451100C17BDA /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
@@ -274,7 +272,6 @@
 			isa = PBXGroup;
 			children = (
 				E4375A8E29954E3300A92751 /* View+TextStyle.swift */,
-				E42303542997CE41007FB0A4 /* LocationType+.swift */,
 				E45C6417299A3399009A70E6 /* String+.swift */,
 				E45C641F299A449B009A70E6 /* LocationFilter+.swift */,
 				E472EED2299ACEFB007571C4 /* View+Frame.swift */,
@@ -627,7 +624,6 @@
 				E42FFA8C299659D300C17BDA /* TabBarView.swift in Sources */,
 				E4375A592995306100A92751 /* RootView.swift in Sources */,
 				E4375A89299548D800A92751 /* Assets.swift in Sources */,
-				E42303552997CE41007FB0A4 /* LocationType+.swift in Sources */,
 				E40211BE2994081D00C89C65 /* AppConfig.swift in Sources */,
 				E49C029C2993E6C4001993B7 /* SthlmExplorerApp.swift in Sources */,
 				E4648C6829966ED500A0E103 /* LocationCardView.swift in Sources */,

@@ -12,7 +12,6 @@ struct LocationCardView: View {
     let title: String
     let type: Location.LocationType
     let imageURL: String?
-    let icon: Image
 
     private let cardHeight: CGFloat = .cardHeight
 
@@ -23,14 +22,12 @@ struct LocationCardView: View {
         title: String,
         type: Location.LocationType,
         imageURL: String?,
-        icon: Image,
         isFavorite: Binding<Bool>,
         onTap: (() -> Void)? = nil
     ) {
         self.title = title
         self.type = type
         self.imageURL = imageURL
-        self.icon = icon
         self._isFavorite = isFavorite
         self.onTap = onTap
     }
@@ -44,7 +41,6 @@ struct LocationCardView: View {
             title: location.title,
             type: location.type,
             imageURL: location.image,
-            icon: location.type.icon,
             isFavorite: isFavorite,
             onTap: onTap
         )

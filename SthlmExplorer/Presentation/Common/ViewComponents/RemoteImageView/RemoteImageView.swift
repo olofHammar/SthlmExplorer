@@ -40,6 +40,7 @@ struct RemoteImageView: View {
 struct RemoteImageView_Previews: PreviewProvider {
     static var previews: some View {
         RemoteImageView(urlString: nil,
-                        placeholder: Asset.Colors.Main.gray100.swiftUIColor.embedInAnyView())
+                        placeholder: Asset.Colors.Main.gray100.swiftUIColor.embedInAnyView()
+        )
     }
 }

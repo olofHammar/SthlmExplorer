@@ -34,7 +34,7 @@ struct RoundedCardModifier: ViewModifier {
 struct RoundedCardModifier_Previews: PreviewProvider {
     static var previews: some View {
         VStack {
-            Text("Example view")
+            Text("Example card")
         }
         .frame(maxWidth: .infinity, maxHeight: 250)
         .modifier(RoundedCardModifier())

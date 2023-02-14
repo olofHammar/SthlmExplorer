@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ListOffsetModifier: ViewModifier {
     @Binding var offset: CGFloat
-    @State private var startOffset: CGFloat = 0
+    @State private var startOffset: CGFloat = .zero
 
     func body(content: Content) -> some View {
         content
@@ -20,7 +20,7 @@ struct ListOffsetModifier: ViewModifier {
                 }
             )
             .onPreferenceChange(ListOffsetKey.self) { offset in
-                if startOffset == 0 {
+                if startOffset == .zero {
                     startOffset = offset
                 }
                 self.offset = offset - startOffset
