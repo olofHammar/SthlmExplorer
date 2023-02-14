@@ -67,6 +67,8 @@
 		E49D71AB2996FD0A00B7E72C /* IconButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49D71AA2996FD0A00B7E72C /* IconButtonStyle.swift */; };
 		E4D986E4299B861400C7C380 /* Image+SystemImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D986E3299B861400C7C380 /* Image+SystemImage.swift */; };
 		E4D986E6299B965900C7C380 /* View+HideKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D986E5299B965900C7C380 /* View+HideKeyboard.swift */; };
+		E4D986E9299B9BFC00C7C380 /* LocationDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D986E8299B9BFC00C7C380 /* LocationDetailViewModel.swift */; };
+		E4D986EB299B9C3500C7C380 /* LocationDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D986EA299B9C3500C7C380 /* LocationDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -151,6 +153,8 @@
 		E49D71AA2996FD0A00B7E72C /* IconButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconButtonStyle.swift; sourceTree = "<group>"; };
 		E4D986E3299B861400C7C380 /* Image+SystemImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+SystemImage.swift"; sourceTree = "<group>"; };
 		E4D986E5299B965900C7C380 /* View+HideKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+HideKeyboard.swift"; sourceTree = "<group>"; };
+		E4D986E8299B9BFC00C7C380 /* LocationDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailViewModel.swift; sourceTree = "<group>"; };
+		E4D986EA299B9C3500C7C380 /* LocationDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -253,6 +257,7 @@
 		E4375A5C29953BBF00A92751 /* Flows */ = {
 			isa = PBXGroup;
 			children = (
+				E4D986E7299B9BC000C7C380 /* LocationDetail */,
 				E42FFA7E299644BD00C17BDA /* List */,
 				E42FFA7D299644B600C17BDA /* Map */,
 				E4375A572995304E00A92751 /* Root */,
@@ -469,6 +474,15 @@
 			path = Styles;
 			sourceTree = "<group>";
 		};
+		E4D986E7299B9BC000C7C380 /* LocationDetail */ = {
+			isa = PBXGroup;
+			children = (
+				E4D986E8299B9BFC00C7C380 /* LocationDetailViewModel.swift */,
+				E4D986EA299B9C3500C7C380 /* LocationDetailView.swift */,
+			);
+			path = LocationDetail;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -625,6 +639,7 @@
 			files = (
 				E4375A5B2995307100A92751 /* RootViewModel.swift in Sources */,
 				E472EED3299ACEFB007571C4 /* View+Frame.swift in Sources */,
+				E4D986EB299B9C3500C7C380 /* LocationDetailView.swift in Sources */,
 				E45C6416299A2F12009A70E6 /* HeaderTitleView.swift in Sources */,
 				E4375A8F29954E3300A92751 /* View+TextStyle.swift in Sources */,
 				E42FFA8C299659D300C17BDA /* TabBarView.swift in Sources */,
@@ -637,6 +652,7 @@
 				E45C6418299A3399009A70E6 /* String+.swift in Sources */,
 				E43D5265299927BA001A6EB8 /* CustomCorner.swift in Sources */,
 				E4375A852995486C00A92751 /* Fonts.swift in Sources */,
+				E4D986E9299B9BFC00C7C380 /* LocationDetailViewModel.swift in Sources */,
 				E49D71AB2996FD0A00B7E72C /* IconButtonStyle.swift in Sources */,
 				E42FFA862996459400C17BDA /* MapView.swift in Sources */,
 				E472EECF299ACE25007571C4 /* RemoteImageView.swift in Sources */,
