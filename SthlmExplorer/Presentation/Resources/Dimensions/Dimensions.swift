@@ -18,6 +18,7 @@ extension CGFloat {
     static var headerTitleHeight: CGFloat = 90
     static var filterViewHeight: CGFloat { .x7 }
     static var defaultCardHeight: CGFloat = 250
+    static var defaultIconHeight: CGFloat = 40
 
     // MARK: - Padding
     static var defaultHorizontalPadding: CGFloat { .x2 }

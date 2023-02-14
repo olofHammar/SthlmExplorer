@@ -44,7 +44,7 @@ struct ExpandableSearchBar: View {
                         minimizeSearchBar()
                     }
                     .matchedGeometryEffect(id: String.searchBarButtonID, in: searchBarAnimation)
-                    .buttonStyle(IconButtonStyle(systemImage: "xmark"))
+                    .buttonStyle(IconButtonStyle(systemImage: .xMark))
                 } else {
                     Spacer()
 
@@ -57,7 +57,7 @@ struct ExpandableSearchBar: View {
                         expandSearchBar()
                     }
                     .matchedGeometryEffect(id: String.searchBarButtonID, in: searchBarAnimation)
-                    .buttonStyle(IconButtonStyle(systemImage: "magnifyingglass"))
+                    .buttonStyle(IconButtonStyle(systemImage: .magnifyingGlass))
                     .overlay {
                         Asset.Images.Icons.magnifyingglass.swiftUIImage
                             .matchedGeometryEffect(id: String.searchBarIconID, in: searchBarAnimation)

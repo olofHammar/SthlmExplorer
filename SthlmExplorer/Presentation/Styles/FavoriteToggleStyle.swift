@@ -23,17 +23,17 @@ struct FavoriteToggleStyle: ToggleStyle {
 
     func makeBody(configuration: Configuration) -> some View {
         return ZStack {
-            Image(systemName: configuration.isOn ? "heart.fill" : "heart")
+            Image(systemImage: configuration.isOn ? .heartFill : .heart)
                 .foregroundColor(Asset.Colors.Main.accent.swiftUIColor)
                 .overlay(content: {
-                    Image(systemName: configuration.isOn ? "heart.fill" : "heart")
+                    Image(systemImage: configuration.isOn ? .heartFill : .heart)
                         .foregroundColor(Asset.Colors.Main.accent.swiftUIColor)
                         .animation(splash ? .easeInOut(duration: 0.5).repeatForever(autoreverses: true) : .default, value: splash)
                         .scaleEffect(splash ? splashScale : 1)
                         .opacity(isFavorite ? 1 : 0)
                 })
                 .font(.system(size: 20))
-                .frame(width: 40, height: 40)
+                .frame(width: .defaultIconHeight, height: .defaultIconHeight)
                 .background(.thickMaterial)
                 .clipShape(Circle())
                 .shadow(color: Color.white, radius: 1, x: -1, y: -1)

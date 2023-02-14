@@ -65,6 +65,7 @@
 		E49C02B92993E6C5001993B7 /* SthlmExplorerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49C02B82993E6C5001993B7 /* SthlmExplorerUITestsLaunchTests.swift */; };
 		E49D71A92996FC9400B7E72C /* NeumorphismButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49D71A82996FC9400B7E72C /* NeumorphismButtonStyle.swift */; };
 		E49D71AB2996FD0A00B7E72C /* IconButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49D71AA2996FD0A00B7E72C /* IconButtonStyle.swift */; };
+		E4D986E4299B861400C7C380 /* Image+SystemImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D986E3299B861400C7C380 /* Image+SystemImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -147,6 +148,7 @@
 		E49C02B82993E6C5001993B7 /* SthlmExplorerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SthlmExplorerUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		E49D71A82996FC9400B7E72C /* NeumorphismButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeumorphismButtonStyle.swift; sourceTree = "<group>"; };
 		E49D71AA2996FD0A00B7E72C /* IconButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconButtonStyle.swift; sourceTree = "<group>"; };
+		E4D986E3299B861400C7C380 /* Image+SystemImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+SystemImage.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -314,6 +316,7 @@
 				E4375A88299548D800A92751 /* Assets.swift */,
 				E4375A8A299548F900A92751 /* Assets+Extension.swift */,
 				E49C029F2993E6C5001993B7 /* Assets.xcassets */,
+				E4D986E3299B861400C7C380 /* Image+SystemImage.swift */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -624,6 +627,7 @@
 				E42FFA8C299659D300C17BDA /* TabBarView.swift in Sources */,
 				E4375A592995306100A92751 /* RootView.swift in Sources */,
 				E4375A89299548D800A92751 /* Assets.swift in Sources */,
+				E4D986E4299B861400C7C380 /* Image+SystemImage.swift in Sources */,
 				E40211BE2994081D00C89C65 /* AppConfig.swift in Sources */,
 				E49C029C2993E6C4001993B7 /* SthlmExplorerApp.swift in Sources */,
 				E4648C6829966ED500A0E103 /* LocationCardView.swift in Sources */,
