@@ -12,6 +12,8 @@ import SwiftUI
 struct ListView: View {
     @InjectObject var vm: ListViewModel
 
+    var parentAnimation: Namespace.ID
+
     @Namespace private var topID
     @Namespace private var listAnimation
 
@@ -84,6 +86,8 @@ struct ListView: View {
                                     case .location(let locationItem):
                                         LocationCardView(location: locationItem.location,
                                                          isFavorite: vm.favoriteBinding(locationItem),
+                                                         animation: parentAnimation,
+                                                         isDetail: false,
                                                          onTap: { vm.presentDetail(for: locationItem) }
                                         )
 
@@ -119,7 +123,9 @@ struct ListView: View {
 }
 
 struct ListView_Previews: PreviewProvider {
+    @Namespace static var animation
+
     static var previews: some View {
-        ListView()
+        ListView(parentAnimation: animation)
     }
 }

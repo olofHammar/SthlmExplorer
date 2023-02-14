@@ -39,7 +39,7 @@ private extension RootViewModel {
         case .presentedLocationDetail(let location):
             self.isAnimatingView = true
 
-            withAnimation(.easeInOut) {
+            withAnimation(.interactiveSpring(response: 0.7, dampingFraction: 0.7, blendDuration: 0.6)) {
                 self.isPresentingDetail = true
                 self.selectedLocation = location
             }

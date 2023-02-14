@@ -101,7 +101,9 @@ final class ListViewModel: ObservableObject {
     }
 
     func presentDetail(for location: LocationItem) {
-        viewStateManager.presentSelectedDetail(for: location)
+        withAnimation(.interactiveSpring(response: 0.6, dampingFraction: 0.7, blendDuration: 0.7)){
+            viewStateManager.presentSelectedDetail(for: location)
+        }
     }
 
     private func sortListItems(locationItems: [LocationItem], travelTips: [TravelTipItem]) -> [ListItem] {
