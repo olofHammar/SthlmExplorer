@@ -13,7 +13,7 @@ struct LocationCardView: View {
     let type: Location.LocationType
     let imageURL: String?
 
-    private let cardHeight: CGFloat = .cardHeight
+    private let cardHeight: CGFloat = .defaultCardHeight
 
     @Binding var isFavorite: Bool
     var onTap: (() -> Void)?
@@ -107,8 +107,4 @@ fileprivate extension Location {
             longitude: 18.07176
         )
     }
-}
-
-fileprivate extension CGFloat {
-    static var cardHeight = CGFloat(250)
 }

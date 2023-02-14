@@ -10,11 +10,13 @@ import UIKit
 extension CGFloat {
     static let zero = 0
 
+    // MARK: - Default values
     static var defaultContentWidth: CGFloat = 300
     static var largeContentWidth: CGFloat = 340
     static var headerExpanded: CGFloat = 220
     static var headerCollapsed: CGFloat = 145
     static var filterViewHeight: CGFloat { .x7 }
+    static var defaultCardHeight: CGFloat = 250
 
     // MARK: - Padding
     static var defaultHorizontalPadding: CGFloat { .x2 }

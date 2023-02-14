@@ -9,9 +9,28 @@ import Model
 import SwiftUI
 
 struct TravelTipCardView: View {
+    let title: String
+    let caption: String
 
-    let travelTip: TravelTipItem
+    private let cardHeight: CGFloat = .defaultCardHeight
     private typealias Strings = L10n.TravelTipCard
+
+    init(
+        title: String,
+        caption: String
+    ) {
+        self.title = title
+        self.caption = caption
+    }
+
+    init(
+        travelTip: TravelTipItem
+    ) {
+        self.init(
+            title: travelTip.title,
+            caption: travelTip.caption
+        )
+    }
 
     var body: some View {
         ZStack {
@@ -32,7 +51,7 @@ struct TravelTipCardView: View {
             }
         }
         .frame(maxWidth: .infinity, alignment: .center)
-        .frame(height: 250)
+        .frame(height: cardHeight)
         .foregroundColor(Asset.Colors.Main.accent.swiftUIColor)
         .modifier(RoundedCardModifier())
     }
@@ -53,14 +72,14 @@ struct TravelTipCardView: View {
     @ViewBuilder
     private func centerTextSectionView() -> some View {
         VStack(spacing: .x1) {
-            Text(travelTip.title.uppercased())
+            Text(title.uppercased())
                 .textStyle(.bodyLBold)
 
-            Text(travelTip.caption)
+            Text(caption)
                 .textStyle(.bodyMBoldPlay)
         }
         .multilineTextAlignment(.center)
-        .frame(width: 250)
+        .frame(width: cardHeight)
     }
 
     @ViewBuilder
