@@ -113,10 +113,6 @@ private extension AppConfig {
         injector.map(MapViewModel.self) {
             MapViewModel()
         }
-
-        injector.map(LocationDetailViewModel.self) {
-            LocationDetailViewModel()
-        }
     }
 }
 

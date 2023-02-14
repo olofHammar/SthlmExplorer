@@ -5,14 +5,17 @@
 //  Created by Olof Hammar on 2023-02-14.
 //
 
+import Model
 import SwiftUI
 
 struct LocationDetailView: View {
     @StateObject private var vm = LocationDetailViewModel()
 
+    let locationItem: LocationItem
+
     var body: some View {
         VStack(spacing: 50) {
-            Text("Location Detail View")
+            Text(locationItem.location.title)
 
             Button("Close") {
                 vm.dismissSelectedDetail()
@@ -27,6 +30,6 @@ struct LocationDetailView: View {
 
 struct LocationDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        LocationDetailView()
+        LocationDetailView(locationItem: LocationItem.init(location: .mockLocation, isFavorite: false))
     }
 }

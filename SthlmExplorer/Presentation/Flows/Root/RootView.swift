@@ -31,6 +31,10 @@ struct RootView: View {
             TabBarView(tabBarSelection: $vm.selectedTab)
                 .padding(.bottom, .x4)
                 .ignoresSafeArea(.keyboard)
+
+            if let selectedLocation = vm.selectedLocation, vm.isPresentingDetail {
+                LocationDetailView(locationItem: selectedLocation)
+            }
         }
         .ignoresSafeArea()
     }

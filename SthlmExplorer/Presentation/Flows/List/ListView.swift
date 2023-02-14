@@ -83,7 +83,10 @@ struct ListView: View {
                                     switch item {
                                     case .location(let locationItem):
                                         LocationCardView(location: locationItem.location,
-                                                         isFavorite: vm.favoriteBinding(locationItem))
+                                                         isFavorite: vm.favoriteBinding(locationItem),
+                                                         onTap: { vm.presentDetail(for: locationItem) }
+                                        )
+
                                     case .travelTip(let travelTip):
                                         TravelTipCardView(travelTip: travelTip)
                                     }

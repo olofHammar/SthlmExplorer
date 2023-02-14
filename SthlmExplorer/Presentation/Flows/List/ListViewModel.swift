@@ -7,11 +7,14 @@
 
 import Combine
 import Domain
+import Navigation
 import Model
 import ShortcutFoundation
 import SwiftUI
 
 final class ListViewModel: ObservableObject {
+    @Inject var viewStateManager: IViewStateManager
+
     @Inject private var fetchListItemsUseCase: IFetchLocationItemsUseCase
     @Inject private var favoriteLocationUseCase: IFavoriteLocationUseCase
     @Inject private var fetchTravelTipItemsUseCase: IFetchTravelTipItemsUseCase
@@ -95,6 +98,10 @@ final class ListViewModel: ObservableObject {
 
     func shouldDisplayEmptySearchState() -> Bool {
         locationItems.isEmpty && !searchBarText.isEmpty
+    }
+
+    func presentDetail(for location: LocationItem) {
+        viewStateManager.presentSelectedDetail(for: location)
     }
 
     private func sortListItems(locationItems: [LocationItem], travelTips: [TravelTipItem]) -> [ListItem] {

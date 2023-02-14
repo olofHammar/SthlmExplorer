@@ -56,6 +56,9 @@ struct LocationCardView: View {
             }
             .frame(height: cardHeight)
             .modifier(RoundedCardModifier())
+            .onTapGesture {
+                onTap?()
+            }
 
             VStack(alignment: .leading, spacing: 0) {
                 titleAndToggleSection()
