@@ -46,7 +46,7 @@ struct ListView: View {
                 LocationDetailView(
                     location: locationItem.location,
                     distance: vm.distanceToLocation(locationItem),
-                    onTap: { vm.dismissDetail() }
+                    onClose: { vm.dismissDetail() }
                 )
             }
             .padding(.top, .x10)
@@ -120,7 +120,7 @@ struct ListView: View {
 
                                     case .travelTip(let travelTip):
                                         TravelTipCardView(travelTip: travelTip)
-                                            .opacity(vm.isPresentingLocationDetail ? 0 : 1)
+                                            .opacity(vm.isHeaderSectionDismissed ? 0 : 1)
                                     }
                                 }
                             }

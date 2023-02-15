@@ -16,6 +16,7 @@ public enum SystemImage: String {
     case tram = "tram"
     case walk = "figure.walk"
     case bike = "bicycle"
+    case location = "location"
 
     var systemName: String {
         self.rawValue

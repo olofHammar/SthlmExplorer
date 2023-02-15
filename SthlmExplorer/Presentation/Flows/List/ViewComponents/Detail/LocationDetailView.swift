@@ -5,19 +5,19 @@
 //  Created by Olof Hammar on 2023-02-14.
 //
 
+import CoreLocation
+import Navigation
 import Model
+import ShortcutFoundation
 import SwiftUI
 
 struct LocationDetailView: View {
+    @Inject private var externalViewRouter: IExternalViewRouter
     @State private var isAnimatingView = false
 
     let location: Location
     let distance: Int?
-    var onTap: (() -> Void)?
-
-    let columns = [
-        GridItem(.adaptive(minimum: 100))
-    ]
+    var onClose: (() -> Void)?
 
     private typealias MyStrings = L10n.LocationDetail
 
@@ -25,21 +25,28 @@ struct LocationDetailView: View {
         VStack(alignment: .leading, spacing: 0) {
 
             topSection()
+                .padding(.vertical, .x2)
 
             aboutSection()
-                .padding(.top, .x2)
+                .padding(.vertical, .x2)
 
             tagSection(tags: location.tags)
-                .padding(.top, .x4)
+                .padding(.vertical, .x2)
+
+            if let timeSlots = location.info {
+                openingHoursSection(hours: timeSlots)
+                    .padding(.vertical, .x2)
+            }
 
             Button("") {
-                onTap?()
+                onClose?()
             }
             .buttonStyle(IconButtonStyle(systemImage: .xMark))
             .frame(maxWidth: .infinity, alignment: .center)
             .padding(.vertical, .x2)
         }
-//        .offset(y: isAnimatingView ? 0 : .defaultContentWidth * 2)
+        .foregroundColor(Asset.Colors.Main.primary.swiftUIColor)
+        .offset(y: isAnimatingView ? 0 : .defaultContentWidth * 2)
         .opacity(isAnimatingView ? 1 : 0)
         .onAppear {
             withAnimation(.spring().delay(0.2)) {
@@ -54,8 +61,14 @@ struct LocationDetailView: View {
     @ViewBuilder
     private func topSection() -> some View {
         VStack(spacing: 0) {
-            VStack(alignment: .leading, spacing: .x2) {
-                iconLabel(image: .tram, text: location.subway)
+            VStack(alignment: .leading, spacing: .x1) {
+                HStack {
+                    iconLabel(image: .tram, text: location.subway)
+
+                    Spacer()
+
+                    shareLocationButton()
+                }
 
                 if let distance {
                     iconLabel(image: .walk, text: MyStrings.Walk.title(distance))
@@ -65,7 +78,24 @@ struct LocationDetailView: View {
             }
             .foregroundColor(Asset.Colors.Main.gray200.swiftUIColor)
         }
-        .padding(.vertical, .x2)
+    }
+
+    @ViewBuilder
+    private func shareLocationButton() -> some View {
+        Button {
+            externalViewRouter.presentLocationShareSheet(
+                with: location.title,
+                for: CLLocation(latitude: location.latitude, longitude: location.longitude)
+            )
+        } label: {
+            HStack {
+                Image(systemImage: .location)
+
+                Text("Share Location")
+            }
+            .textStyle(.bodyMBold)
+            .foregroundColor(Asset.Colors.Main.secondary.swiftUIColor)
+        }
     }
 
     @ViewBuilder
@@ -92,10 +122,9 @@ struct LocationDetailView: View {
             Text(location.description.replacingOccurrences(of: "<br>", with: "\n\n"))
                 .textStyle(.bodyM)
                 .fixedSize(horizontal: false, vertical: true)
-                .padding(.trailing, .x6)
+                .padding(.trailing, .x4)
 
         }
-        .foregroundColor(Asset.Colors.Main.primary.swiftUIColor)
     }
 
     @ViewBuilder
@@ -110,7 +139,6 @@ struct LocationDetailView: View {
                     .padding([.leading, .top], .x1)
             }
         }
-        .foregroundColor(Asset.Colors.Main.primary.swiftUIColor)
     }
 
     @ViewBuilder
@@ -118,7 +146,6 @@ struct LocationDetailView: View {
         HStack(spacing: .x1) {
             Circle()
                 .frame(width: 4, height: 4)
-                .offset(y: -2)
 
             Text(title)
                 .textStyle(.bodyS)
@@ -126,11 +153,24 @@ struct LocationDetailView: View {
             Spacer()
         }
     }
+
+    @ViewBuilder
+    private func openingHoursSection(hours: [String]) -> some View {
+        VStack(alignment: .leading, spacing: 0) {
+            Text(MyStrings.OpeningHours.title.uppercased())
+                .textStyle(.bodyLBold)
+                .padding(.bottom, .x1)
+
+            ForEach(hours, id: \.self) { timeSlot in
+                Text(timeSlot)
+                    .textStyle(.bodyS)
+                    .padding([.leading, .top], .x1)
+            }
+        }
+    }
 }
 
 struct LocationDetailView_Previews: PreviewProvider {
-    @Namespace static var animation
-
     static var previews: some View {
         LocationDetailView(location: Location.mockLocation, distance: 32)
     }
