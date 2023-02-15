@@ -9,94 +9,36 @@ import Model
 import SwiftUI
 
 struct LocationDetailView: View {
-    @StateObject private var vm: LocationDetailViewModel
+    @State private var isAnimatingView = false
 
-    let animation: Namespace.ID
+    let location: Location
+    var onTap: (() -> Void)?
 
     private typealias MyStrings = L10n.LocationDetail
 
-    init(
-        locationItem: LocationItem,
-        animation: Namespace.ID
-    ) {
-        _vm = StateObject(wrappedValue: LocationDetailViewModel(
-            locationItem: locationItem)
-        )
-        self.animation = animation
-    }
-
     var body: some View {
-        GeometryReader { geo in
-            ZStack(alignment: .topLeading) {
-                ScrollView {
-                    VStack(alignment: .leading, spacing: 0) {
-                        LocationCardView(
-                            location: vm.location,
-                            isFavorite: $vm.isFavorite,
-                            animation: animation,
-                            isDetail: true
-                        )
-                        .padding(.bottom, .x2)
+        VStack(alignment: .leading, spacing: 0) {
+            topSection()
 
-                        VStack(alignment: .leading, spacing: 0) {
-                            topSection()
+            aboutSection()
 
-                            aboutSection()
-                        }
-                        .offset(y: vm.isAnimatingInfoSection ? 0 : geo.size.height)
-                        .opacity(vm.isAnimatingInfoSection ? 1 : 0)
-
-                        Spacer()
-                    }
-                }
-                .ignoresSafeArea(edges: .top)
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
-                .background(Asset.Colors.Background.b100.swiftUIColor)
-
-                topNavBar()
+            Button("") {
+                onTap?()
             }
-            .transition(.identity)
+            .buttonStyle(IconButtonStyle(systemImage: .xMark))
+            .frame(maxWidth: .infinity, alignment: .center)
+            .padding(.vertical, .x2)
         }
+        .offset(y: isAnimatingView ? 0 : .defaultContentWidth * 2)
+        .opacity(isAnimatingView ? 1 : 0)
         .onAppear {
             withAnimation(.spring().delay(0.2)) {
-                vm.prepareAnimationForInfoSection()
+                isAnimatingView = true
             }
         }
         .onDisappear {
-            vm.resetAnimationForInfoSection()
+            isAnimatingView = false
         }
-    }
-
-    @ViewBuilder
-    private func topNavBar() -> some View {
-        VStack {
-            HStack {
-                Spacer()
-                    .frame(maxWidth: .infinity, alignment: .leading)
-
-                Text(vm.location.title.capitalized)
-                    .textStyle(.bodyLBoldPlay)
-                    .frame(maxWidth: .infinity, alignment: .center)
-                    .frame(minWidth: .x14)
-//                    .offset(y: vm.isShowingNavBarWithTitle ? 0 : 20)
-//                    .opacity(vm.isShowingNavBarWithTitle ? 1 : 0)
-//                    .animation(.easeInOut, value: vm.isShowingNavBarWithTitle)
-                Button("") {
-                    vm.dismissSelectedDetail()
-                }
-                .buttonStyle(IconButtonStyle(systemImage: .xMark))
-                .frame(maxWidth: .infinity, alignment: .trailing)
-            }
-            .padding([.horizontal, .top])
-            .foregroundColor(Asset.Colors.Main.accent.just())
-
-            Spacer()
-        }
-        .padding(.top)
-        .frame(maxWidth: .infinity)
-        .frame(height: 80)
-//        .background(vm.isShowingNavBarWithTitle ? Asset.Color.Background.b200.just() : .clear)
-        .background(.clear)
     }
 
     @ViewBuilder
@@ -108,27 +50,15 @@ struct LocationDetailView: View {
                     .aspectRatio(contentMode: .fill)
                     .frame(width: .x3, height: .x3)
 
-                Text(vm.location.subway)
+                Text(location.subway)
                     .textStyle(.bodyMPlay)
 
                 Spacer()
-
-                Asset.Images.Icons.figureWalk.just()
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .frame(width: .x3, height: .x3)
-
-//                Text(setDistanceToLocation())
-                Text("4 km away")
-                    .textStyle(.bodyMPlay)
             }
-            .padding(.vertical, .x2)
         }
-        .padding([.vertical, .horizontal], .x2)
-        .frame(maxWidth: .infinity)
+        .padding(.vertical, .x2)
         .frame(height: 60)
         .foregroundColor(Asset.Colors.Main.accent.just())
-        .background(Asset.Colors.Background.b100.just())
     }
 
     @ViewBuilder
@@ -138,16 +68,16 @@ struct LocationDetailView: View {
                 .textStyle(.bodyLBold)
                 .padding(.bottom, .x1)
 
-            Text(vm.location.description.replacingOccurrences(of: "<br>", with: "\n\n"))
+            Text(location.description.replacingOccurrences(of: "<br>", with: "\n\n"))
                 .textStyle(.bodyMPlay)
+                .fixedSize(horizontal: false, vertical: true)
                 .padding(.trailing, .x1)
-                .frame(maxWidth: .infinity, alignment: .leading)
+//                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
 
         }
         .padding(.x4)
-        .background(.white)
+        .background(.thinMaterial)
         .modifier(RoundedCardModifier())
-        .padding(.x2)
     }
 }
 
@@ -155,8 +85,5 @@ struct LocationDetailView_Previews: PreviewProvider {
     @Namespace static var animation
 
     static var previews: some View {
-        LocationDetailView(
-            locationItem: LocationItem.init(location: .mockLocation, isFavorite: false),
-            animation: animation)
-    }
+        LocationDetailView(location: Location.mockLocation)}
 }

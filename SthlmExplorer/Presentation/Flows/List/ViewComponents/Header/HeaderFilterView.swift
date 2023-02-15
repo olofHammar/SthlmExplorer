@@ -20,7 +20,8 @@ struct HeaderFilterView: View {
                     filterButton(locationFilter: locationFilter)
                 }
             }
-            .frame(height: .filterViewHeight)
+            .padding(.trailing, .x2)
+            .frame(height: .headerFilterHeight)
         }
         .frame(maxHeight: . infinity, alignment: .bottom)
     }

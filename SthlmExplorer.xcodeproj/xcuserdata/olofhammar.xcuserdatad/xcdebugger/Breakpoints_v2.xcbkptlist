@@ -110,8 +110,8 @@
             filePath = "SthlmExplorer/Presentation/Flows/List/ListViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "107"
-            endingLineNumber = "107"
+            startingLineNumber = "133"
+            endingLineNumber = "133"
             landmarkName = "presentDetail(for:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -142,8 +142,8 @@
             filePath = "SthlmExplorer/Presentation/Flows/Root/RootViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "30"
-            endingLineNumber = "30"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
             landmarkName = "init()"
             landmarkType = "7">
          </BreakpointContent>
@@ -158,26 +158,10 @@
             filePath = "SthlmExplorer/Presentation/Flows/Root/RootViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "52"
-            endingLineNumber = "52"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
             landmarkName = "handleViewStates(_:)"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "B790DE1B-BD22-42E3-B42A-ED88B65FBAB4"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "SthlmExplorer/Presentation/Flows/Root/RootView.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "38"
-            endingLineNumber = "38"
-            landmarkName = "body"
-            landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -192,8 +176,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "37"
             endingLineNumber = "37"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "init(locationItem:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

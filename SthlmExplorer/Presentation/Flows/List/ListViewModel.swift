@@ -23,8 +23,11 @@ final class ListViewModel: ObservableObject {
     @Published private(set) var allLocationItems: [LocationItem] = []
     @Published private(set) var locationItems: [LocationItem] = []
     @Published private(set) var travelTipItems: [TravelTipItem] = []
+    @Published private(set) var selectedLocation: LocationItem?
 
     @Published private(set) var isLoading = false
+    @Published private(set) var isPresentingLocationDetail = false
+    @Published private(set) var isHeaderSectionDismissed = false
     @Published var isPresentingExpandedSearchBar = false
 
     @Published var searchBarText = String.empty
@@ -34,10 +37,12 @@ final class ListViewModel: ObservableObject {
     private var cancellables = Set<AnyCancellable>()
 
     init() {
-        fetchListItems()
+        startListItemObservers()
     }
 
-    func fetchListItems() {
+    // MARK: - Publishers
+
+    func startListItemObservers() {
         fetchListItemsUseCase.execute()
             .receive(on: RunLoop.main)
             .assign(to: &$allLocationItems)
@@ -61,6 +66,8 @@ final class ListViewModel: ObservableObject {
             .store(in: &cancellables)
     }
 
+    // MARK: - View Helpers
+
     func favoriteBinding(_ locationItem: LocationItem) -> Binding<Bool> {
         Binding {
             withAnimation {
@@ -69,12 +76,13 @@ final class ListViewModel: ObservableObject {
         } set: { isFavorite in
             withAnimation {
                 self.favoriteLocationUseCase.toggleFavorite(locationItem.id, isOn: locationItem.isFavorite)
+                self.selectedLocation?.isFavorite.toggle()
             }
         }
     }
 
     func headerOffsetValue() -> CGFloat {
-        let navBarDifference = .headerExpanded - .headerCollapsed
+        let navBarDifference = .expandedHeaderHeight - .compressedHeaderHeight
         let offsetValue = -headerOffset < navBarDifference ? headerOffset : -navBarDifference
 
         guard !isPresentingExpandedSearchBar else {
@@ -85,12 +93,22 @@ final class ListViewModel: ObservableObject {
     }
 
     func headerOffsetProgress() -> CGFloat {
-        let navBarDifference = .headerExpanded - (.headerCollapsed + .x7)
+        let navBarDifference = .expandedHeaderHeight - (.compressedHeaderHeight + .x7)
         let topHeight = navBarDifference
         let progress = headerOffsetValue() / topHeight
 
         return progress
     }
+
+    func isSelectedLocation(_ locationItem: LocationItem) -> Bool {
+        isPresentingLocationDetail && locationItem.id == selectedLocation?.id
+    }
+
+    func opacityForLocationCard(_ locationItem: LocationItem) -> Double {
+        isPresentingLocationDetail ? (isSelectedLocation(locationItem) ? 1 : 0) : 1
+    }
+
+    // MARK: - Changing View State
 
     func shouldDisplayEmptyFavoritesState() -> Bool {
         locationItems.isEmpty && selectedFilter == .favorites
@@ -100,11 +118,31 @@ final class ListViewModel: ObservableObject {
         locationItems.isEmpty && !searchBarText.isEmpty
     }
 
-    func presentDetail(for location: LocationItem) {
-        withAnimation(.interactiveSpring(response: 0.6, dampingFraction: 0.7, blendDuration: 0.7)){
-            viewStateManager.presentSelectedDetail(for: location)
+    func presentDetail(for locationItem: LocationItem) {
+        isPresentingExpandedSearchBar = false
+        isHeaderSectionDismissed = true
+        
+        withAnimation(.easeOut(duration: 0)) {
+            isPresentingLocationDetail = true
+            viewStateManager.presentSelectedDetail(for: locationItem)
+        }
+
+        withAnimation(.interactiveSpring(response: 0.6, dampingFraction: 0.7, blendDuration: 0.7)) {
+            selectedLocation = locationItem
         }
     }
+
+    func dismissDetail() {
+        isHeaderSectionDismissed = false
+        
+        withAnimation(.interactiveSpring(response: 0.8, dampingFraction: 0.7, blendDuration: 0.7)) {
+            viewStateManager.dismissSelectedDetail()
+            isPresentingLocationDetail = false
+            selectedLocation = nil
+        }
+    }
+
+    // MARK: - List and Filter Helpers
 
     private func sortListItems(locationItems: [LocationItem], travelTips: [TravelTipItem]) -> [ListItem] {
         var listItems = [ListItem]()
@@ -147,6 +185,8 @@ final class ListViewModel: ObservableObject {
         }
     }
 }
+
+// MARK: - Enum For Combining Card Types
 
 extension ListViewModel {
     enum ListItem: Hashable, Identifiable {

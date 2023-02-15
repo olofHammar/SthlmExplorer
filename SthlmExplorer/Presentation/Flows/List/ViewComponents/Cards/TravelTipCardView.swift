@@ -12,7 +12,6 @@ struct TravelTipCardView: View {
     let title: String
     let caption: String
 
-    private let cardHeight: CGFloat = .defaultCardHeight
     private typealias Strings = L10n.TravelTipCard
 
     init(
@@ -51,7 +50,7 @@ struct TravelTipCardView: View {
             }
         }
         .frame(maxWidth: .infinity, alignment: .center)
-        .frame(height: cardHeight)
+        .frame(height: .defaultCardHeight)
         .foregroundColor(Asset.Colors.Main.accent.swiftUIColor)
         .modifier(RoundedCardModifier())
     }
@@ -79,7 +78,7 @@ struct TravelTipCardView: View {
                 .textStyle(.bodyMBoldPlay)
         }
         .multilineTextAlignment(.center)
-        .frame(width: cardHeight)
+        .frame(width: .defaultCardHeight)
     }
 
     @ViewBuilder
