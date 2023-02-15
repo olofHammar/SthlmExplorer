@@ -7,6 +7,7 @@
 
 import Combine
 import Domain
+import Location
 import Model
 import Navigation
 import ShortcutFoundation
@@ -14,6 +15,7 @@ import SwiftUI
 
 final class RootViewModel: ObservableObject {
     @Inject var viewStateManager: IViewStateManager
+    @Inject var locationManager: ILocationManager
 
     @Published var selectedTab: TabBarSelection = .list
     @Published private(set) var isPresentingDetail = false
@@ -21,6 +23,8 @@ final class RootViewModel: ObservableObject {
     private var cancellables = Set<AnyCancellable>()
 
     init() {
+        locationManager.requestLocationPermission()
+
         viewStateManager.viewStatePublisher
             .receive(on: RunLoop.main)
             .sink { (state) in

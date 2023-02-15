@@ -7,6 +7,7 @@
 
 import Combine
 import Domain
+import Location
 import Navigation
 import Model
 import ShortcutFoundation
@@ -14,6 +15,7 @@ import SwiftUI
 
 final class ListViewModel: ObservableObject {
     @Inject var viewStateManager: IViewStateManager
+    @Inject var locationManager: ILocationManager
 
     @Inject private var fetchListItemsUseCase: IFetchLocationItemsUseCase
     @Inject private var favoriteLocationUseCase: IFavoriteLocationUseCase
@@ -143,6 +145,15 @@ final class ListViewModel: ObservableObject {
     }
 
     // MARK: - List and Filter Helpers
+    func distanceToLocation(_ locationItem: LocationItem) -> Int? {
+        let distance = locationManager.calculateDistance(to: (locationItem.location.latitude, locationItem.location.longitude))
+
+        guard distance != 0 else {
+            return nil
+        }
+
+        return distance
+    }
 
     private func sortListItems(locationItems: [LocationItem], travelTips: [TravelTipItem]) -> [ListItem] {
         var listItems = [ListItem]()

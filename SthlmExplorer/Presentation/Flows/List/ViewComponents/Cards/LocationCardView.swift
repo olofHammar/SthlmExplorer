@@ -72,7 +72,7 @@ struct LocationCardView: View {
 
                 Text(type.rawValue.uppercased())
                     .textStyle(.bodySBold)
-                    .foregroundColor(.gray)
+                    .foregroundColor(Asset.Colors.Main.gray200.swiftUIColor)
             }
             .padding(.top, .x1)
         }

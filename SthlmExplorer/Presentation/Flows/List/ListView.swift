@@ -45,6 +45,7 @@ struct ListView: View {
 
                 LocationDetailView(
                     location: locationItem.location,
+                    distance: vm.distanceToLocation(locationItem),
                     onTap: { vm.dismissDetail() }
                 )
             }

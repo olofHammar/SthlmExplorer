@@ -25,7 +25,7 @@ struct ExpandableSearchBar: View {
             HStack(spacing: 0) {
                 if isExpanded {
                     if isAnimating {
-                        Asset.Images.Icons.magnifyingglass.swiftUIImage
+                        Image(systemImage: .magnifyingGlass)
                             .matchedGeometryEffect(id: String.searchBarIconID, in: searchBarAnimation)
                             .padding(.leading, .x1)
                             .foregroundColor(Asset.Colors.Main.gray200.swiftUIColor)
@@ -63,7 +63,7 @@ struct ExpandableSearchBar: View {
                     .matchedGeometryEffect(id: String.searchBarButtonID, in: searchBarAnimation)
                     .buttonStyle(IconButtonStyle(systemImage: .magnifyingGlass))
                     .overlay {
-                        Asset.Images.Icons.magnifyingglass.swiftUIImage
+                        Image(systemImage: .magnifyingGlass)
                             .matchedGeometryEffect(id: String.searchBarIconID, in: searchBarAnimation)
                             .opacity(0)
                             .allowsHitTesting(false)
