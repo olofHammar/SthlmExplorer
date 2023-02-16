@@ -17,7 +17,7 @@ final class ListViewModel: ObservableObject {
     @Inject var viewStateManager: IViewStateManager
     @Inject var locationManager: ILocationManager
 
-    @Inject private var fetchListItemsUseCase: IFetchLocationItemsUseCase
+    @Inject private var fetchLocationItemsUseCase: IFetchLocationItemsUseCase
     @Inject private var favoriteLocationUseCase: IFavoriteLocationUseCase
     @Inject private var fetchTravelTipItemsUseCase: IFetchTravelTipItemsUseCase
 
@@ -45,7 +45,7 @@ final class ListViewModel: ObservableObject {
     // MARK: - Publishers
 
     func startListItemObservers() {
-        fetchListItemsUseCase.execute()
+        fetchLocationItemsUseCase.execute()
             .receive(on: RunLoop.main)
             .assign(to: &$allLocationItems)
 

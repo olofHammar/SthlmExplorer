@@ -49,6 +49,12 @@ internal enum Asset {
     }
   }
   internal enum Images {
+    internal enum AnnotationsIcons {
+      internal static let buildingColumns = ImageAsset(name: "Images/AnnotationsIcons/building.columns")
+      internal static let heart = ImageAsset(name: "Images/AnnotationsIcons/heart")
+      internal static let mountain2 = ImageAsset(name: "Images/AnnotationsIcons/mountain.2")
+      internal static let rosette = ImageAsset(name: "Images/AnnotationsIcons/rosette")
+    }
     internal enum Home {
       internal static let logo = ImageAsset(name: "Images/Home/logo")
     }
