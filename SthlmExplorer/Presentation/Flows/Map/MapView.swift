@@ -7,6 +7,7 @@
 
 import MapKit
 import ShortcutFoundation
+import ShortcutSwiftUI
 import SwiftUI
 
 struct MapView: View {
