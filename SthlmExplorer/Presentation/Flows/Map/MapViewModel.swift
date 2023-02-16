@@ -14,6 +14,7 @@ import SwiftUI
 
 final class MapViewModel: ObservableObject {
     @Inject private var fetchLocationItemsUseCase: IFetchLocationItemsUseCase
+    @Inject private var favoriteLocationUseCase: IFavoriteLocationUseCase
     @Inject private var viewStateManager: IViewStateManager
 
     @Published private(set) var locationAnnotations: [Annotation] = []
@@ -25,6 +26,19 @@ final class MapViewModel: ObservableObject {
 
     init() {
         startMapObserevers()
+    }
+
+    func favoriteBinding(_ locationItem: LocationItem) -> Binding<Bool> {
+        Binding {
+            withAnimation {
+                self.favoriteLocationUseCase.isFavorite(locationItem.id)
+            }
+        } set: { isFavorite in
+            withAnimation {
+                self.favoriteLocationUseCase.toggleFavorite(locationItem.id, isOn: locationItem.isFavorite)
+                self.selectedAnnotation?.annotationItem.isFavorite.toggle()
+            }
+        }
     }
 
     func centerUserLocation() {

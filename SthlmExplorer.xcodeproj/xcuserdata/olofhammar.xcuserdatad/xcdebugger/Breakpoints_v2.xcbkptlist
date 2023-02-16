@@ -158,8 +158,8 @@
             filePath = "SthlmExplorer/Presentation/Flows/Map/MapViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "142"
-            endingLineNumber = "142"
+            startingLineNumber = "156"
+            endingLineNumber = "156"
             landmarkName = "startMapObserevers()"
             landmarkType = "7">
          </BreakpointContent>

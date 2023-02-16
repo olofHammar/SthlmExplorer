@@ -50,7 +50,7 @@ struct MapView: View {
     private func selectedLocationSheetView(for locationItem: LocationItem) -> some View {
         VStack(spacing: .x2) {
             LocationCardView(
-               isFavorite: .constant(false),
+                isFavorite: vm.favoriteBinding(locationItem),
                location: locationItem.location,
                animation: mapAnimation
             )
@@ -72,7 +72,7 @@ struct MapView: View {
         ScrollView(showsIndicators: false) {
             VStack {
                 LocationCardView(
-                    isFavorite: .constant(false),
+                    isFavorite: vm.favoriteBinding(locationItem),
                     location: locationItem.location,
                     animation: mapAnimation
                 )

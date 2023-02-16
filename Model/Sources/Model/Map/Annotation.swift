@@ -9,7 +9,7 @@ import Foundation
 import MapKit
 
 public class Annotation: MKPointAnnotation, Identifiable {
-    public let annotationItem: LocationItem
+    public var annotationItem: LocationItem
 
     public init(annotationItem: LocationItem) {
         self.annotationItem = annotationItem
