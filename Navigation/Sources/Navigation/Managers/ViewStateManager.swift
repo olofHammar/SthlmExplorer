@@ -12,9 +12,9 @@ import Model
 public protocol IViewStateManager {
     var viewStatePublisher: Published<ViewState>.Publisher { get }
 
-    func presentSelectedDetail(for location: LocationItem)
+    func presentSelectedDetail()
     func dismissSelectedDetail()
-    func presentSelectedSheet(for location: LocationItem)
+    func presentSelectedSheet()
     func dismissSelectedSheet()
 }
 
@@ -30,16 +30,16 @@ public final class ViewStateManager: NSObject, ObservableObject, IViewStateManag
         cancellables.forEach { $0.cancel() }
     }
 
-    public func presentSelectedDetail(for location: LocationItem) {
-        self.viewState = .presentedLocationDetail(location)
+    public func presentSelectedDetail() {
+        self.viewState = .presentedLocationDetail
     }
 
     public func dismissSelectedDetail() {
         self.viewState = .dismissedLocationDetail
     }
 
-    public func presentSelectedSheet(for location: LocationItem) {
-        self.viewState = .presentedLocationSheet(location)
+    public func presentSelectedSheet() {
+        self.viewState = .presentedLocationSheet
     }
 
     public func dismissSelectedSheet() {

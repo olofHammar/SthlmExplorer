@@ -58,7 +58,7 @@ extension MapViewRepresentable {
         }
 
         func mapView(_ mapView: MKMapView, didDeselect view: MKAnnotationView) {
-            viewModel.mapView(mapView, didSelect: view)
+            viewModel.mapView(mapView, didDeselect: view)
         }
 
         func mapView(_ mapView: MKMapView, clusterAnnotationForMemberAnnotations memberAnnotations: [MKAnnotation]) -> MKClusterAnnotation {

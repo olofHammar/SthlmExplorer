@@ -44,18 +44,13 @@ struct LocationDetailView: View {
             .buttonStyle(IconButtonStyle(systemImage: .xMark))
             .frame(maxWidth: .infinity, alignment: .center)
             .padding(.vertical, .x2)
+            .padding(.bottom, .x2)
         }
         .foregroundColor(Asset.Colors.Main.primary.swiftUIColor)
         .offset(y: isAnimatingView ? 0 : .defaultContentWidth * 2)
         .opacity(isAnimatingView ? 1 : 0)
-        .onAppear {
-            withAnimation(.spring().delay(0.2)) {
-                isAnimatingView = true
-            }
-        }
-        .onDisappear {
-            isAnimatingView = false
-        }
+        .onAppear(perform: startOnAppearAnimation)
+        .onDisappear(perform: resetAnimationValues)
     }
 
     @ViewBuilder
@@ -167,6 +162,16 @@ struct LocationDetailView: View {
                     .padding([.leading, .top], .x1)
             }
         }
+    }
+
+    private func startOnAppearAnimation() {
+        withAnimation(.spring().delay(0.2)) {
+            isAnimatingView = true
+        }
+    }
+
+    private func resetAnimationValues() {
+        isAnimatingView = false
     }
 }
 

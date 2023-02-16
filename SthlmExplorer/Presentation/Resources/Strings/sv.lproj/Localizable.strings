@@ -30,7 +30,8 @@
 
 // MARK: - MapSheet
 "mapSheet.getDirections" = "Få vägbeskrivningar";
-"mapSheet.info.title" = "Läs mer";
+"mapSheet.info.readMore" = "Läs mer";
+"mapSheet.info.close" = "Stäng";
 
 // MARK: - LocationFilters
 "locationFilter.all.title" = "ALLA";

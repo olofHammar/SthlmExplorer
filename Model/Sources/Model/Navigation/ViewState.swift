@@ -9,8 +9,8 @@ import Foundation
 
 public enum ViewState {
     case initial
-    case presentedLocationDetail(_ location: LocationItem)
+    case presentedLocationDetail
     case dismissedLocationDetail
-    case presentedLocationSheet(_ location: LocationItem)
+    case presentedLocationSheet
     case dismissedLocationSheet
 }

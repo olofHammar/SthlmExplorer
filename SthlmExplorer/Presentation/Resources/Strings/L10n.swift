@@ -129,8 +129,10 @@ internal enum L10n {
     /// Få vägbeskrivningar
     internal static let getDirections = L10n.tr("Localizable", "mapSheet.getDirections", fallback: "Få vägbeskrivningar")
     internal enum Info {
+      /// Stäng
+      internal static let close = L10n.tr("Localizable", "mapSheet.info.close", fallback: "Stäng")
       /// Läs mer
-      internal static let title = L10n.tr("Localizable", "mapSheet.info.title", fallback: "Läs mer")
+      internal static let readMore = L10n.tr("Localizable", "mapSheet.info.readMore", fallback: "Läs mer")
     }
   }
   internal enum Root {

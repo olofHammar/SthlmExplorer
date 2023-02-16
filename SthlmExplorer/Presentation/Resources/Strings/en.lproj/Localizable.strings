@@ -30,7 +30,8 @@
 
 // MARK: - MapSheet
 "mapSheet.getDirections" = "Get Directions";
-"mapSheet.info.title" = "Learn More";
+"mapSheet.info.readMore" = "Read More";
+"mapSheet.info.close" = "Close";
 
 // MARK: - LocationFilters
 "locationFilter.all.title" = "ALL";

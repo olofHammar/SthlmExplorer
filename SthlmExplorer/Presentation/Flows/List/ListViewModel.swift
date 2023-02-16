@@ -126,7 +126,7 @@ final class ListViewModel: ObservableObject {
         
         withAnimation(.easeOut(duration: 0)) {
             isPresentingLocationDetail = true
-            viewStateManager.presentSelectedDetail(for: locationItem)
+            viewStateManager.presentSelectedDetail()
         }
 
         withAnimation(.interactiveSpring(response: 0.6, dampingFraction: 0.7, blendDuration: 0.7)) {

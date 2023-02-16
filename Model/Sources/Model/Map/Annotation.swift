@@ -8,7 +8,7 @@
 import Foundation
 import MapKit
 
-public class Annotation: MKPointAnnotation {
+public class Annotation: MKPointAnnotation, Identifiable {
     public let annotationItem: LocationItem
 
     public init(annotationItem: LocationItem) {

@@ -37,12 +37,12 @@ final class RootViewModel: ObservableObject {
 private extension RootViewModel {
     func handleViewStates(_ state: ViewState) {
         switch state {
-        case .presentedLocationDetail:
+        case .presentedLocationDetail, .presentedLocationSheet:
             withAnimation(.easeOut(duration: 0)) {
                 self.isPresentingDetail = true
             }
 
-        case .dismissedLocationDetail:
+        case .dismissedLocationDetail, .dismissedLocationSheet:
             withAnimation(.easeIn(duration: 0)) {
                 self.isPresentingDetail = false
             }

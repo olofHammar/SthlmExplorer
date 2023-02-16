@@ -8,17 +8,20 @@
 import Domain
 import MapKit
 import Model
+import Navigation
 import ShortcutFoundation
 import SwiftUI
 
 final class MapViewModel: ObservableObject {
     @Inject private var fetchLocationItemsUseCase: IFetchLocationItemsUseCase
+    @Inject private var viewStateManager: IViewStateManager
 
     @Published private(set) var locationAnnotations: [Annotation] = []
-    @Published private(set) var selectedAnnotation: Annotation?
+    @Published var selectedAnnotation: Annotation?
 
     @Published private(set) var isCenteringUserLocation = false
     @Published private(set) var isPresentingDirections = false
+    @Published private(set) var isPresentingDetail = false
 
     init() {
         startMapObserevers()
@@ -29,7 +32,9 @@ final class MapViewModel: ObservableObject {
     }
 
     func updateMapView(_ view: MKMapView) {
-//        isCenteringUserLocation = false
+        DispatchQueue.main.async {
+            self.isCenteringUserLocation = false
+        }
 
         let currentMapAnnotations = view.annotations.compactMap { $0 as? Annotation }
 
@@ -85,7 +90,12 @@ final class MapViewModel: ObservableObject {
             return
         }
 
-        self.selectedAnnotation = annotation
+        DispatchQueue.main.async {
+            withAnimation {
+                self.selectedAnnotation = annotation
+                self.viewStateManager.presentSelectedSheet()
+            }
+        }
     }
 
     func mapView(_ mapView: MKMapView, didDeselect view: MKAnnotationView) {
@@ -102,8 +112,27 @@ final class MapViewModel: ObservableObject {
         return MKClusterAnnotation(memberAnnotations: memberAnnotations)
     }
 
-    private func deselectAnnotation() {
-        selectedAnnotation = nil
+    func deselectAnnotation() {
+        DispatchQueue.main.async {
+            self.selectedAnnotation = nil
+        }
+
+        DispatchQueue.main.async {
+            withAnimation(.easeIn) {
+                self.viewStateManager.dismissSelectedSheet()
+            }
+        }
+    }
+
+    func presentSelectedDetail() {
+        withAnimation {
+            isPresentingDetail = true
+        }
+    }
+
+    func dismissSelectedDetail() {
+        deselectAnnotation()
+        isPresentingDetail = false
     }
 
     private func startMapObserevers() {
