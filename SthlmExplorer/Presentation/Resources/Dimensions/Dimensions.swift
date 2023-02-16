@@ -14,7 +14,7 @@ extension CGFloat {
     static var defaultContentWidth: CGFloat = 300
     static var largeContentWidth: CGFloat = 340
     static var expandedHeaderHeight: CGFloat = 220
-    static var compressedHeaderHeight: CGFloat = 145
+    static var compressedHeaderHeight: CGFloat = 160
     static var headerTitleHeight: CGFloat = 90
     static var headerFilterHeight: CGFloat { .x7 }
     static var defaultCardHeight: CGFloat = 250

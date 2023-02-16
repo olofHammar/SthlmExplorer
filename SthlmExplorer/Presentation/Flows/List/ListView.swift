@@ -75,8 +75,8 @@ struct ListView: View {
 
             HeaderFilterView(selectedFilter: $vm.selectedFilter, animation: listAnimation)
         }
-        .padding([.leading, .top], .x2)
-        .frame(height: .expandedHeaderHeight)
+        .frame(maxHeight: .expandedHeaderHeight)
+        .padding(.leading, .x2)
         .background(
             Asset.Colors.Background.b100.swiftUIColor
                 .padding(.horizontal, -.x2)

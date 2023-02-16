@@ -3,7 +3,7 @@ output_dir: SthlmExplorer/Presentation/Resources/
 
 strings:
   inputs:
-    - Strings/Sv.lproj
+    - Strings/En.lproj
   outputs:
     templateName: structured-swift5
     output: Strings/L10n.swift

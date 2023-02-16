@@ -43,7 +43,7 @@
 "locationFilter.explore.headerCaption" = "Explore";
 "locationFilter.landmark.headerTitle" = "Landmarks";
 "locationFilter.scenicView.title" = "SCENIC VIEWS";
-"locationFilter.scenicView.searchKey" = "scenic view";
+"locationFilter.scenicView.searchKey" = "scenicview";
 "locationFilter.scenicView.headerTitle" = "Scenic Views";
 "locationFilter.museum.title" = "MUSEUMS";
 "locationFilter.museum.searchKey" = "museum";

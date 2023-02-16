@@ -51,15 +51,14 @@ struct MapView: View {
         VStack(spacing: .x2) {
             LocationCardView(
                 isFavorite: vm.favoriteBinding(locationItem),
-               location: locationItem.location,
-               animation: mapAnimation
+                location: locationItem.location,
+                animation: mapAnimation
             )
 
             LocationSheetBottomView(
                 onExpand: { vm.presentSelectedDetail() },
-               onDismiss: { vm.deselectAnnotation() }
+                onDismiss: { vm.deselectAnnotation() }
             )
-
         }
         .padding([.top, .horizontal], .x2)
         .padding(.bottom, .x8)
