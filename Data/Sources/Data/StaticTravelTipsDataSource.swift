@@ -17,8 +17,8 @@ public struct StaticTravelTipsDataSource: ITravelTipDataSource {
         let subject = CurrentValueSubject<[TravelTipItem], Never>([])
 
         do {
-            let locations: [TravelTipItem] = try locationsFromJsonFixture("TravelTips")
-            subject.send(locations)
+            let travelTips: [TravelTipItem] = try locationsFromJsonFixture("TravelTips")
+            subject.send(travelTips)
         } catch ResourceError.namedResourceNotInBundle(let resourceName) {
             print("Error: The resource \(resourceName) could not be found in the bundle.")
         } catch {

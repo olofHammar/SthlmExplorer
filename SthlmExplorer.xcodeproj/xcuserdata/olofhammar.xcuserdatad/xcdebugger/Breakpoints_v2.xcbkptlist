@@ -352,5 +352,69 @@
             endingLineNumber = "152">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "DD4A80CC-AD40-4A60-9918-C4B31AF5EB37"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Data/Sources/Data/StaticTravelTipsDataSource.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "21"
+            endingLineNumber = "21"
+            landmarkName = "getTravelTips()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "DD4A80CC-AD40-4A60-9918-C4B31AF5EB37 - 6d13deb696603bd1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Data.StaticTravelTipsDataSource.getTravelTips() -&gt; Combine.AnyPublisher&lt;Swift.Array&lt;Model.TravelTipItem&gt;, Swift.Never&gt;"
+                  moduleName = "DataTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/olofhammar/xCodeProjects/SthlmExplorer/Data/Sources/Data/StaticTravelTipsDataSource.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "21"
+                  endingLineNumber = "21"
+                  offsetFromSymbolStart = "256">
+               </Location>
+               <Location
+                  uuid = "DD4A80CC-AD40-4A60-9918-C4B31AF5EB37 - 46ad6806731dc631"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Data.StaticTravelTipsDataSource.getTravelTips() -&gt; Combine.AnyPublisher&lt;Swift.Array&lt;Model.TravelTipItem&gt;, Swift.Never&gt;"
+                  moduleName = "DomainTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/olofhammar/xCodeProjects/SthlmExplorer/Data/Sources/Data/StaticTravelTipsDataSource.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "21"
+                  endingLineNumber = "21"
+                  offsetFromSymbolStart = "256">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7647C1D0-477A-49E2-B2FF-11D0DE525DB7"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Domain/Sources/Domain/StaticFetchTravelTipItemsUseCase.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "22"
+            endingLineNumber = "22"
+            landmarkName = "execute()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>
