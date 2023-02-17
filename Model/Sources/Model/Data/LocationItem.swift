@@ -8,11 +8,22 @@
 import Foundation
 import CoreLocation
 
+/// A struct that represents a location item that has an identifier, a location, and an isFavorite flag.
 public struct LocationItem: Identifiable, Hashable {
+    /// The identifier of the location item, derived from its location ID.
     public var id: String { location.id }
+
+    /// The location of the item.
     public let location: Location
+
+    /// A flag indicating whether the location item is marked as a favorite or not.
     public var isFavorite: Bool
 
+    /// Creates a new location item.
+    ///
+    /// - Parameters:
+    ///   - location: The location of the item.
+    ///   - isFavorite: A flag indicating whether the location item is marked as a favorite or not.
     public init(
         location: Location,
         isFavorite: Bool
@@ -22,18 +33,51 @@ public struct LocationItem: Identifiable, Hashable {
     }
 }
 
+/// A struct that represents a location that has an identifier, a title, a description, a type, an image URL, a subway line, a set of tags, additional information, and coordinates.
 public struct Location: Codable, Identifiable, Hashable {
+    /// The identifier of the location.
     public let id: String
+
+    /// The title of the location.
     public let title: String
+
+    /// The description of the location.
     public let description: String
+
+    /// The type of the location.
     public let type: LocationType
+
+    /// The URL of the image of the location.
     public let image: String
+
+    /// The subway line closest to the location.
     public let subway: String
+
+    /// The set of tags associated with the location.
     public let tags: [String]
+
+    /// Additional information about the location.
     public let info: [String]?
+
+    /// The latitude of the location.
     public let latitude: Double
+
+    /// The longitude of the location.
     public let longitude: Double
 
+    /// Creates a new location.
+    ///
+    /// - Parameters:
+    ///   - id: The identifier of the location.
+    ///   - title: The title of the location.
+    ///   - description: The description of the location.
+    ///   - type: The type of the location.
+    ///   - image: The URL of the image of the location.
+    ///   - subway: The subway line that serves the location.
+    ///   - tags: The set of tags associated with the location.
+    ///   - info: Additional information about the location.
+    ///   - latitude: The latitude of the location.
+    ///   - longitude: The longitude of the location.
     public init(
         id: String,
         title: String,
@@ -58,16 +102,19 @@ public struct Location: Codable, Identifiable, Hashable {
         self.longitude = longitude
     }
 
+    /// The type of a location, represented as a string.
     public enum LocationType: String, Codable {
         case scenicView
         case museum
         case landmark
     }
 
+    /// Checks if two locations are equal by comparing their identifiers.
     public static func == (lhs: Location, rhs: Location) -> Bool {
         return lhs.id == rhs.id
     }
 
+    /// Returns a hash value for the location.
     public func hash(into hasher: inout Hasher) {
         return hasher.combine(id)
     }

@@ -12,41 +12,41 @@ import Foundation
 internal enum L10n {
   internal enum Home {
     internal enum EmptyList {
-      /// Inga matchande platser hittades
-      internal static let title = L10n.tr("Localizable", "home.emptyList.title", fallback: "Inga matchande platser hittades")
+      /// No matching locations found
+      internal static let title = L10n.tr("Localizable", "home.emptyList.title", fallback: "No matching locations found")
       internal enum Favorites {
-        /// Inga platser har lagts till 
-        ///  till din favoritlista än
-        internal static let message = L10n.tr("Localizable", "home.emptyList.favorites.message", fallback: "Inga platser har lagts till \n till din favoritlista än")
+        /// No locations have been added 
+        ///  to your favorite list yet
+        internal static let message = L10n.tr("Localizable", "home.emptyList.favorites.message", fallback: "No locations have been added \n to your favorite list yet")
       }
     }
     internal enum SearchBar {
-      /// Sök efter platser
-      internal static let title = L10n.tr("Localizable", "home.searchBar.title", fallback: "Sök efter platser")
+      /// Search Locations
+      internal static let title = L10n.tr("Localizable", "home.searchBar.title", fallback: "Search Locations")
     }
     internal enum Welcome {
-      /// Här hittar du platser värda ett besök när du utforskar Stockholms stad
-      internal static let message = L10n.tr("Localizable", "home.welcome.message", fallback: "Här hittar du platser värda ett besök när du utforskar Stockholms stad")
-      /// Välkommen till Stockholm Explorer
-      internal static let title = L10n.tr("Localizable", "home.welcome.title", fallback: "Välkommen till Stockholm Explorer")
+      /// Here you will find locations worth a visit when exploring the city of Stockholm
+      internal static let message = L10n.tr("Localizable", "home.welcome.message", fallback: "Here you will find locations worth a visit when exploring the city of Stockholm")
+      /// Welcome to Stockholm Explorer
+      internal static let title = L10n.tr("Localizable", "home.welcome.title", fallback: "Welcome to Stockholm Explorer")
     }
   }
   internal enum LocationDetail {
     internal enum About {
-      /// Om
-      internal static let title = L10n.tr("Localizable", "locationDetail.about.title", fallback: "Om")
+      /// About
+      internal static let title = L10n.tr("Localizable", "locationDetail.about.title", fallback: "About")
     }
     internal enum Button {
-      /// En kort historia
-      internal static let history = L10n.tr("Localizable", "locationDetail.button.history", fallback: "En kort historia")
+      /// A Brief History
+      internal static let history = L10n.tr("Localizable", "locationDetail.button.history", fallback: "A Brief History")
     }
     internal enum OpeningHours {
-      /// Öppettider
-      internal static let title = L10n.tr("Localizable", "locationDetail.openingHours.title", fallback: "Öppettider")
+      /// Opening hours
+      internal static let title = L10n.tr("Localizable", "locationDetail.openingHours.title", fallback: "Opening hours")
     }
     internal enum Tags {
-      /// Bra om du gillar
-      internal static let title = L10n.tr("Localizable", "locationDetail.tags.title", fallback: "Bra om du gillar")
+      /// Great if you like
+      internal static let title = L10n.tr("Localizable", "locationDetail.tags.title", fallback: "Great if you like")
     }
     internal enum Walk {
       /// N/A
@@ -59,78 +59,80 @@ internal enum L10n {
   }
   internal enum LocationFilter {
     internal enum All {
-      /// Välkommen till
-      internal static let headerCaption = L10n.tr("Localizable", "locationFilter.all.headerCaption", fallback: "Välkommen till")
+      /// Welcome to
+      internal static let headerCaption = L10n.tr("Localizable", "locationFilter.all.headerCaption", fallback: "Welcome to")
       /// Stockholm
       internal static let headerTitle = L10n.tr("Localizable", "locationFilter.all.headerTitle", fallback: "Stockholm")
-      /// alla
-      internal static let searchKey = L10n.tr("Localizable", "locationFilter.all.searchKey", fallback: "alla")
-      /// ALLA
-      internal static let title = L10n.tr("Localizable", "locationFilter.all.title", fallback: "ALLA")
+      /// all
+      internal static let searchKey = L10n.tr("Localizable", "locationFilter.all.searchKey", fallback: "all")
+      /// ALL
+      internal static let title = L10n.tr("Localizable", "locationFilter.all.title", fallback: "ALL")
     }
     internal enum Explore {
-      /// Utforska
-      internal static let headerCaption = L10n.tr("Localizable", "locationFilter.explore.headerCaption", fallback: "Utforska")
+      /// Explore
+      internal static let headerCaption = L10n.tr("Localizable", "locationFilter.explore.headerCaption", fallback: "Explore")
     }
     internal enum Favorites {
-      /// Dina
-      internal static let headerCaption = L10n.tr("Localizable", "locationFilter.favorites.headerCaption", fallback: "Dina")
-      /// Favoriter
-      internal static let headerTitle = L10n.tr("Localizable", "locationFilter.favorites.headerTitle", fallback: "Favoriter")
-      /// favoriter
-      internal static let searchKey = L10n.tr("Localizable", "locationFilter.favorites.searchKey", fallback: "favoriter")
-      /// FAVORITER
-      internal static let title = L10n.tr("Localizable", "locationFilter.favorites.title", fallback: "FAVORITER")
+      /// Your
+      internal static let headerCaption = L10n.tr("Localizable", "locationFilter.favorites.headerCaption", fallback: "Your")
+      /// Favorites
+      internal static let headerTitle = L10n.tr("Localizable", "locationFilter.favorites.headerTitle", fallback: "Favorites")
+      /// favorite
+      internal static let searchKey = L10n.tr("Localizable", "locationFilter.favorites.searchKey", fallback: "favorite")
+      /// FAVORITES
+      internal static let title = L10n.tr("Localizable", "locationFilter.favorites.title", fallback: "FAVORITES")
     }
     internal enum Landmark {
-      /// Landmärken
-      internal static let headerTitle = L10n.tr("Localizable", "locationFilter.landmark.headerTitle", fallback: "Landmärken")
+      /// Landmarks
+      internal static let headerTitle = L10n.tr("Localizable", "locationFilter.landmark.headerTitle", fallback: "Landmarks")
       /// landmark
       internal static let searchKey = L10n.tr("Localizable", "locationFilter.landmark.searchKey", fallback: "landmark")
-      /// LANDMÄRKEN
-      internal static let title = L10n.tr("Localizable", "locationFilter.landmark.title", fallback: "LANDMÄRKEN")
+      /// LANDMARKS
+      internal static let title = L10n.tr("Localizable", "locationFilter.landmark.title", fallback: "LANDMARKS")
     }
     internal enum Museum {
-      /// Museum
-      internal static let headerTitle = L10n.tr("Localizable", "locationFilter.museum.headerTitle", fallback: "Museum")
+      /// Museums
+      internal static let headerTitle = L10n.tr("Localizable", "locationFilter.museum.headerTitle", fallback: "Museums")
       /// museum
       internal static let searchKey = L10n.tr("Localizable", "locationFilter.museum.searchKey", fallback: "museum")
-      /// MUSEUM
-      internal static let title = L10n.tr("Localizable", "locationFilter.museum.title", fallback: "MUSEUM")
+      /// MUSEUMS
+      internal static let title = L10n.tr("Localizable", "locationFilter.museum.title", fallback: "MUSEUMS")
     }
     internal enum ScenicView {
-      /// Utsiktsplatser
-      internal static let headerTitle = L10n.tr("Localizable", "locationFilter.scenicView.headerTitle", fallback: "Utsiktsplatser")
-      /// scenicView
-      internal static let searchKey = L10n.tr("Localizable", "locationFilter.scenicView.searchKey", fallback: "scenicView")
-      /// UTSIKSPLATSER
-      internal static let title = L10n.tr("Localizable", "locationFilter.scenicView.title", fallback: "UTSIKSPLATSER")
+      /// Scenic Views
+      internal static let headerTitle = L10n.tr("Localizable", "locationFilter.scenicView.headerTitle", fallback: "Scenic Views")
+      /// scenicview
+      internal static let searchKey = L10n.tr("Localizable", "locationFilter.scenicView.searchKey", fallback: "scenicview")
+      /// SCENIC VIEWS
+      internal static let title = L10n.tr("Localizable", "locationFilter.scenicView.title", fallback: "SCENIC VIEWS")
     }
   }
   internal enum Map {
     internal enum Directions {
       internal enum Completed {
-        /// Du har nått din destination
-        internal static let message = L10n.tr("Localizable", "map.directions.completed.message", fallback: "Du har nått din destination")
+        /// You have reached your destination
+        internal static let message = L10n.tr("Localizable", "map.directions.completed.message", fallback: "You have reached your destination")
       }
       internal enum LocationNotAvailable {
-        /// Uppdatera din platsbehörighet för att aktivera vägbeskrivningar.
-        internal static let message = L10n.tr("Localizable", "map.directions.locationNotAvailable.message", fallback: "Uppdatera din platsbehörighet för att aktivera vägbeskrivningar.")
+        /// Update you location persmission to enable directions.
+        internal static let message = L10n.tr("Localizable", "map.directions.locationNotAvailable.message", fallback: "Update you location persmission to enable directions.")
       }
       internal enum Route {
-        /// Din destination är %@ min bort
+        /// Your destination is %@ min away
         internal static func message(_ p1: Any) -> String {
-          return L10n.tr("Localizable", "map.directions.route.message", String(describing: p1), fallback: "Din destination är %@ min bort")
+          return L10n.tr("Localizable", "map.directions.route.message", String(describing: p1), fallback: "Your destination is %@ min away")
         }
       }
     }
   }
   internal enum MapSheet {
-    /// Få vägbeskrivningar
-    internal static let getDirections = L10n.tr("Localizable", "mapSheet.getDirections", fallback: "Få vägbeskrivningar")
+    /// Get Directions
+    internal static let getDirections = L10n.tr("Localizable", "mapSheet.getDirections", fallback: "Get Directions")
     internal enum Info {
-      /// Läs mer
-      internal static let title = L10n.tr("Localizable", "mapSheet.info.title", fallback: "Läs mer")
+      /// Close
+      internal static let close = L10n.tr("Localizable", "mapSheet.info.close", fallback: "Close")
+      /// Read More
+      internal static let readMore = L10n.tr("Localizable", "mapSheet.info.readMore", fallback: "Read More")
     }
   }
   internal enum Root {
@@ -141,14 +143,14 @@ internal enum L10n {
     internal static let title = L10n.tr("Localizable", "root.title", fallback: "Root view")
   }
   internal enum Tabbar {
-    /// LISTA
-    internal static let list = L10n.tr("Localizable", "tabbar.list", fallback: "LISTA")
-    /// KARTA
-    internal static let map = L10n.tr("Localizable", "tabbar.map", fallback: "KARTA")
+    /// LIST
+    internal static let list = L10n.tr("Localizable", "tabbar.list", fallback: "LIST")
+    /// MAP
+    internal static let map = L10n.tr("Localizable", "tabbar.map", fallback: "MAP")
   }
   internal enum TravelTipCard {
-    /// Resetips
-    internal static let title = L10n.tr("Localizable", "travelTipCard.title", fallback: "Resetips")
+    /// Travel Tip
+    internal static let title = L10n.tr("Localizable", "travelTipCard.title", fallback: "Travel Tip")
   }
 }
 // swiftlint:enable explicit_type_interface function_parameter_count identifier_name line_length

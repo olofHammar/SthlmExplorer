@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+/// An Enum which represents all avaliable style for setting `Text` including `Font`, `Size` and `Weight`.
 enum TextStyle {
     case headerOne, headerTwo, headerThree, headerFour
     case headerOnePlay, headerTwoPlay, headerThreePlay, headerFourPlay

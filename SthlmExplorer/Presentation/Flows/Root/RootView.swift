@@ -11,9 +11,6 @@ import SwiftUI
 struct RootView: View {
     @InjectObject var vm: RootViewModel
 
-    private typealias MyStrings = L10n.Home.Welcome
-    private typealias MyColors = Asset.Colors.Main
-
     init() {
         UITabBar.appearance().isHidden = true
     }
@@ -31,6 +28,7 @@ struct RootView: View {
             TabBarView(tabBarSelection: $vm.selectedTab)
                 .padding(.bottom, .x4)
                 .ignoresSafeArea(.keyboard)
+                .opacity(vm.isPresentingDetail ? 0 : 1)
         }
         .ignoresSafeArea()
     }

@@ -13,7 +13,6 @@ struct ExpandableSearchBar: View {
     @Binding var searchText: String
 
     @State private var isAnimating = false
-    
     @FocusState private var isFocused: Bool
     @Namespace private var searchBarAnimation
 
@@ -26,7 +25,7 @@ struct ExpandableSearchBar: View {
             HStack(spacing: 0) {
                 if isExpanded {
                     if isAnimating {
-                        Asset.Images.Icons.magnifyingglass.swiftUIImage
+                        Image(systemImage: .magnifyingGlass)
                             .matchedGeometryEffect(id: String.searchBarIconID, in: searchBarAnimation)
                             .padding(.leading, .x1)
                             .foregroundColor(Asset.Colors.Main.gray200.swiftUIColor)
@@ -42,7 +41,9 @@ struct ExpandableSearchBar: View {
                     }
 
                     Button(String.empty) {
-                        minimizeSearchBar()
+                        withAnimation {
+                            isExpanded = false
+                        }
                     }
                     .matchedGeometryEffect(id: String.searchBarButtonID, in: searchBarAnimation)
                     .buttonStyle(IconButtonStyle(systemImage: .xMark))
@@ -55,12 +56,14 @@ struct ExpandableSearchBar: View {
                         .frame(width: 0, height: 0)
 
                     Button(String.empty) {
-                        expandSearchBar()
+                        withAnimation {
+                            isExpanded = true
+                        }
                     }
                     .matchedGeometryEffect(id: String.searchBarButtonID, in: searchBarAnimation)
                     .buttonStyle(IconButtonStyle(systemImage: .magnifyingGlass))
                     .overlay {
-                        Asset.Images.Icons.magnifyingglass.swiftUIImage
+                        Image(systemImage: .magnifyingGlass)
                             .matchedGeometryEffect(id: String.searchBarIconID, in: searchBarAnimation)
                             .opacity(0)
                             .allowsHitTesting(false)
@@ -72,6 +75,13 @@ struct ExpandableSearchBar: View {
             .cornerRadius(.x4)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomTrailing)
+        .onChange(of: isExpanded) { newValue in
+            if newValue {
+                expandSearchBar()
+            } else {
+                minimizeSearchBar()
+            }
+        }
     }
 
     private func expandSearchBar() {
@@ -85,6 +95,8 @@ struct ExpandableSearchBar: View {
     }
 
     private func minimizeSearchBar() {
+        hideKeyboard()
+
         withAnimation(.linear) {
             isAnimating = false
         }

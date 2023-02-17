@@ -13,10 +13,10 @@ extension CGFloat {
     // MARK: - Default values
     static var defaultContentWidth: CGFloat = 300
     static var largeContentWidth: CGFloat = 340
-    static var headerExpanded: CGFloat = 220
-    static var headerCollapsed: CGFloat = 145
+    static var expandedHeaderHeight: CGFloat = 220
+    static var compressedHeaderHeight: CGFloat = 160
     static var headerTitleHeight: CGFloat = 90
-    static var filterViewHeight: CGFloat { .x7 }
+    static var headerFilterHeight: CGFloat { .x7 }
     static var defaultCardHeight: CGFloat = 250
     static var defaultIconHeight: CGFloat = 40
 

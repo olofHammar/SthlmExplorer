@@ -7,11 +7,22 @@
 
 import SwiftUI
 
+/// A view modifier that adds a rounded rectangle background and a shadow to the view.
 struct RoundedCardModifier: ViewModifier {
+    /// The corner radius of the rounded rectangle.
     let cornerRadius: CGFloat
+
+    /// The radius of the shadow.
     let shadowRadius: CGFloat
+
+    /// The background color of the card.
     let backgroundColor: Color
 
+    /// Creates a new rounded card modifier.
+    /// - Parameters:
+    ///   - cornerRadius: The corner radius of the rounded rectangle. Default is `.x2`.
+    ///   - shadowRadius: The radius of the shadow. Default is `1`.
+    ///   - backgroundColor: The background color of the card. Default is `Asset.Colors.Background.b100.swiftUIColor`.
     init(
         cornerRadius: CGFloat = .x2,
         shadowRadius: CGFloat = 1,
@@ -22,6 +33,9 @@ struct RoundedCardModifier: ViewModifier {
         self.backgroundColor = backgroundColor
     }
 
+    /// Returns a new view with a rounded rectangle background and a shadow.
+    /// - Parameter content: The content of the view.
+    /// - Returns: A new view with a rounded rectangle background and a shadow.
     func body(content: Content) -> some View {
         content
             .background(backgroundColor)

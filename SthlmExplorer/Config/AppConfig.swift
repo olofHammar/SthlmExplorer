@@ -16,6 +16,7 @@ struct AppConfig: Config {
     func configure(_ injector: ShortcutFoundation.Injector) {
         configureDataInjections(injector)
         configureDomainInjections(injector)
+        configureLocationInjections(injector)
         configureNavigationInjections(injector)
         configureViewModelInjections(injector)
         configurePresentationInjections(injector)

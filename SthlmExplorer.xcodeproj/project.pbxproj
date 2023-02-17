@@ -37,7 +37,6 @@
 		E4375A592995306100A92751 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4375A582995306100A92751 /* RootView.swift */; };
 		E4375A5B2995307100A92751 /* RootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4375A5A2995307100A92751 /* RootViewModel.swift */; };
 		E4375A6F2995416300A92751 /* swiftgen.yml in Resources */ = {isa = PBXBuildFile; fileRef = E4375A6E2995416300A92751 /* swiftgen.yml */; };
-		E4375A732995435500A92751 /* sv.lproj in Resources */ = {isa = PBXBuildFile; fileRef = E4375A702995435500A92751 /* sv.lproj */; };
 		E4375A742995435500A92751 /* en.lproj in Resources */ = {isa = PBXBuildFile; fileRef = E4375A712995435500A92751 /* en.lproj */; };
 		E4375A752995435500A92751 /* L10n.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4375A722995435500A92751 /* L10n.swift */; };
 		E4375A852995486C00A92751 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4375A842995486C00A92751 /* Fonts.swift */; };
@@ -65,8 +64,12 @@
 		E49C02B92993E6C5001993B7 /* SthlmExplorerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49C02B82993E6C5001993B7 /* SthlmExplorerUITestsLaunchTests.swift */; };
 		E49D71A92996FC9400B7E72C /* NeumorphismButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49D71A82996FC9400B7E72C /* NeumorphismButtonStyle.swift */; };
 		E49D71AB2996FD0A00B7E72C /* IconButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49D71AA2996FD0A00B7E72C /* IconButtonStyle.swift */; };
+		E4B470D7299E2BC000D8B5A6 /* MapViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B470D6299E2BC000D8B5A6 /* MapViewRepresentable.swift */; };
+		E4B470D9299E37DD00D8B5A6 /* UIImage+.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B470D8299E37DD00D8B5A6 /* UIImage+.swift */; };
+		E4B470DB299E620000D8B5A6 /* LocationSheetBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B470DA299E620000D8B5A6 /* LocationSheetBottomView.swift */; };
 		E4D986E4299B861400C7C380 /* Image+SystemImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D986E3299B861400C7C380 /* Image+SystemImage.swift */; };
 		E4D986E6299B965900C7C380 /* View+HideKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D986E5299B965900C7C380 /* View+HideKeyboard.swift */; };
+		E4D986EB299B9C3500C7C380 /* LocationDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D986EA299B9C3500C7C380 /* LocationDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,7 +109,6 @@
 		E4375A582995306100A92751 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		E4375A5A2995307100A92751 /* RootViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewModel.swift; sourceTree = "<group>"; };
 		E4375A6E2995416300A92751 /* swiftgen.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = swiftgen.yml; sourceTree = "<group>"; };
-		E4375A702995435500A92751 /* sv.lproj */ = {isa = PBXFileReference; lastKnownFileType = folder; path = sv.lproj; sourceTree = "<group>"; };
 		E4375A712995435500A92751 /* en.lproj */ = {isa = PBXFileReference; lastKnownFileType = folder; path = en.lproj; sourceTree = "<group>"; };
 		E4375A722995435500A92751 /* L10n.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = L10n.swift; sourceTree = "<group>"; };
 		E4375A782995484400A92751 /* PlayfairDisplay-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PlayfairDisplay-Regular.ttf"; sourceTree = "<group>"; };
@@ -149,8 +151,12 @@
 		E49C02B82993E6C5001993B7 /* SthlmExplorerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SthlmExplorerUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		E49D71A82996FC9400B7E72C /* NeumorphismButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeumorphismButtonStyle.swift; sourceTree = "<group>"; };
 		E49D71AA2996FD0A00B7E72C /* IconButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconButtonStyle.swift; sourceTree = "<group>"; };
+		E4B470D6299E2BC000D8B5A6 /* MapViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewRepresentable.swift; sourceTree = "<group>"; };
+		E4B470D8299E37DD00D8B5A6 /* UIImage+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+.swift"; sourceTree = "<group>"; };
+		E4B470DA299E620000D8B5A6 /* LocationSheetBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSheetBottomView.swift; sourceTree = "<group>"; };
 		E4D986E3299B861400C7C380 /* Image+SystemImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+SystemImage.swift"; sourceTree = "<group>"; };
 		E4D986E5299B965900C7C380 /* View+HideKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+HideKeyboard.swift"; sourceTree = "<group>"; };
+		E4D986EA299B9C3500C7C380 /* LocationDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -204,6 +210,7 @@
 		E42FFA7D299644B600C17BDA /* Map */ = {
 			isa = PBXGroup;
 			children = (
+				E4B470D5299E2B9300D8B5A6 /* ViewComponents */,
 				E42FFA832996457700C17BDA /* MapViewModel.swift */,
 				E42FFA852996459400C17BDA /* MapView.swift */,
 			);
@@ -280,6 +287,7 @@
 				E45C641F299A449B009A70E6 /* LocationFilter+.swift */,
 				E472EED2299ACEFB007571C4 /* View+Frame.swift */,
 				E4D986E5299B965900C7C380 /* View+HideKeyboard.swift */,
+				E4B470D8299E37DD00D8B5A6 /* UIImage+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -328,7 +336,6 @@
 			isa = PBXGroup;
 			children = (
 				E4375A722995435500A92751 /* L10n.swift */,
-				E4375A702995435500A92751 /* sv.lproj */,
 				E4375A712995435500A92751 /* en.lproj */,
 			);
 			path = Strings;
@@ -365,6 +372,7 @@
 		E4648C6629966EBE00A0E103 /* ViewComponents */ = {
 			isa = PBXGroup;
 			children = (
+				E492D1FA299D1F3A00AD7374 /* Detail */,
 				E45C641E299A4145009A70E6 /* Cards */,
 				E45C641D299A413D009A70E6 /* Header */,
 			);
@@ -386,6 +394,14 @@
 				E472EED0299ACE37007571C4 /* RemoteImageViewModel.swift */,
 			);
 			path = RemoteImageView;
+			sourceTree = "<group>";
+		};
+		E492D1FA299D1F3A00AD7374 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				E4D986EA299B9C3500C7C380 /* LocationDetailView.swift */,
+			);
+			path = Detail;
 			sourceTree = "<group>";
 		};
 		E49C028F2993E6C4001993B7 = {
@@ -467,6 +483,15 @@
 				E423034D299785C2007FB0A4 /* FavoriteToggleStyle.swift */,
 			);
 			path = Styles;
+			sourceTree = "<group>";
+		};
+		E4B470D5299E2B9300D8B5A6 /* ViewComponents */ = {
+			isa = PBXGroup;
+			children = (
+				E4B470D6299E2BC000D8B5A6 /* MapViewRepresentable.swift */,
+				E4B470DA299E620000D8B5A6 /* LocationSheetBottomView.swift */,
+			);
+			path = ViewComponents;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -562,7 +587,6 @@
 			knownRegions = (
 				en,
 				Base,
-				sv,
 			);
 			mainGroup = E49C028F2993E6C4001993B7;
 			productRefGroup = E49C02992993E6C4001993B7 /* Products */;
@@ -597,7 +621,6 @@
 				E49C02A32993E6C5001993B7 /* Preview Assets.xcassets in Resources */,
 				E4375A6F2995416300A92751 /* swiftgen.yml in Resources */,
 				E49C02A02993E6C5001993B7 /* Assets.xcassets in Resources */,
-				E4375A732995435500A92751 /* sv.lproj in Resources */,
 				E40211BC2994057100C89C65 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -625,6 +648,7 @@
 			files = (
 				E4375A5B2995307100A92751 /* RootViewModel.swift in Sources */,
 				E472EED3299ACEFB007571C4 /* View+Frame.swift in Sources */,
+				E4D986EB299B9C3500C7C380 /* LocationDetailView.swift in Sources */,
 				E45C6416299A2F12009A70E6 /* HeaderTitleView.swift in Sources */,
 				E4375A8F29954E3300A92751 /* View+TextStyle.swift in Sources */,
 				E42FFA8C299659D300C17BDA /* TabBarView.swift in Sources */,
@@ -635,6 +659,7 @@
 				E49C029C2993E6C4001993B7 /* SthlmExplorerApp.swift in Sources */,
 				E4648C6829966ED500A0E103 /* LocationCardView.swift in Sources */,
 				E45C6418299A3399009A70E6 /* String+.swift in Sources */,
+				E4B470D9299E37DD00D8B5A6 /* UIImage+.swift in Sources */,
 				E43D5265299927BA001A6EB8 /* CustomCorner.swift in Sources */,
 				E4375A852995486C00A92751 /* Fonts.swift in Sources */,
 				E49D71AB2996FD0A00B7E72C /* IconButtonStyle.swift in Sources */,
@@ -644,12 +669,14 @@
 				E423034E299785C2007FB0A4 /* FavoriteToggleStyle.swift in Sources */,
 				E45C641A299A3827009A70E6 /* ListOffsetModifier.swift in Sources */,
 				E4375A8D29954DD300A92751 /* Dimensions.swift in Sources */,
+				E4B470D7299E2BC000D8B5A6 /* MapViewRepresentable.swift in Sources */,
 				E4D986E6299B965900C7C380 /* View+HideKeyboard.swift in Sources */,
 				E42FFA80299644FB00C17BDA /* ListView.swift in Sources */,
 				E45C641C299A4137009A70E6 /* HeaderFilterView.swift in Sources */,
 				E42FFA822996451100C17BDA /* ListViewModel.swift in Sources */,
 				E45C6420299A449B009A70E6 /* LocationFilter+.swift in Sources */,
 				E4375A752995435500A92751 /* L10n.swift in Sources */,
+				E4B470DB299E620000D8B5A6 /* LocationSheetBottomView.swift in Sources */,
 				E42303532997C50B007FB0A4 /* RoundedCardModifier.swift in Sources */,
 				E42FFA842996457700C17BDA /* MapViewModel.swift in Sources */,
 				E42303502997C1F1007FB0A4 /* TravelTipCardView.swift in Sources */,

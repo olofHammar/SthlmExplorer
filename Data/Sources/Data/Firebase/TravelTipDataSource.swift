@@ -11,11 +11,17 @@ import FirebaseFirestore
 import FirebaseFirestoreSwift
 import Model
 
+/// A data source for retrieving `TravelTipItem` objects from Firestore.
 public class TravelTipDataSource: ITravelTipDataSource {
+    /// The `Firestore` instance used by this data source.
     private var firestore = Firestore.firestore()
 
+    /// Initializes a new instance of the `TravelTipDataSource` class.
     public init() { }
 
+    /// Retrieves a stream of `TravelTipItem` objects from Firestore.
+    ///
+    /// - Returns: A publisher that emits an array of `TravelTipItem` objects, or an empty array if no travel tips are found.
     public func getTravelTips() -> AnyPublisher<[TravelTipItem], Never> {
         let publisher = CurrentValueSubject<[TravelTipItem], Never>([])
 
@@ -40,6 +46,7 @@ public class TravelTipDataSource: ITravelTipDataSource {
     }
 }
 
+/// Returns a `CollectionReference` object for the 'traveltips' collection in Firestore.
 private extension Firestore {
     func travelTipCollection() -> CollectionReference {
         self.collection("traveltips")

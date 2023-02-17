@@ -7,8 +7,13 @@
 
 import SwiftUI
 
+/// A modifier that provides the offset of a `List` in a binding variable.
+/// This modifier is used to obtain the current scroll position of a `List` and stores it in a binding variable. The offset value represents the position of the top edge of the `List` relative to its parent view.
 struct ListOffsetModifier: ViewModifier {
+    /// The binding variable to store the offset value.
     @Binding var offset: CGFloat
+
+    /// The initial offset value when the `List` is first rendered.
     @State private var startOffset: CGFloat = .zero
 
     func body(content: Content) -> some View {

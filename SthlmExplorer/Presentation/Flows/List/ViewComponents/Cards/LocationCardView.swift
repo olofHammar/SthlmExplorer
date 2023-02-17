@@ -9,39 +9,46 @@ import Model
 import SwiftUI
 
 struct LocationCardView: View {
+    @Binding var isFavorite: Bool
+
+    let id: String
     let title: String
     let type: Location.LocationType
     let imageURL: String?
-
-    private let cardHeight: CGFloat = .defaultCardHeight
-
-    @Binding var isFavorite: Bool
+    let animation: Namespace.ID
     var onTap: (() -> Void)?
 
     init(
+        isFavorite: Binding<Bool>,
+        id: String,
         title: String,
         type: Location.LocationType,
         imageURL: String?,
-        isFavorite: Binding<Bool>,
+        animation: Namespace.ID,
         onTap: (() -> Void)? = nil
     ) {
+        self._isFavorite = isFavorite
+        self.id = id
         self.title = title
         self.type = type
         self.imageURL = imageURL
-        self._isFavorite = isFavorite
+        self.animation = animation
         self.onTap = onTap
     }
 
     init(
-        location: Location,
         isFavorite: Binding<Bool>,
+        location: Location,
+        animation: Namespace.ID,
         onTap: (() -> Void)? = nil
     ) {
         self.init(
+            isFavorite: isFavorite,
+            id: location.id,
             title: location.title,
             type: location.type,
             imageURL: location.image,
-            isFavorite: isFavorite,
+            animation: animation,
             onTap: onTap
         )
     }
@@ -54,18 +61,22 @@ struct LocationCardView: View {
                     placeholder: Asset.Colors.Main.gray100.swiftUIColor.embedInAnyView()
                 )
             }
-            .frame(height: cardHeight)
-            .modifier(RoundedCardModifier())
+            .frame(height: .defaultCardHeight)
+            .modifier(RoundedCardModifier(cornerRadius: .x2))
+            .onTapGesture {
+                onTap?()
+            }
 
             VStack(alignment: .leading, spacing: 0) {
                 titleAndToggleSection()
 
                 Text(type.rawValue.uppercased())
                     .textStyle(.bodySBold)
-                    .foregroundColor(.gray)
+                    .foregroundColor(Asset.Colors.Main.gray200.swiftUIColor)
             }
             .padding(.top, .x1)
         }
+        .matchedGeometryEffect(id: id, in: animation)
     }
 
     @ViewBuilder
@@ -73,8 +84,6 @@ struct LocationCardView: View {
         HStack(alignment: .top, spacing: 0) {
             Text(title.capitalized)
                 .textStyle(.headerThreePlay)
-                .minimumScaleFactor(0.5)
-                .lineLimit(1)
 
             Spacer()
 
@@ -90,7 +99,13 @@ struct LocationCardView: View {
 }
 
 struct LocationCardView_Previews: PreviewProvider {
+    @Namespace static var animation
+
     static var previews: some View {
-        LocationCardView(location: .mockLocation, isFavorite: .constant(false))
+        LocationCardView(
+            isFavorite: .constant(false),
+            location: .mockLocation,
+            animation: animation
+        )
     }
 }

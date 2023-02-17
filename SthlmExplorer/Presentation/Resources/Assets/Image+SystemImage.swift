@@ -13,6 +13,15 @@ public enum SystemImage: String {
     case magnifyingGlass = "magnifyingglass"
     case heart = "heart"
     case heartFill = "heart.fill"
+    case tram = "tram"
+    case walk = "figure.walk"
+    case bike = "bicycle"
+    case location = "location"
+    case landmark = "rosette"
+    case landmark2 = "crown"
+    case scenicView = "mountain.2"
+    case museum = "building.columns"
+
 
     var systemName: String {
         self.rawValue

@@ -10,10 +10,15 @@ import Data
 import Foundation
 import Model
 
+/// A struct representing a static data source for retrieving a pre-defined list of travel tips.
 public struct StaticFetchTravelTipItemsUseCase: IFetchTravelTipItemsUseCase {
 
+    /// Creates a new instance of the `StaticTravelTipsDataSource`.
     public init() { }
 
+    /// Retrieves a pre-defined list of travel tips from the data source.
+    ///
+    /// - Returns: A publisher that emits an array of `TravelTipItem` objects.
     public func execute() -> AnyPublisher<[TravelTipItem], Never> {
         let subject = CurrentValueSubject<[TravelTipItem], Never>([])
 

@@ -19,22 +19,49 @@ struct ListView: View {
 
     var body: some View {
         ZStack(alignment: .topLeading) {
-            listHeaderSection()
+            headerSection()
+                .opacity(vm.isHeaderSectionDismissed ? 0 : 1)
                 .zIndex(1)
 
             listScrollView()
+
+            if let selectedLocationItem = vm.selectedLocation, vm.isPresentingLocationDetail {
+                selectedLocationView(for: selectedLocationItem)
+            }
         }
         .ignoresSafeArea(edges: .top)
         .background(.thickMaterial)
-        .onTapGesture { hideKeyboard() }
     }
 
     @ViewBuilder
-    private func listHeaderSection() -> some View {
+    private func selectedLocationView(for locationItem: LocationItem) -> some View {
+        ScrollView(showsIndicators: false) {
+            VStack {
+                LocationCardView(
+                    isFavorite: vm.favoriteBinding(locationItem),
+                    location: locationItem.location,
+                    animation: listAnimation
+                )
+
+                LocationDetailView(
+                    location: locationItem.location,
+                    distance: vm.distanceToLocation(locationItem),
+                    onClose: { vm.dismissDetail() }
+                )
+            }
+            .padding(.top, .x10)
+            .padding(.horizontal, .x2)
+            .background(Asset.Colors.Background.b100.just())
+        }
+        .transition(.identity)
+    }
+
+    @ViewBuilder
+    private func headerSection() -> some View {
         VStack(alignment: .leading, spacing: 0) {
             HeaderTitleView(locationFilter: vm.selectedFilter, animation: listAnimation)
                 .animation(.easeInOut, value: vm.headerOffset)
-                .frame(height: .headerExpanded - .filterViewHeight, alignment: .bottom)
+                .frame(height: .expandedHeaderHeight - .headerFilterHeight, alignment: .bottom)
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .opacity(1.8 + vm.headerOffsetProgress())
                 .animation(vm.isPresentingExpandedSearchBar ? .none : .interactiveSpring(response: 0.7, dampingFraction: 0.7, blendDuration: 0.6).delay(0.2), value: vm.isPresentingExpandedSearchBar)
@@ -48,12 +75,12 @@ struct ListView: View {
 
             HeaderFilterView(selectedFilter: $vm.selectedFilter, animation: listAnimation)
         }
-        .padding([.leading, .top], .x2)
-        .frame(height: .headerExpanded)
+        .frame(maxHeight: .expandedHeaderHeight)
+        .padding(.leading, .x2)
         .background(
             Asset.Colors.Background.b100.swiftUIColor
                 .padding(.horizontal, -.x2)
-                .shadow(color: Asset.Colors.Main.black400.swiftUIColor, radius: 12, x: 0, y: 5)
+                .shadow(color: Asset.Colors.Main.black400.swiftUIColor, radius: 8, x: 0, y: 5)
         )
         .offset(y: vm.headerOffsetValue())
     }
@@ -82,22 +109,30 @@ struct ListView: View {
                                 ForEach(vm.listItems) { item in
                                     switch item {
                                     case .location(let locationItem):
-                                        LocationCardView(location: locationItem.location,
-                                                         isFavorite: vm.favoriteBinding(locationItem))
+                                        LocationCardView(
+                                            isFavorite: vm.favoriteBinding(locationItem),
+                                            location: locationItem.location,
+                                            animation: listAnimation,
+                                            onTap: { vm.presentDetail(for: locationItem) }
+                                        )
+                                        .opacity(vm.opacityForLocationCard(locationItem))
+                                        .zIndex(vm.isSelectedLocation(locationItem) ? 10 : 0)
+
                                     case .travelTip(let travelTip):
                                         TravelTipCardView(travelTip: travelTip)
+                                            .opacity(vm.isHeaderSectionDismissed ? 0 : 1)
                                     }
                                 }
                             }
                         }
                         .padding(.top, .x4)
-                        .padding(.top, vm.isPresentingExpandedSearchBar ? .headerCollapsed : .headerExpanded)
+                        .padding(.top, vm.isPresentingExpandedSearchBar ? .compressedHeaderHeight : .expandedHeaderHeight)
                         .padding(.horizontal, .x2)
                         .padding(.bottom, .x10)
                         .modifier(ListOffsetModifier(offset: $vm.headerOffset))
                     }
                     .onChange(of: vm.isPresentingExpandedSearchBar) { _ in
-                        withAnimation(.linear) {
+                        withAnimation(.linear.speed(0.7)) {
                             reader.scrollTo(topID, anchor: .bottom)
                         }
                     }
