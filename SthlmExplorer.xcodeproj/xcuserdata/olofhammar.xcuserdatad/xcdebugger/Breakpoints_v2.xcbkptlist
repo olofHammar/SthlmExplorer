@@ -94,8 +94,8 @@
             filePath = "Navigation/Sources/Navigation/Managers/ViewStateManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "34"
-            endingLineNumber = "34"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
             landmarkName = "presentSelectedDetail()"
             landmarkType = "7">
          </BreakpointContent>

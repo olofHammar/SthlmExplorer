@@ -10,14 +10,26 @@ import LinkPresentation
 import SwiftUI
 import UIKit
 
+/// The IExternalViewRouter protocol defines the interface for a view router that presents external views, such as the system share sheet.
 public protocol IExternalViewRouter {
+
+    /// Presents a share sheet with the given title and location.
+    /// - Parameters:
+    ///   - title: The title for the share sheet.
+    ///   - location: The location to be shared.
     func presentLocationShareSheet(with title: String, for location: CLLocation)
 }
 
+/// The ExternalViewRouter class provides an implementation of the `IExternalViewRouter` protocol for presenting external views.
 public final class ExternalViewRouter: IExternalViewRouter {
 
+    /// Initializes a new `ExternalViewRouter`.
     public init() {}
-    
+
+    /// Presents a share sheet with the given title and location.
+    /// - Parameters:
+    ///   - title: The title for the share sheet.
+    ///   - location: The location to be shared.
     public func presentLocationShareSheet(with title: String, for location: CLLocation) {
         let sheet = ShareSheet(title: title, location: location)
         let hostingViewController = UIHostingController(rootView: sheet)
@@ -31,6 +43,7 @@ public final class ExternalViewRouter: IExternalViewRouter {
     }
 }
 
+/// The ShareSheet struct provides a SwiftUI view that wraps a `UIActivityViewController, which presents the system share sheet for sharing a location.
 private struct ShareSheet: UIViewControllerRepresentable {
     typealias UIViewControllerType = UIActivityViewController
 
@@ -51,6 +64,10 @@ private struct ShareSheet: UIViewControllerRepresentable {
 }
 
 private extension URL {
+
+    /// Returns an URL object for opening Apple Maps at the specified location.
+    /// - Parameter location: The location to open in Apple Maps.
+    /// - Returns: An URL object for opening Apple Maps at the specified location, or nil if the location is invalid.
     static func appleMapsURL(for location: CLLocation) -> URL? {
         URL(string: "http://maps.apple.com/?saddr=&daddr=\(location.coordinate.latitude),\(location.coordinate.longitude)")
     }
