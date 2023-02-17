@@ -4,3 +4,15 @@ Welcome to SthlmExplorer, the ultimate app for tourists exploring Stockholm! Thi
 But SthlmExplorer is more than just a useful tool for travelers - it's also a showcase of my coding abilities. As the developer of this app, I've used SwiftUI to create a user-friendly and visually stunning app that is both functional and aesthetically pleasing.
 
 Whether you're a traveler looking to explore Stockholm or a potential employer looking for a talented developer, SthlmExplorer is the perfect app for you. Enjoy your trip to Stockholm, and happy exploring!
+
+## Available Content
+
+- [Installation](#installation) 
+- [Libraries](#libraries)
+- [Demo](#demo)
+
+### Installation <a name="installation"></a>
+
+### Libraries <a name="libraries"></a>
+
+### Demo <a name="demo"></a>
