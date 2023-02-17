@@ -28,22 +28,16 @@ final class MapViewModel: ObservableObject {
         startMapObserevers()
     }
 
-    func favoriteBinding(_ locationItem: LocationItem) -> Binding<Bool> {
-        Binding {
-            withAnimation {
-                self.favoriteLocationUseCase.isFavorite(locationItem.id)
-            }
-        } set: { isFavorite in
-            withAnimation {
-                self.favoriteLocationUseCase.toggleFavorite(locationItem.id, isOn: locationItem.isFavorite)
-                self.selectedAnnotation?.annotationItem.isFavorite.toggle()
-            }
-        }
+    // MARK: - Publishers
+    
+    private func startMapObserevers() {
+        fetchLocationItemsUseCase.execute()
+            .map { $0.map { locationItem in Annotation(annotationItem: locationItem) } }
+            .receive(on: RunLoop.main)
+            .assign(to: &$locationAnnotations)
     }
 
-    func centerUserLocation() {
-        isCenteringUserLocation = true
-    }
+    // MARK: - Map Helpers
 
     func updateMapView(_ view: MKMapView) {
         DispatchQueue.main.async {
@@ -138,6 +132,23 @@ final class MapViewModel: ObservableObject {
         }
     }
 
+    // MARK: - UI Helpers
+    
+    func favoriteBinding(_ locationItem: LocationItem) -> Binding<Bool> {
+        Binding {
+            withAnimation {
+                self.favoriteLocationUseCase.isFavorite(locationItem.id)
+            }
+        } set: { isFavorite in
+            withAnimation {
+                self.favoriteLocationUseCase.toggleFavorite(locationItem.id, isOn: locationItem.isFavorite)
+                self.selectedAnnotation?.annotationItem.isFavorite.toggle()
+            }
+        }
+    }
+
+    // MARK: Changing View State
+
     func presentSelectedDetail() {
         withAnimation {
             isPresentingDetail = true
@@ -148,16 +159,9 @@ final class MapViewModel: ObservableObject {
         deselectAnnotation()
         isPresentingDetail = false
     }
-
-    private func startMapObserevers() {
-        fetchLocationItemsUseCase.execute()
-            .map { $0.map { locationItem in Annotation(annotationItem: locationItem) } }
-            .receive(on: RunLoop.main)
-            .assign(to: &$locationAnnotations)
-
-    }
 }
 
+// MARK: - Enum which handles icon and color for each annotation type
 private extension MapViewModel {
     enum AnnotationAsset: String {
         case landmark, scenicView, museum

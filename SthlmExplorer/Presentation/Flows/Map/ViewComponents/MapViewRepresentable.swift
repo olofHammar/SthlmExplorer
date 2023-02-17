@@ -17,8 +17,6 @@ struct MapViewRepresentable: UIViewRepresentable {
 
     var annotations: [Annotation]
     var selectedAnnotation: Annotation?
-    var isCenteringUseLocation: Bool
-    var isPresentingDirections: Bool
 
     func makeUIView(context: Self.Context) -> MKMapView {
         let mapView = MKMapView(frame: .zero)
@@ -71,21 +69,5 @@ extension MapViewRepresentable {
 
             return renderer
         }
-    }
-}
-
-extension MKMapView {
-    func updateAnnotations(with selectedAnnotation: Annotation) {
-        let oldAnnotations = self.annotations.compactMap({ $0 as? Annotation })
-        let oldAnnotationsToRemove = oldAnnotations.filter( { $0.annotationItem.id != selectedAnnotation.annotationItem.id } )
-        self.removeAnnotations(oldAnnotationsToRemove)
-    }
-
-    func disableMap() {
-        self.isUserInteractionEnabled = false
-    }
-
-    func enableMap() {
-        self.isUserInteractionEnabled = true
     }
 }

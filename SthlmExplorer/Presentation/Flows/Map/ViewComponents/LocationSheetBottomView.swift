@@ -16,18 +16,14 @@ struct LocationSheetBottomView: View {
 
     var body: some View {
         HStack {
-            Button {
+            Button(MyStrings.readMore) {
                 onExpand?()
-            } label: {
-                Text(MyStrings.readMore)
             }
 
             Spacer()
 
-            Button {
+            Button(MyStrings.close) {
                 onDismiss?()
-            } label: {
-                Text(MyStrings.close)
             }
         }
         .textStyle(.bodyM)
