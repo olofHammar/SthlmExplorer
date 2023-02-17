@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// An Enum representing the available selection of states for `ViewStateManager`.
 public enum ViewState {
     case initial
     case presentedLocationDetail

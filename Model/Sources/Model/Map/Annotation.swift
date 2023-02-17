@@ -8,9 +8,14 @@
 import Foundation
 import MapKit
 
+/// The Annotation class extends MKPointAnnotation and represents a location annotation on a map.
 public class Annotation: MKPointAnnotation, Identifiable {
+    /// The LocationItem associated with the annotation.
     public var annotationItem: LocationItem
 
+    /// Initializes a new `Annotation` with the given `LocationItem`.
+    /// - Parameters:
+    /// -  annotationItem: The `LocationItem` associated with the annotation.
     public init(annotationItem: LocationItem) {
         self.annotationItem = annotationItem
         super.init()

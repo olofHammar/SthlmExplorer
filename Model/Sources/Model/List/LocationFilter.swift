@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// An Enum representing the available types of location filters.
 public enum LocationFilter: CaseIterable {
     case all, landmarks, scenicViews, museums, favorites
 }
