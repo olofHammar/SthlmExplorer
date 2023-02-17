@@ -49,6 +49,19 @@ $ brew update
 $ brew install swiftgen
 ```
 
+### SwiftLint
+
+> A tool to enforce Swift style and conventions, loosely based on the now archived [GitHub Swift Style Guide](https://github.com/github/swift-style-guide). SwiftLint enforces the style guide rules that are generally accepted by the Swift community. [https://github.com/realm/SwiftLint](url)
+
+SwiftLint is installed in your local computer and will be executed via a script under project Build Phases everytime you build the project. It will search for the configuration file `/.swiftlint.yml` and apply the rules to your source code.
+
+
+To install SwiftLint:
+```
+$ brew update
+$ brew install swiftlint
+```
+
 #### Installation with Mint
 To install Mint:
 ```
