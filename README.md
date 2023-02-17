@@ -11,7 +11,7 @@ Whether you're a traveler looking to explore Stockholm or a potential employer l
 - [Libraries](#libraries)
 - [Demo](#demo)
 
-### Installation <a name="installation"></a>
+## Installation <a name="installation"></a>
 
 Before you clone this project make sure you have the following software installed
 
