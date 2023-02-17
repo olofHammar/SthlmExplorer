@@ -8,7 +8,7 @@
 import Foundation
 import Model
 
-// TODO: Maybe add localizable strings to Model-module and set this on the model instead of using this extension?
+/// An extension of struct `LocationFilter` which is used to set title, searchKey, headerTitle and headerCaption using content from folder `Resources`.
 extension LocationFilter {
 
     typealias MyStrings = L10n.LocationFilter

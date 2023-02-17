@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 extension UIImage {
-
+    /// Adds padding to UIImage.
     func withPadding(x horisontal: CGFloat, y vertical: CGFloat) -> UIImage? {
         let width: CGFloat = size.width + horisontal
         let height: CGFloat = size.height + vertical

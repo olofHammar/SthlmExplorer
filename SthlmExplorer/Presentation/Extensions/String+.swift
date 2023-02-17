@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// An extension of `String` used for setting ids to `MatchedGeometryEffect`.
 extension String {
 
     static var headerTitleID: String {
