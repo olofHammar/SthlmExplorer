@@ -76,7 +76,7 @@ To manually run SwiftGen (in project folder) :
 $ swiftgen config run
 ```
 
-### Project Setup <a name="projectsetup"></a>
+## Project Setup <a name="projectsetup"></a>
 
 ### Libraries
 This is a list of the libraries (Swift Package Manager) used in this Project:
