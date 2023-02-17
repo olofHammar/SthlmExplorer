@@ -9,10 +9,15 @@ import Combine
 import Foundation
 import Model
 
+/// A struct representing a static data source for retrieving a pre-defined list of locations.
 public struct StaticLocationsDataSource: ILocationsDataSource {
 
+    /// Creates a new instance of the `StaticLocationsDataSource`.
     public init() { }
 
+    /// Retrieves a pre-defined list of locations from the data source.
+    ///
+    /// - Returns: A publisher that emits an array of `Location` objects.
     public func getLocations() -> AnyPublisher<[Location], Never> {
         let subject = CurrentValueSubject<[Location], Never>([])
 
