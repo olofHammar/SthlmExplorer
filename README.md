@@ -8,7 +8,7 @@ Whether you're a traveler looking to explore Stockholm or a potential employer l
 ## Available Content
 
 - [Installation](#installation) 
-- [Libraries](#libraries)
+- [Project Setup](#projectsetup)
 - [Demo](#demo)
 
 ## Installation <a name="installation"></a>
@@ -76,6 +76,26 @@ To manually run SwiftGen (in project folder) :
 $ swiftgen config run
 ```
 
-### Libraries <a name="libraries"></a>
+### Project Setup <a name="projectsetup"></a>
+
+### Libraries
+This is a list of the libraries (Swift Package Manager) used in this Project:
+- Firebase
+- ShortcutFoundation
+- ShortcutSwiftUI
+- OrderedCollections
+
+Local Packages
+- Data
+- Domain
+- Location
+- Model
+- Navigation
+
+### Common Grounds
+- Deployment target: `iOS 16.0`
+- It relies on [Swift Combine](https://developer.apple.com/documentation/combine) framework for the native `MVVM pattern`.
+
+No authentication needed.
 
 ### Demo <a name="demo"></a>
