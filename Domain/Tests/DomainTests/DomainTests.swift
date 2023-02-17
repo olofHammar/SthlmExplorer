@@ -11,19 +11,26 @@ import Data
 import XCTest
 
 final class DomainTests: XCTestCase {
-    var sut: StaticFetchLocationItemsUseCase!
 
     override func setUp() {
         super.setUp()
-        sut = StaticFetchLocationItemsUseCase()
     }
 
-    func test_static_data_count_is_two() throws {
+    func test_static_locations_data_count_is_two() throws {
         let sut = StaticFetchLocationItemsUseCase()
 
         let publisher = sut.execute()
 
         let locations = try preloadedValueInPublisher(publisher)
         XCTAssertEqual(locations.count, 2)
+    }
+
+    func test_static_travel_tips_data_count_is_one() throws {
+        let sut = StaticFetchTravelTipItemsUseCase()
+
+        let publisher = sut.execute()
+
+        let travelTips = try preloadedValueInPublisher(publisher)
+        XCTAssertEqual(travelTips.count, 1)
     }
 }

@@ -35,11 +35,13 @@ internal enum Asset {
       internal static let accent = ColorAsset(name: "Colors/Main/Accent")
       internal static let black200 = ColorAsset(name: "Colors/Main/Black200")
       internal static let black300 = ColorAsset(name: "Colors/Main/Black300")
+      internal static let black400 = ColorAsset(name: "Colors/Main/Black400")
       internal static let gray100 = ColorAsset(name: "Colors/Main/Gray100")
+      internal static let gray200 = ColorAsset(name: "Colors/Main/Gray200")
+      internal static let gray300 = ColorAsset(name: "Colors/Main/Gray300")
       internal static let info = ColorAsset(name: "Colors/Main/Info")
       internal static let primary = ColorAsset(name: "Colors/Main/Primary")
       internal static let secondary = ColorAsset(name: "Colors/Main/Secondary")
-      internal static let success = ColorAsset(name: "Colors/Main/Success")
     }
     internal enum NavigationBar {
       internal static let primary = ColorAsset(name: "Colors/NavigationBar/Primary")
@@ -47,59 +49,20 @@ internal enum Asset {
     }
   }
   internal enum Images {
+    internal enum AnnotationsIcons {
+      internal static let buildingColumns = ImageAsset(name: "Images/AnnotationsIcons/building.columns")
+      internal static let heart = ImageAsset(name: "Images/AnnotationsIcons/heart")
+      internal static let mountain2 = ImageAsset(name: "Images/AnnotationsIcons/mountain.2")
+      internal static let rosette = ImageAsset(name: "Images/AnnotationsIcons/rosette")
+    }
     internal enum Home {
       internal static let logo = ImageAsset(name: "Images/Home/logo")
     }
-    internal enum Icons {
-      internal static let bank = ImageAsset(name: "Images/Icons/bank")
-      internal static let binocularsFill = ImageAsset(name: "Images/Icons/binoculars.fill")
-      internal static let binoculars = ImageAsset(name: "Images/Icons/binoculars")
-      internal static let chevronBackward = ImageAsset(name: "Images/Icons/chevron.backward")
-      internal static let crown = ImageAsset(name: "Images/Icons/crown")
-      internal static let ferry = ImageAsset(name: "Images/Icons/ferry")
-      internal static let figureWalk = ImageAsset(name: "Images/Icons/figure.walk")
-      internal static let flag = ImageAsset(name: "Images/Icons/flag")
-      internal static let forkKnife = ImageAsset(name: "Images/Icons/fork.knife")
-      internal static let heartFill = ImageAsset(name: "Images/Icons/heart.fill")
-      internal static let heart = ImageAsset(name: "Images/Icons/heart")
-      internal static let info = ImageAsset(name: "Images/Icons/info")
-      internal static let leaf = ImageAsset(name: "Images/Icons/leaf")
-      internal static let locationFill = ImageAsset(name: "Images/Icons/location.fill")
-      internal static let location = ImageAsset(name: "Images/Icons/location")
-      internal static let magnifyingglass = ImageAsset(name: "Images/Icons/magnifyingglass")
-      internal static let map = ImageAsset(name: "Images/Icons/map")
-      internal static let pin = ImageAsset(name: "Images/Icons/pin")
-      internal static let playFill = ImageAsset(name: "Images/Icons/play.fill")
-      internal static let play = ImageAsset(name: "Images/Icons/play")
-      internal static let rosette = ImageAsset(name: "Images/Icons/rosette")
-      internal static let share = ImageAsset(name: "Images/Icons/share")
-      internal static let sliderVertical3 = ImageAsset(name: "Images/Icons/slider.vertical.3")
-      internal static let squareAndArrowUp = ImageAsset(name: "Images/Icons/square.and.arrow.up")
-      internal static let stopFill = ImageAsset(name: "Images/Icons/stop.fill")
-      internal static let stop = ImageAsset(name: "Images/Icons/stop")
-      internal static let tCircleFill = ImageAsset(name: "Images/Icons/t.circle.fill")
-      internal static let tCircle = ImageAsset(name: "Images/Icons/t.circle")
-      internal static let tramFill = ImageAsset(name: "Images/Icons/tram.fill")
-      internal static let tram = ImageAsset(name: "Images/Icons/tram")
-      internal static let xmark = ImageAsset(name: "Images/Icons/xmark")
-    }
     internal enum SketchImages {
-      internal static let arrowCurly = ImageAsset(name: "Images/SketchImages/arrow-curly")
-      internal static let arrowLeftStripe = ImageAsset(name: "Images/SketchImages/arrow-left-stripe")
-      internal static let arrowLeftThick = ImageAsset(name: "Images/SketchImages/arrow-left-thick")
-      internal static let arrowLeft = ImageAsset(name: "Images/SketchImages/arrow-left")
-      internal static let arrowRightThick = ImageAsset(name: "Images/SketchImages/arrow-right-thick")
-      internal static let arrowSmall = ImageAsset(name: "Images/SketchImages/arrow-small")
-      internal static let arrowThickLeft = ImageAsset(name: "Images/SketchImages/arrow-thick-left")
-      internal static let arrowWide = ImageAsset(name: "Images/SketchImages/arrow-wide")
-      internal static let dottedFrame = ImageAsset(name: "Images/SketchImages/dotted-frame")
       internal static let dottedLine = ImageAsset(name: "Images/SketchImages/dotted-line")
-      internal static let magnifyingglass = ImageAsset(name: "Images/SketchImages/magnifyingglass")
-      internal static let rectangle = ImageAsset(name: "Images/SketchImages/rectangle")
       internal static let thumbUp = ImageAsset(name: "Images/SketchImages/thumb-up")
       internal static let underlineThin = ImageAsset(name: "Images/SketchImages/underline-thin")
       internal static let underlineTwo = ImageAsset(name: "Images/SketchImages/underline-two")
-      internal static let underlineWind = ImageAsset(name: "Images/SketchImages/underline-wind")
       internal static let underline = ImageAsset(name: "Images/SketchImages/underline")
     }
   }

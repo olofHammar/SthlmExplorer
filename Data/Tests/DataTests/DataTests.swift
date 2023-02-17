@@ -10,19 +10,28 @@ import Combine
 import XCTest
 
 final class DataTests: XCTestCase {
-    var sut: StaticLocationItemDataSource!
 
     override func setUp() {
         super.setUp()
-        sut = StaticLocationItemDataSource()
     }
 
-    func test_static_data_count_is_two() throws {
-        let sut = StaticLocationItemDataSource()
+    // MARK: - Test Locations Data Source
+    func test_static_locations_data_count_is_two() throws {
+        let sut = StaticLocationsDataSource()
 
-        let publisher = sut.getLocationItems()
+        let publisher = sut.getLocations()
 
         let locations = try preloadedValueInPublisher(publisher)
         XCTAssertEqual(locations.count, 2)
+    }
+
+    // MARK: - Test Travel Tips Data Source
+    func test_static_travel_tips_data_count_is_one() throws {
+        let sut = StaticTravelTipsDataSource()
+
+        let publisher = sut.getTravelTips()
+
+        let travelTips = try preloadedValueInPublisher(publisher)
+        XCTAssertEqual(travelTips.count, 1)
     }
 }

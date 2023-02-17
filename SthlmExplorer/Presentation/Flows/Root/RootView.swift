@@ -11,19 +11,26 @@ import SwiftUI
 struct RootView: View {
     @InjectObject var vm: RootViewModel
 
-    private typealias MyStrings = L10n.Home.Welcome
-    private typealias MyColors = Asset.Colors.Main
+    init() {
+        UITabBar.appearance().isHidden = true
+    }
 
     var body: some View {
-        VStack {
-            Text(MyStrings.title)
-            ForEach(vm.locationItems) { location in
-                Text(location.title)
+        ZStack(alignment: .topLeading) {
+            TabView(selection: $vm.selectedTab) {
+                ListView()
+                    .tag(TabBarSelection.list)
+
+                MapView()
+                    .tag(TabBarSelection.map)
             }
+
+            TabBarView(tabBarSelection: $vm.selectedTab)
+                .padding(.bottom, .x4)
+                .ignoresSafeArea(.keyboard)
+                .opacity(vm.isPresentingDetail ? 0 : 1)
         }
-        .onAppear {
-            vm.fetchListItems()
-        }
+        .ignoresSafeArea()
     }
 }
 

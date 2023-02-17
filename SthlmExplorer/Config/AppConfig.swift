@@ -16,6 +16,7 @@ struct AppConfig: Config {
     func configure(_ injector: ShortcutFoundation.Injector) {
         configureDataInjections(injector)
         configureDomainInjections(injector)
+        configureLocationInjections(injector)
         configureNavigationInjections(injector)
         configureViewModelInjections(injector)
         configurePresentationInjections(injector)
@@ -24,18 +25,38 @@ struct AppConfig: Config {
 
 private extension AppConfig {
     func configureDataInjections(_ injector: Injector) {
-        injector.map(ILocationItemDataSource.self) {
+        injector.map(ILocationsDataSource.self) {
             if isRunningInPreview {
-                return StaticLocationItemDataSource()
+                return StaticLocationsDataSource()
             } else {
-                return LocationItemDataSource()
+                return LocationsDataSource()
             }
+        }
+
+        injector.map(ITravelTipDataSource.self) {
+            if isRunningInPreview {
+                return StaticTravelTipsDataSource()
+            } else {
+                return TravelTipDataSource()
+            }
+        }
+
+        injector.map(IFavoriteLocationsDataSource.self) {
+            FavoriteLocationsDataSource()
         }
     }
 
     func configureDomainInjections(_ injector: Injector) {
         injector.map(ILocationItemsRepository.self) {
             LocationItemsRepository()
+        }
+
+        injector.map(IFavoriteLocationsRepository.self) {
+            FavoriteLocationsRepository()
+        }
+
+        injector.map(ITravelTipItemsRepository.self) {
+            TravelTipItemsRepository()
         }
     }
 
@@ -67,11 +88,31 @@ private extension AppConfig {
                 return FetchLocationItemsUseCase()
             }
         }
+
+        injector.map(IFavoriteLocationUseCase.self) {
+            FavoriteLocationUseCase()
+        }
+
+        injector.map(IFetchTravelTipItemsUseCase.self) {
+            if isRunningInPreview {
+                return StaticFetchTravelTipItemsUseCase()
+            } else {
+                return FetchTravelTipItemsUseCase()
+            }
+        }
     }
 
     func configureViewModelInjections(_ injector: Injector) {
         injector.map(RootViewModel.self) {
             RootViewModel()
+        }
+
+        injector.map(ListViewModel.self) {
+            ListViewModel()
+        }
+
+        injector.map(MapViewModel.self) {
+            MapViewModel()
         }
     }
 }

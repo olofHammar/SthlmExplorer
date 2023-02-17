@@ -17,6 +17,7 @@ public enum ModalPresentationState: Identifiable {
     }
 }
 
+/// An Enum representing the available presentation states for  `ModalViewRouter`.
 public enum ModalPresentationType {
     case sheet
     case fullScreen

@@ -10,7 +10,7 @@
 "root.title" = "Root view";
 
 // MARK: - TabBar
-"tabbar.list" = "HOME";
+"tabbar.list" = "LIST";
 "tabbar.map" = "MAP";
 
 // MARK: - Home
@@ -30,25 +30,28 @@
 
 // MARK: - MapSheet
 "mapSheet.getDirections" = "Get Directions";
-"mapSheet.info.title" = "Learn More";
+"mapSheet.info.readMore" = "Read More";
+"mapSheet.info.close" = "Close";
 
 // MARK: - LocationFilters
 "locationFilter.all.title" = "ALL";
 "locationFilter.all.searchKey" = "all";
 "locationFilter.all.headerTitle" = "Stockholm";
-"locationFilter.all.headerCaption" = "Welcome to,";
+"locationFilter.all.headerCaption" = "Welcome to";
 "locationFilter.landmark.title" = "LANDMARKS";
 "locationFilter.landmark.searchKey" = "landmark";
-"locationFilter.landmark.headerCaption" = "Explore Landmarks";
+"locationFilter.explore.headerCaption" = "Explore";
+"locationFilter.landmark.headerTitle" = "Landmarks";
 "locationFilter.scenicView.title" = "SCENIC VIEWS";
-"locationFilter.scenicView.searchKey" = "scenic view";
-"locationFilter.scenicView.headerCaption" = "Explore Scenic Walks";
+"locationFilter.scenicView.searchKey" = "scenicview";
+"locationFilter.scenicView.headerTitle" = "Scenic Views";
 "locationFilter.museum.title" = "MUSEUMS";
 "locationFilter.museum.searchKey" = "museum";
-"locationFilter.museum.headerCaption" = "Explore Museums";
+"locationFilter.museum.headerTitle" = "Museums";
 "locationFilter.favorites.title" = "FAVORITES";
 "locationFilter.favorites.searchKey" = "favorite";
-"locationFilter.favorites.headerCaption" = "Your Favorites";
+"locationFilter.favorites.headerCaption" = "Your";
+"locationFilter.favorites.headerTitle" = "Favorites";
 
 // MARK: - LocationDetail
 "locationDetail.button.history" = "A Brief History";
