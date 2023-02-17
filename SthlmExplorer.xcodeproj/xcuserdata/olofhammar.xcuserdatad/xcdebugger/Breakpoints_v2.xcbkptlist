@@ -30,8 +30,8 @@
             filePath = "Domain/Sources/Domain/UseCases/FetchLocationItemsUseCase.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "19"
-            endingLineNumber = "19"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
             landmarkName = "execute()"
             landmarkType = "7">
          </BreakpointContent>
@@ -62,8 +62,8 @@
             filePath = "Domain/Sources/Domain/Repositories/LocationItemsRepository.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "23"
-            endingLineNumber = "23"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
             landmarkName = "getLocationItems()"
             landmarkType = "7">
          </BreakpointContent>
@@ -398,22 +398,6 @@
                   offsetFromSymbolStart = "256">
                </Location>
             </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "7647C1D0-477A-49E2-B2FF-11D0DE525DB7"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Domain/Sources/Domain/StaticFetchTravelTipItemsUseCase.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "22"
-            endingLineNumber = "22"
-            landmarkName = "execute()"
-            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
