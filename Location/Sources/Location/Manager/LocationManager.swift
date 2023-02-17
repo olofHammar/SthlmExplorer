@@ -51,7 +51,7 @@ public final class LocationManager: NSObject, ILocationManager, ObservableObject
         return Int(distanceInMin.rounded())
     }
 
-    public static func stockholmOverviewRegion() -> MKCoordinateRegion {
+    public static func stockholmRegion() -> MKCoordinateRegion {
         MKCoordinateRegion(center: .init(latitude: 59.3293, longitude: 18.0686), span: .mediumCity)
     }
 }

@@ -84,8 +84,8 @@ struct MapView: View {
             }
             .padding(.top, .x10)
             .padding(.horizontal, .x2)
-            .background(Asset.Colors.Background.b100.just())
         }
+        .background(Asset.Colors.Background.b100.just())
         .transition(.identity)
     }
 }

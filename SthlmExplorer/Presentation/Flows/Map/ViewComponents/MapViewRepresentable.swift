@@ -24,7 +24,7 @@ struct MapViewRepresentable: UIViewRepresentable {
         let mapView = MKMapView(frame: .zero)
         mapView.delegate = context.coordinator
         mapView.showsUserLocation = true
-        mapView.setRegion(LocationManager.stockholmOverviewRegion(), animated: false)
+        mapView.setRegion(LocationManager.stockholmRegion(), animated: false)
 
         return mapView
     }
