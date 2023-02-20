@@ -20,22 +20,13 @@ final class ListViewModelTests: XCTestCase {
 
     func test_list_items_is_equal_to_static_data_after_starting_oberservers() {
         // Given
-        let vm = makeSUT()
-        let expectation = XCTestExpectation(description: "List items should be equal to the combined count of CardList.json and TravelTip.json.")
+        let vm = makeSUTWithListItems()
 
         // When
-        vm.startListItemObservers()
-
-        let timeout = TimeInterval(1)
         let listItemCount = 3
 
         // Then
-        DispatchQueue.main.asyncAfter(deadline: .now() + timeout) {
-            XCTAssertEqual(vm.listItems.count, listItemCount)
-            expectation.fulfill()
-        }
-
-        wait(for: [expectation], timeout: timeout)
+        XCTAssertEqual(vm.listItems.count, listItemCount)
     }
 
     func test_favorite_location_binding_is_toggled_correctly() {
@@ -192,7 +183,44 @@ final class ListViewModelTests: XCTestCase {
         }
     }
 
+    func test_list_items_are_sorted_by_travel_tip_order() {
+        // Given
+        let vm = makeSUTWithListItems()
+
+        // When
+        let travelTips = vm.listItems.filter { $0.isTravelTip }
+        let firstTravelTip = travelTips.first
+
+        // Then
+        XCTAssertNotNil(firstTravelTip)
+
+        if case let .travelTip(travelTip) = firstTravelTip {
+            XCTAssertEqual(travelTip.order - 1, vm.listItems.firstIndex(where: { $0.isTravelTip })!)
+        } else {
+            XCTFail("Since static travel tip card has order value 2, second item in list should be of type TravelTip")
+        }
+    }
+
     private func makeSUT() -> ListViewModel {
         ListViewModel()
+    }
+
+    private func makeSUTWithListItems() -> ListViewModel {
+        let vm = makeSUT()
+        let expectation = XCTestExpectation(description: "List should not be empty")
+
+        let observer = vm.$listItems
+            .sink { items in
+                if items.count == 3 {
+                    expectation.fulfill()
+                }
+            }
+
+        vm.startListItemObservers()
+
+        wait(for: [expectation], timeout: 3)
+        observer.cancel()
+
+        return vm
     }
 }

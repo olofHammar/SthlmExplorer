@@ -215,5 +215,17 @@ extension ListViewModel {
                 return travelTip.id
             }
         }
+
+        /// Helper variable used only for testing.
+        var isTravelTip: Bool {
+            switch self {
+            case .travelTip:
+                return true
+
+            default:
+                return false
+
+            }
+        }
     }
 }
