@@ -74,6 +74,32 @@ final class ListViewModelTests: XCTestCase {
         XCTAssertEqual(selectedLocation, vm.selectedLocation)
     }
 
+    func test_location_card_opacity_is_one_when_selected_detail_is_nil() {
+        // Given
+        let vm = makeSUT()
+        let location = LocationItem(location: .mockLocation, isFavorite: false)
+
+        // When
+        XCTAssertNil(vm.selectedLocation)
+
+        // Then
+        XCTAssertEqual(vm.opacityForLocationCard(location), 1)
+    }
+
+    func test_location_card_opacity_is_set_to_one_for_selected_and_zero_for_unselected() {
+        // Given
+        let vm = makeSUT()
+        let unselectedLocation = LocationItem(location: .emptyLocation, isFavorite: false)
+        let selectedLocation = LocationItem(location: .mockLocation, isFavorite: false)
+
+        // When
+        vm.presentDetail(for: selectedLocation)
+
+        // Then
+        XCTAssertEqual(vm.opacityForLocationCard(unselectedLocation), 0)
+        XCTAssertEqual(vm.opacityForLocationCard(selectedLocation), 1)
+    }
+
     private func makeSUT() -> ListViewModel {
         ListViewModel()
     }
