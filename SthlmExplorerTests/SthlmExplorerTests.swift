@@ -5,32 +5,48 @@
 //  Created by Olof Hammar on 2023-02-08.
 //
 
+import Model
 import XCTest
+@testable import Data
+@testable import Domain
 @testable import SthlmExplorer
 
-final class SthlmExplorerTests: XCTestCase {
+final class ListViewModelTests: XCTestCase {
+    var viewModel: ListViewModel!
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    override func setUp() {
+        super.setUp()
+        viewModel = ListViewModel()
     }
 
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
+    func test_list_items_is_equal_to_static_data_after_starting_oberservers() {
+        // Given
+        let expectation = XCTestExpectation(description: "List items should be equal to the combined count of CardList.json and TravelTip.json.")
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
-    }
+        // When
+        viewModel.startListItemObservers()
 
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+        let timeout = TimeInterval(2)
+        let listItemCount = 3
+
+        // Then
+        DispatchQueue.main.asyncAfter(deadline: .now() + timeout) {
+            XCTAssertEqual(self.viewModel.listItems.count, listItemCount)
+            expectation.fulfill()
         }
+
+        wait(for: [expectation], timeout: timeout)
     }
 
+    func test_favorite_location_binding() {
+        // Given
+        let locationItem = LocationItem(location: Location.mockLocation, isFavorite: false)
+        let expectedFavoriteValue = true
+
+        // When
+        viewModel.favoriteBinding(locationItem).wrappedValue = expectedFavoriteValue
+
+        // Then
+        XCTAssertTrue(viewModel.isFavoriteLocation(locationItem.id))
+    }
 }
