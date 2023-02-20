@@ -10,6 +10,7 @@ import XCTest
 @testable import Data
 @testable import Domain
 @testable import SthlmExplorer
+@testable import Navigation
 
 final class ListViewModelTests: XCTestCase {
 
@@ -98,6 +99,97 @@ final class ListViewModelTests: XCTestCase {
         // Then
         XCTAssertEqual(vm.opacityForLocationCard(unselectedLocation), 0)
         XCTAssertEqual(vm.opacityForLocationCard(selectedLocation), 1)
+    }
+
+    func test_should_display_empty_state_for_favorites() {
+        // Given
+        let vm = makeSUT()
+
+        // When
+        vm.selectedFilter = .landmarks
+
+        // Then
+        XCTAssertFalse(vm.shouldDisplayEmptyFavoritesState())
+
+        // WHen
+        vm.selectedFilter = .favorites
+
+        // Then
+        XCTAssertTrue(vm.shouldDisplayEmptyFavoritesState())
+    }
+
+    func test_should_diplay_empty_searchbar_state() {
+        // Given
+        let vm = makeSUT()
+
+        // When
+        vm.searchBarText = "Someone is searching for a specific location which is not found..."
+
+        // Then
+        XCTAssertTrue(vm.shouldDisplayEmptySearchState())
+    }
+
+    func test_view_state_manager_changes_state_when_presenting_location_detail() {
+        // Given
+        let vm = makeSUT()
+        let locationItem = LocationItem(location: .mockLocation, isFavorite: false)
+        let expectation = XCTestExpectation()
+        var viewState: ViewState?
+
+        // When
+        // Ignoring the initial value and listening for the next value change.
+        let subscription = vm.viewStateManager.viewStatePublisher
+            .dropFirst(1)
+            .sink { state in
+                viewState = state
+                expectation.fulfill()
+            }
+
+        vm.presentDetail(for: locationItem)
+
+        // Then
+        let isPresentingDetail = (viewState == .presentedLocationDetail)
+        subscription.cancel()
+        XCTAssertTrue(isPresentingDetail)
+
+        wait(for: [expectation], timeout: 1)
+    }
+
+    func test_view_state_manager_changes_state_when_dismissing_location_detail() {
+        // Given
+        let vm = makeSUT()
+        let expectation = XCTestExpectation()
+        var viewState: ViewState?
+
+        // When
+        let subscription = vm.viewStateManager.viewStatePublisher
+            .dropFirst(1)
+            .sink { state in
+                viewState = state
+                expectation.fulfill()
+            }
+
+        vm.dismissDetail()
+        let didDismissDetail = (viewState == .dismissedLocationDetail)
+        subscription.cancel()
+        XCTAssertTrue(didDismissDetail)
+
+        wait(for: [expectation], timeout: 1)
+    }
+
+    func test_calculate_distance_returns_value_in_minutes() {
+        // Given
+        let vm = makeSUT()
+        let location = LocationItem(location: .mockLocation, isFavorite: false)
+
+        // When
+        if let distance = vm.distanceToLocation(location) {
+            // Then
+            XCTAssertGreaterThan(distance, 0)
+        } else {
+            // Then
+            XCTFail("distance is nil")
+        }
     }
 
     private func makeSUT() -> ListViewModel {
