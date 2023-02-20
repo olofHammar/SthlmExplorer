@@ -31,6 +31,7 @@ struct HeaderTitleView: View {
             }
         }
         .matchedGeometryEffect(id: String.headerTitleID, in: animation)
+        .allowsHitTesting(false)
         .offset(y: contentOffset())
         .frame(height: .headerTitleHeight, alignment: .top)
         .clipped()

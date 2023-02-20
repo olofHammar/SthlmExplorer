@@ -1,3 +1,3 @@
 # Navigation
 
-A description of this package.
+Contains Manager handling application view states.

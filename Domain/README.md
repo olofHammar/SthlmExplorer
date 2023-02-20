@@ -1,3 +1,3 @@
 # Domain
 
-A description of this package.
+Contains Use Cases and Repositories. 
