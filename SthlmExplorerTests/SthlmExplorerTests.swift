@@ -207,11 +207,12 @@ final class ListViewModelTests: XCTestCase {
 
     private func makeSUTWithListItems() -> ListViewModel {
         let vm = makeSUT()
+        let expectedItemsCount = 3
         let expectation = XCTestExpectation(description: "List should not be empty")
 
         let observer = vm.$listItems
             .sink { items in
-                if items.count == 3 {
+                if items.count == expectedItemsCount {
                     expectation.fulfill()
                 }
             }
