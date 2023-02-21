@@ -78,8 +78,8 @@
             filePath = "SthlmExplorer/Presentation/Flows/List/ListViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "135"
-            endingLineNumber = "135"
+            startingLineNumber = "138"
+            endingLineNumber = "138"
             landmarkName = "presentDetail(for:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -414,6 +414,70 @@
             endingLineNumber = "35"
             landmarkName = "IFavoriteLocationsDataSource"
             landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1070D782-FFF3-4E00-9C91-ADCF60EC8F2A"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SthlmExplorer/Config/AppConfig.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "86"
+            endingLineNumber = "86"
+            landmarkName = "configurePresentationInjections(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "90B0FD6A-E6C3-4140-BD7E-5206E8132264"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SthlmExplorerTests/SthlmExplorerTests.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "135"
+            endingLineNumber = "135"
+            landmarkName = "test_view_state_manager_changes_state_when_presenting_location_detail()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "90B0FD6A-E6C3-4140-BD7E-5206E8132264 - 20f3115e855524c5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Model.ViewState) -&gt; () in SthlmExplorerTests.ListViewModelTests.test_view_state_manager_changes_state() -&gt; ()"
+                  moduleName = "SthlmExplorerTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/olofhammar/xCodeProjects/SthlmExplorer/SthlmExplorerTests/SthlmExplorerTests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "142"
+                  endingLineNumber = "142"
+                  offsetFromSymbolStart = "80">
+               </Location>
+               <Location
+                  uuid = "90B0FD6A-E6C3-4140-BD7E-5206E8132264 - 20f3115e855524a4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Model.ViewState) -&gt; () in SthlmExplorerTests.ListViewModelTests.test_view_state_manager_changes_state() -&gt; ()"
+                  moduleName = "SthlmExplorerTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/olofhammar/xCodeProjects/SthlmExplorer/SthlmExplorerTests/SthlmExplorerTests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "143"
+                  endingLineNumber = "143"
+                  offsetFromSymbolStart = "80">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

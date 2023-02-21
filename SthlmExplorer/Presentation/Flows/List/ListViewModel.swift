@@ -24,7 +24,6 @@ final class ListViewModel: ObservableObject {
     @Published private(set) var listItems: [ListItem] = []
     @Published private(set) var allLocationItems: [LocationItem] = []
     @Published private(set) var locationItems: [LocationItem] = []
-    @Published private(set) var travelTipItems: [TravelTipItem] = []
     @Published private(set) var selectedLocation: LocationItem?
 
     @Published private(set) var isLoading = false
@@ -81,6 +80,10 @@ final class ListViewModel: ObservableObject {
                 self.selectedLocation?.isFavorite.toggle()
             }
         }
+    }
+
+    func isFavoriteLocation(_ id: String) -> Bool {
+        favoriteLocationUseCase.isFavorite(id)
     }
 
     func headerOffsetValue() -> CGFloat {
@@ -210,6 +213,18 @@ extension ListViewModel {
                 return location.id
             case .travelTip(let travelTip):
                 return travelTip.id
+            }
+        }
+
+        /// Helper variable used only for testing.
+        var isTravelTip: Bool {
+            switch self {
+            case .travelTip:
+                return true
+
+            default:
+                return false
+
             }
         }
     }

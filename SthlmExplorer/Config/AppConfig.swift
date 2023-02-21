@@ -26,7 +26,7 @@ struct AppConfig: Config {
 private extension AppConfig {
     func configureDataInjections(_ injector: Injector) {
         injector.map(ILocationsDataSource.self) {
-            if isRunningInPreview {
+            if shouldFetchStaticData() {
                 return StaticLocationsDataSource()
             } else {
                 return LocationsDataSource()
@@ -34,7 +34,7 @@ private extension AppConfig {
         }
 
         injector.map(ITravelTipDataSource.self) {
-            if isRunningInPreview {
+            if shouldFetchStaticData() {
                 return StaticTravelTipsDataSource()
             } else {
                 return TravelTipDataSource()
@@ -82,7 +82,7 @@ private extension AppConfig {
 
     func configurePresentationInjections(_ injector: Injector) {
         injector.map(IFetchLocationItemsUseCase.self) {
-            if isRunningInPreview {
+            if shouldFetchStaticData() {
                 return StaticFetchLocationItemsUseCase()
             } else {
                 return FetchLocationItemsUseCase()
@@ -94,7 +94,7 @@ private extension AppConfig {
         }
 
         injector.map(IFetchTravelTipItemsUseCase.self) {
-            if isRunningInPreview {
+            if shouldFetchStaticData() {
                 return StaticFetchTravelTipItemsUseCase()
             } else {
                 return FetchTravelTipItemsUseCase()
@@ -119,4 +119,9 @@ private extension AppConfig {
 
 private extension AppConfig {
     var isRunningInPreview: Bool { ProcessInfo.processInfo.environment["XCODE_RUNNING_FOR_PREVIEWS"] == "1" }
+    var isRunningTests: Bool { ProcessInfo.processInfo.environment["XCTestConfigurationFilePath"] != nil }
+
+    func shouldFetchStaticData() -> Bool {
+        isRunningInPreview || isRunningTests
+    }
 }
