@@ -67,6 +67,11 @@
 		E4B470D7299E2BC000D8B5A6 /* MapViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B470D6299E2BC000D8B5A6 /* MapViewRepresentable.swift */; };
 		E4B470D9299E37DD00D8B5A6 /* UIImage+.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B470D8299E37DD00D8B5A6 /* UIImage+.swift */; };
 		E4B470DB299E620000D8B5A6 /* LocationSheetBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B470DA299E620000D8B5A6 /* LocationSheetBottomView.swift */; };
+		E4BA956129A3A082001EB9D3 /* Data in Frameworks */ = {isa = PBXBuildFile; productRef = E4BA956029A3A082001EB9D3 /* Data */; };
+		E4BA956329A3A088001EB9D3 /* Domain in Frameworks */ = {isa = PBXBuildFile; productRef = E4BA956229A3A088001EB9D3 /* Domain */; };
+		E4BA956529A3A091001EB9D3 /* Location in Frameworks */ = {isa = PBXBuildFile; productRef = E4BA956429A3A091001EB9D3 /* Location */; };
+		E4BA956729A3A096001EB9D3 /* Model in Frameworks */ = {isa = PBXBuildFile; productRef = E4BA956629A3A096001EB9D3 /* Model */; };
+		E4BA956929A3A09A001EB9D3 /* Navigation in Frameworks */ = {isa = PBXBuildFile; productRef = E4BA956829A3A09A001EB9D3 /* Navigation */; };
 		E4D986E4299B861400C7C380 /* Image+SystemImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D986E3299B861400C7C380 /* Image+SystemImage.swift */; };
 		E4D986E6299B965900C7C380 /* View+HideKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D986E5299B965900C7C380 /* View+HideKeyboard.swift */; };
 		E4D986EB299B9C3500C7C380 /* LocationDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D986EA299B9C3500C7C380 /* LocationDetailView.swift */; };
@@ -176,6 +181,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4BA956329A3A088001EB9D3 /* Domain in Frameworks */,
+				E4BA956129A3A082001EB9D3 /* Data in Frameworks */,
+				E4BA956729A3A096001EB9D3 /* Model in Frameworks */,
+				E4BA956529A3A091001EB9D3 /* Location in Frameworks */,
+				E4BA956929A3A09A001EB9D3 /* Navigation in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -535,6 +545,13 @@
 				E49C02AA2993E6C5001993B7 /* PBXTargetDependency */,
 			);
 			name = SthlmExplorerTests;
+			packageProductDependencies = (
+				E4BA956029A3A082001EB9D3 /* Data */,
+				E4BA956229A3A088001EB9D3 /* Domain */,
+				E4BA956429A3A091001EB9D3 /* Location */,
+				E4BA956629A3A096001EB9D3 /* Model */,
+				E4BA956829A3A09A001EB9D3 /* Navigation */,
+			);
 			productName = SthlmExplorerTests;
 			productReference = E49C02A82993E6C5001993B7 /* SthlmExplorerTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -849,8 +866,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -859,9 +876,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.olof.SthlmExplorer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -880,8 +900,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -890,9 +910,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.olof.SthlmExplorer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -1033,6 +1056,26 @@
 		E42FFA882996487200C17BDA /* Location */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Location;
+		};
+		E4BA956029A3A082001EB9D3 /* Data */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Data;
+		};
+		E4BA956229A3A088001EB9D3 /* Domain */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Domain;
+		};
+		E4BA956429A3A091001EB9D3 /* Location */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Location;
+		};
+		E4BA956629A3A096001EB9D3 /* Model */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Model;
+		};
+		E4BA956829A3A09A001EB9D3 /* Navigation */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Navigation;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -135,4 +135,18 @@ public extension Location {
             longitude: 18.07176
         )
     }
+
+    static var emptyLocation: Location {
+        .init(id: "",
+              title: "",
+              description: "",
+              type: .landmark,
+              image: "",
+              subway: "",
+              tags: [],
+              info: nil,
+              latitude: 0.0,
+              longitude: 0.0
+        )
+    }
 }
